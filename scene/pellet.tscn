@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://bgwcwkfi4hekd"]
+
+[ext_resource type="Script" path="res://script/pellet.gd" id="1_ae3ek"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_hm731"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_tr0w8"]
+
+[sub_resource type="Gradient" id="Gradient_8d14v"]
+offsets = PackedFloat32Array(0, 0.424, 0.642667, 1)
+colors = PackedColorArray(0.498039, 0.411765, 0.4, 0.498039, 1, 1, 1, 1, 0, 0.509804, 0.839216, 0.219608, 0.965486, 0.965486, 0.965486, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_xxrko"]
+noise_type = 3
+frequency = 0.0036
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5q5e7"]
+width = 222
+in_3d_space = true
+seamless = true
+seamless_blend_skirt = 0.28
+color_ramp = SubResource("Gradient_8d14v")
+noise = SubResource("FastNoiseLite_xxrko")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q8kvi"]
+albedo_texture = SubResource("NoiseTexture2D_5q5e7")
+
+[node name="Pellet" type="Node3D"]
+script = ExtResource("1_ae3ek")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_hm731")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_tr0w8")
+surface_material_override/0 = SubResource("StandardMaterial3D_q8kvi")

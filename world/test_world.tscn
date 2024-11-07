@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1ku58ht1rrpg"]
+
+[ext_resource type="PackedScene" uid="uid://bgwcwkfi4hekd" path="res://scene/pellet.tscn" id="1_1w8jl"]
+
+[sub_resource type="Environment" id="Environment_bfsfx"]
+
+[node name="TestWorld" type="Node3D"]
+transform = Transform3D(0.999994, -0.00351881, -0.000328574, 0.00351843, 0.999993, -0.0011539, 0.000332635, 0.00115274, 0.999999, 0, 0, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.986286, 0.159791, -0.0413246, 0, 0.25038, 0.968148, 0.165048, 0.95487, -0.246946, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bfsfx")
+
+[node name="Pellet" parent="." instance=ExtResource("1_1w8jl")]
+transform = Transform3D(1, 4.32237e-10, 5.82077e-11, -9.62643e-10, 1, -4.65661e-10, 0, 5.82077e-10, 1, -0.110187, 0.54968, -0.00137371)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 2.67755e-09, -2.82e-10, -2.64265e-10, -4.35393e-08, 1, 0, -1, -4.65661e-08, 0.018, 20, -0.006)
+fov = 55.0
