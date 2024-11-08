@@ -14,3 +14,7 @@ config/name="geome"
 run/main_scene="res://world/test_world.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[editor]
+
+movie_writer/movie_file="C:/Users/Blair/Videos/geome.avi"
