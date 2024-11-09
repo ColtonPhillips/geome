@@ -18,7 +18,7 @@ environment = SubResource("Environment_bfsfx")
 
 [node name="Pellet" parent="." instance=ExtResource("1_1w8jl")]
 transform = Transform3D(1, 6.65068e-10, 8.73115e-11, -1.4283e-09, 1, -6.98492e-10, 0, 8.14907e-10, 1, 0.00172574, 0.490482, -0.000565973)
-direction = 2
+direction = 3
 
 [node name="Camera3D2" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 10, 10)
