@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cveu3y5t7k1tr"]
+
+[ext_resource type="Script" path="res://script/airplane.gd" id="1_2wgod"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_abgrw"]
+
+[node name="Airplane" type="Node3D"]
+script = ExtResource("1_2wgod")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_abgrw")
