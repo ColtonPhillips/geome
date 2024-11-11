@@ -11,11 +11,60 @@ subdivide_depth = 100
 render_priority = 0
 shader = ExtResource("1_wt7fe")
 shader_parameter/time = 0.0
-shader_parameter/frequency = 13.349
-shader_parameter/amplitude = 4.0
+shader_parameter/frequency = 400.0
+shader_parameter/amplitude = 2.0
 
 [node name="MeshFloor" type="MeshInstance3D"]
 transform = Transform3D(6.34597, 0, 0, 0, 1, 0, 0, 0, 6.34597, 0, 0, 0)
 mesh = SubResource("PlaneMesh_ua3d6")
 surface_material_override/0 = SubResource("ShaderMaterial_jgthk")
 script = ExtResource("2_105fs")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(0.15758, 0, 0, 0, 1, 0, 0, 0, 0.15758, -0.945482, 0.732918, 0.945482)
+light_color = Color(1, 0, 1, 1)
+light_energy = 5.237
+light_indirect_energy = 7.64
+light_volumetric_fog_energy = 7.67
+light_size = 2.34
+light_specular = 2.255
+omni_range = 8.744
+omni_attenuation = 16.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(0.15758, 0, 0, 0, 1, 0, 0, 0, 0.15758, 0.945482, 0.732918, 0.945482)
+light_color = Color(1, 0, 1, 1)
+light_energy = 5.237
+light_indirect_energy = 7.64
+light_volumetric_fog_energy = 7.67
+light_size = 2.34
+light_specular = 2.255
+omni_range = 8.744
+omni_attenuation = 16.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(0.15758, 0, 0, 0, 1, 0, 0, 0, 0.15758, 0.945482, 0.732918, -0.945482)
+light_color = Color(1, 0, 1, 1)
+light_energy = 5.237
+light_indirect_energy = 7.64
+light_volumetric_fog_energy = 7.67
+light_size = 2.34
+light_specular = 2.255
+omni_range = 8.744
+omni_attenuation = 16.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="."]
+transform = Transform3D(0.15758, 0, 0, 0, 1, 0, 0, 0, 0.15758, -0.945482, 0.732918, -0.945482)
+light_color = Color(1, 0, 1, 1)
+light_energy = 5.237
+light_indirect_energy = 7.64
+light_volumetric_fog_energy = 7.67
+light_size = 2.34
+light_specular = 2.255
+omni_range = 8.744
+omni_attenuation = 16.0
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="."]
+transform = Transform3D(0.15758, 0, 0, 0, 1, 0, 0, 0, 0.15758, 0.364629, 0.934188, 0.193466)
+omni_range = 16.0
+omni_attenuation = 4.0
