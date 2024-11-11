@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1ku58ht1rrpg"]
+[gd_scene load_steps=6 format=3 uid="uid://b1ku58ht1rrpg"]
 
 [ext_resource type="PackedScene" uid="uid://bgwcwkfi4hekd" path="res://scene/pellet.tscn" id="1_1w8jl"]
 [ext_resource type="PackedScene" uid="uid://cveu3y5t7k1tr" path="res://scene/airplane.tscn" id="2_o6dk5"]
+[ext_resource type="PackedScene" uid="uid://bvoas4vmxgv87" path="res://scene/mesh_floor.tscn" id="3_6wmpx"]
 
 [sub_resource type="Environment" id="Environment_bfsfx"]
 
@@ -26,7 +27,10 @@ transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(6.68805, 3.31738e-09, 4.65661e-10, -5.98016e-09, 6.68805, -9.31323e-10, -2.32831e-10, 1.39698e-09, 6.68805, 0, 0, 0)
+visible = false
 mesh = SubResource("PlaneMesh_8urfb")
 
 [node name="Airplane" parent="." instance=ExtResource("2_o6dk5")]
 transform = Transform3D(0.999994, 0.00351843, 0.000332632, -0.00351883, 0.999995, 0.00115273, -0.000328579, -0.0011539, 1, -11.4041, 4.27351, -5.64142)
+
+[node name="MeshFloor" parent="." instance=ExtResource("3_6wmpx")]

@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvoas4vmxgv87"]
+
+[ext_resource type="Shader" path="res://shader/mesh_floor.gdshader" id="1_wt7fe"]
+[ext_resource type="Script" path="res://script/mesh_floor.gd" id="2_105fs"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ua3d6"]
+subdivide_width = 100
+subdivide_depth = 100
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jgthk"]
+render_priority = 0
+shader = ExtResource("1_wt7fe")
+shader_parameter/time = 0.0
+shader_parameter/frequency = 13.349
+shader_parameter/amplitude = 4.0
+
+[node name="MeshFloor" type="MeshInstance3D"]
+transform = Transform3D(6.34597, 0, 0, 0, 1, 0, 0, 0, 6.34597, 0, 0, 0)
+mesh = SubResource("PlaneMesh_ua3d6")
+surface_material_override/0 = SubResource("ShaderMaterial_jgthk")
+script = ExtResource("2_105fs")
