@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1ku58ht1rrpg"]
+[gd_scene load_steps=14 format=3 uid="uid://b1ku58ht1rrpg"]
 
 [ext_resource type="PackedScene" uid="uid://bgwcwkfi4hekd" path="res://scene/pellet.tscn" id="1_1w8jl"]
+[ext_resource type="Script" path="res://script/test_world.gd" id="1_t8vno"]
 [ext_resource type="PackedScene" uid="uid://cveu3y5t7k1tr" path="res://scene/airplane.tscn" id="2_o6dk5"]
 [ext_resource type="PackedScene" uid="uid://bvoas4vmxgv87" path="res://scene/mesh_floor.tscn" id="3_6wmpx"]
 
@@ -8,8 +9,60 @@
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_8urfb"]
 
+[sub_resource type="Gradient" id="Gradient_ufh76"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.354331, 0.540682, 0.729659)
+colors = PackedColorArray(1, 0.72, 0.920667, 1, 0.890196, 0, 0, 1, 0.411765, 0.109804, 0.109804, 1, 0.0588235, 0.109804, 0.109804, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ufjem"]
+noise_type = 3
+frequency = 0.0167
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rqqo2"]
+in_3d_space = true
+seamless = true
+seamless_blend_skirt = 0.71
+color_ramp = SubResource("Gradient_ufh76")
+noise = SubResource("FastNoiseLite_ufjem")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_6bjsa"]
+seed = 3
+frequency = 0.0554
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8ngj4"]
+in_3d_space = true
+seamless = true
+as_normal_map = true
+bump_strength = 19.2
+noise = SubResource("FastNoiseLite_6bjsa")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m4b4y"]
+specular_mode = 1
+albedo_color = Color(0.920907, 0.845425, 0.995168, 1)
+albedo_texture = SubResource("NoiseTexture2D_rqqo2")
+metallic = 0.12
+metallic_specular = 0.23
+roughness = 0.0
+normal_enabled = true
+normal_texture = SubResource("NoiseTexture2D_8ngj4")
+backlight_enabled = true
+backlight = Color(1, 1, 1, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_opogw"]
+material = SubResource("StandardMaterial3D_m4b4y")
+text = "Geome DEMOscene"
+justification_flags = 162
+pixel_size = 0.08
+curve_step = 10.0
+depth = 1.0
+
 [node name="TestWorld" type="Node3D"]
 transform = Transform3D(0.999994, -0.00351881, -0.000328574, 0.00351843, 0.999993, -0.0011539, 0.000332635, 0.00115274, 0.999999, 0, 0, 0)
+script = ExtResource("1_t8vno")
+direction = 3
+speed = 1.0
+rotation_amplitude = 1.0
+switch_time = 4.2
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.986286, 0.159791, -0.0413246, 0, 0.25038, 0.968148, 0.165048, 0.95487, -0.246946, 0, 0, 0)
@@ -34,3 +87,7 @@ mesh = SubResource("PlaneMesh_8urfb")
 transform = Transform3D(0.999994, 0.00351843, 0.000332632, -0.00351883, 0.999995, 0.00115273, -0.000328579, -0.0011539, 1, -11.4041, 4.27351, -5.64142)
 
 [node name="MeshFloor" parent="." instance=ExtResource("3_6wmpx")]
+
+[node name="TextMesh3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.999995, -0.00184645, 0.00278482, -0.00129895, 0.553064, 0.83314, -0.00307853, -0.833139, 0.553058, -0.217435, 4.33292, 2.22533)
+mesh = SubResource("TextMesh_opogw")
