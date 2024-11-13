@@ -1,0 +1,126 @@
+[gd_scene load_steps=6 format=3 uid="uid://d2fn8a73ygp3n"]
+
+[ext_resource type="Script" path="res://script/space_world.gd" id="1_6a7tt"]
+[ext_resource type="PackedScene" uid="uid://bvcsh2a25qngd" path="res://scene/fireball.tscn" id="1_ksnmi"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_duri5"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(0.508417, 0.50715, 0.5325, 1)
+sky_energy_multiplier = 0.0
+ground_bottom_color = Color(0.0999212, 0.0898562, 0.268783, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
+ground_curve = 0.298571
+sun_angle_max = 18.5
+sun_curve = 0.011542
+
+[sub_resource type="Sky" id="Sky_qyr4w"]
+sky_material = SubResource("ProceduralSkyMaterial_duri5")
+
+[sub_resource type="Environment" id="Environment_ysu3d"]
+background_mode = 2
+sky = SubResource("Sky_qyr4w")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="SpaceWorld" type="Node3D"]
+script = ExtResource("1_6a7tt")
+rotation_speed = 0.3
+orbit_distance = 50.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ysu3d")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.716911, -0.452772, 0.530128, 0, 0.760406, 0.649448, -0.697165, 0.465596, -0.545143, 14.1651, 0, 8.33433)
+light_color = Color(1, 0.9865, 0.73, 1)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.987688, 0.156434, 0, -0.156434, 0.987688, 0, 5, 30)
+fov = 55.0
+far = 8000.0
+
+[node name="Fireballs" type="Node3D" parent="."]
+
+[node name="Fireball" parent="Fireballs" instance=ExtResource("1_ksnmi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1651, 0, 8.33433)
+motion_type = 1
+rotation_speed = 1.1
+orbit_distance = 7.0
+chaos_intensity = 1.4
+
+[node name="Fireball6" parent="Fireballs" instance=ExtResource("1_ksnmi")]
+transform = Transform3D(0.973387, -0.229166, 0, 0.229166, 0.973387, 0, 0, 0, 1, 14.1651, 0, 8.33433)
+rotation_speed = 0.4
+orbit_distance = 66.0
+chaos_intensity = 1.4
+
+[node name="Fireball5" parent="Fireballs" instance=ExtResource("1_ksnmi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.1651, 11, 8.33433)
+orbit_distance = 300.0
+chaos_intensity = 1.4
+
+[node name="Fireball2" parent="Fireballs" instance=ExtResource("1_ksnmi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0115, 0, 0.718002)
+rotation_speed = 1.1
+orbit_distance = 80.0
+
+[node name="Fireball3" parent="Fireballs" instance=ExtResource("1_ksnmi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.01152, 0, 0.718002)
+rotation_speed = 0.3
+orbit_distance = 40.0
+
+[node name="Fireball4" parent="Fireballs" instance=ExtResource("1_ksnmi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.98848, 0, 0.718002)
+motion_type = 1
+rotation_speed = 0.3
+orbit_distance = 39.0
+
+[node name="Fireball7" parent="Fireballs" instance=ExtResource("1_ksnmi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.34903, 7.67438, -2.19237)
+motion_type = 1
+rotation_speed = 0.1
+orbit_distance = 3.0
+eccentricity = 0.1
+chaos_intensity = 0.1
+
+[node name="Fireball8" parent="Fireballs" instance=ExtResource("1_ksnmi")]
+transform = Transform3D(1, 0, 0, 0, 0.276443, 0.96103, 0, -0.96103, 0.276443, 0, 9.38463, -26.695)
+motion_type = 1
+orbit_distance = 7.0
+eccentricity = 0.23
+chaos_intensity = 1.4
+
+[node name="Fireball9" parent="Fireballs" instance=ExtResource("1_ksnmi")]
+transform = Transform3D(0.973387, -0.229166, 0, 0.0633513, 0.269086, 0.961031, -0.220236, -0.935455, 0.276443, 0, 9.38463, -26.695)
+rotation_speed = 0.4
+orbit_distance = 66.0
+chaos_intensity = 1.4
+
+[node name="Fireball10" parent="Fireballs" instance=ExtResource("1_ksnmi")]
+transform = Transform3D(1, 0, 0, 0, 0.276443, 0.96103, 0, -0.96103, 0.276443, 8, 12.4255, -37.2664)
+orbit_distance = 300.0
+chaos_intensity = 0.3
+
+[node name="Fireball11" parent="Fireballs" instance=ExtResource("1_ksnmi")]
+transform = Transform3D(1, 0, 0, 0, 0.276443, 0.96103, 0, -0.96103, 0.276443, -0.153619, 2.06511, -28.8005)
+orbit_distance = 80.0
+
+[node name="Fireball12" parent="Fireballs" instance=ExtResource("1_ksnmi")]
+transform = Transform3D(1, 0, 0, 0, 0.276443, 0.96103, 0, -0.96103, 0.276443, -8.15362, 2.06511, -28.8005)
+rotation_speed = 0.3
+orbit_distance = 40.0
+
+[node name="Fireball13" parent="Fireballs" instance=ExtResource("1_ksnmi")]
+transform = Transform3D(1, 0, 0, 0, 0.276443, 0.96103, 0, -0.96103, 0.276443, -16.1536, 2.06511, -28.8005)
+motion_type = 1
+rotation_speed = 0.3
+orbit_distance = 40.0
+
+[node name="Fireball14" parent="Fireballs" instance=ExtResource("1_ksnmi")]
+transform = Transform3D(1, 0, 0, 0, 0.276443, 0.96103, 0, -0.96103, 0.276443, -8.81611, 1.38968, -36.9804)
+motion_type = 1
+rotation_speed = 0.1
+orbit_distance = 3.1
+eccentricity = 0.1
+chaos_intensity = 0.1
