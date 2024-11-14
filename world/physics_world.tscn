@@ -5,9 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://dowwkux4r1tgy" path="res://scene/blender_paddle.tscn" id="3_xawxm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mqrlw"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+sky_top_color = Color(0.2886, 0.750862, 0.905352, 1)
+sky_horizon_color = Color(3.85046e-06, 0.731508, 0.857058, 1)
 sky_energy_multiplier = 4.2
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_bottom_color = Color(0.158333, 0.114, 0.19, 1)
+ground_horizon_color = Color(0.448008, 0.21578, 0.579041, 1)
+sun_angle_max = 184.29
+sun_curve = 0.00937499
 
 [sub_resource type="Sky" id="Sky_5iwfm"]
 sky_material = SubResource("ProceduralSkyMaterial_mqrlw")
@@ -49,8 +53,8 @@ transform = Transform3D(-0.866025, -0.484074, 0.12519, 0, 0.25038, 0.968148, -0.
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.642788, 0.766044, 0, -0.766044, 0.642788, 0, 30, 20)
-fov = 55.0
+transform = Transform3D(0.622517, 0.372879, -0.688066, 0, 0.879197, 0.476458, 0.782607, -0.296603, 0.547315, -25.0745, 25.1634, 23.6816)
+fov = 60.4
 
 [node name="PopcornBall" parent="." instance=ExtResource("1_cgphj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.00315, 0)
