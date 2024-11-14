@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://bnt3uidrc5w5a"]
+[gd_scene load_steps=14 format=3 uid="uid://bnt3uidrc5w5a"]
 
 [ext_resource type="PackedScene" uid="uid://dhmnv08ps8ftx" path="res://scene/popcorn_ball.tscn" id="1_cgphj"]
 [ext_resource type="Script" path="res://script/physics_world.gd" id="1_s20gy"]
 [ext_resource type="PackedScene" uid="uid://dowwkux4r1tgy" path="res://scene/blender_paddle.tscn" id="3_xawxm"]
+[ext_resource type="PackedScene" uid="uid://owsh46128kk2" path="res://scene/zig_zag_animation.tscn" id="4_n5nu6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mqrlw"]
 sky_top_color = Color(0.2886, 0.750862, 0.905352, 1)
@@ -140,3 +141,9 @@ transform = Transform3D(-4.37114e-08, -0.766044, -0.642788, 0, 0.642788, -0.7660
 
 [node name="BlenderPaddle5" parent="Blenders" instance=ExtResource("3_xawxm")]
 transform = Transform3D(2.62268e-08, -2.29282e-15, 0.6, -5.24537e-08, -0.6, 0, 0.6, -5.24537e-08, -2.62268e-08, 0, 1.09256, 0)
+
+[node name="ZigZagAnimation" parent="." instance=ExtResource("4_n5nu6")]
+transform = Transform3D(0.620108, 0.0998885, 0.778132, 0.69548, 0.388954, -0.604171, -0.363007, 0.915826, 0.171723, 216.697, -207.645, -494.335)
+
+[node name="ZigZagAnimation2" parent="." instance=ExtResource("4_n5nu6")]
+transform = Transform3D(0.443766, -0.893921, -0.0630561, -0.896044, -0.441572, -0.0460323, 0.0133054, 0.0769285, -0.996948, 269.623, -188.741, -58.9734)
