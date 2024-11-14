@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dowwkux4r1tgy"]
+
+[ext_resource type="Script" path="res://script/blender_paddle.gd" id="1_7mrg2"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bncls"]
+friction = 0.4
+bounce = 0.1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qov1b"]
+size = Vector3(8, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_n0bje"]
+size = Vector3(8, 1, 1)
+
+[node name="BlenderPaddle" type="AnimatableBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_bncls")
+script = ExtResource("1_7mrg2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.39089, 0.484203, 0)
+shape = SubResource("BoxShape3D_qov1b")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("BoxMesh_n0bje")

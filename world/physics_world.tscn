@@ -1,17 +1,48 @@
-[gd_scene load_steps=6 format=3 uid="uid://bnt3uidrc5w5a"]
+[gd_scene load_steps=13 format=3 uid="uid://bnt3uidrc5w5a"]
 
 [ext_resource type="PackedScene" uid="uid://dhmnv08ps8ftx" path="res://scene/popcorn_ball.tscn" id="1_cgphj"]
 [ext_resource type="Script" path="res://script/physics_world.gd" id="1_s20gy"]
+[ext_resource type="PackedScene" uid="uid://dowwkux4r1tgy" path="res://scene/blender_paddle.tscn" id="3_xawxm"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mqrlw"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+sky_energy_multiplier = 4.2
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_5iwfm"]
+sky_material = SubResource("ProceduralSkyMaterial_mqrlw")
+
+[sub_resource type="Environment" id="Environment_eo18c"]
+background_mode = 2
+sky = SubResource("Sky_5iwfm")
+tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5e02r"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dah51"]
 size = Vector3(1, 1, 1.84961)
 
+[sub_resource type="Gradient" id="Gradient_fm0r0"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g1dxo"]
+gradient = SubResource("Gradient_fm0r0")
+fill_from = Vector2(0.00569801, 0.407407)
+fill_to = Vector2(0.592593, 0.0683761)
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_otr45"]
+albedo_color = Color(0.85098, 1, 1, 1)
+albedo_texture = SubResource("GradientTexture2D_g1dxo")
+emission_energy_multiplier = 3.9
+
 [sub_resource type="BoxMesh" id="BoxMesh_okudw"]
+material = SubResource("ORMMaterial3D_otr45")
 
 [node name="PhysicsWorld" type="Node3D"]
 script = ExtResource("1_s20gy")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_eo18c")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.484074, 0.12519, 0, 0.25038, 0.968148, -0.5, 0.83844, -0.216835, 0, 0, 0)
@@ -44,7 +75,7 @@ transform = Transform3D(8.00327, 0.755636, 0, -9.23304, 0.654991, 0, 0, 0, 10.88
 shape = SubResource("BoxShape3D_dah51")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/StaticBody3D2"]
-transform = Transform3D(8.00327, 0.755636, 0, -9.23304, 0.654991, 0, 0, 0, 19.9194, -10.0299, 4.49177, 0)
+transform = Transform3D(7.85415, 0.766044, 0, -9.36022, 0.642787, 0, 0, 0, 19.9194, -10.0299, 4.49177, 0)
 mesh = SubResource("BoxMesh_okudw")
 skeleton = NodePath("../CollisionShape3D")
 
@@ -57,7 +88,7 @@ transform = Transform3D(8.00327, 0.755636, 0, -9.23304, 0.654991, 0, 0, 0, 10.88
 shape = SubResource("BoxShape3D_dah51")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/StaticBody3D3"]
-transform = Transform3D(8.00327, 0.755636, 0, -9.23304, 0.654991, 0, 0, 0, 19.9194, -10.0299, 4.49177, 0)
+transform = Transform3D(7.85415, 0.766044, 0, -9.36022, 0.642787, 0, 0, 0, 19.9194, -10.0299, 4.49177, 0)
 mesh = SubResource("BoxMesh_okudw")
 skeleton = NodePath("../CollisionShape3D")
 
@@ -70,7 +101,7 @@ transform = Transform3D(8.00327, 0.755636, 0, -9.23304, 0.654991, 0, 0, 0, 10.88
 shape = SubResource("BoxShape3D_dah51")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/StaticBody3D4"]
-transform = Transform3D(8.00327, 0.755636, 0, -9.23304, 0.654991, 0, 0, 0, 19.9194, -10.0299, 4.49177, 0)
+transform = Transform3D(7.85415, 0.766044, 0, -9.36022, 0.642787, 0, 0, 0, 19.9194, -10.0299, 4.49177, 0)
 mesh = SubResource("BoxMesh_okudw")
 skeleton = NodePath("../CollisionShape3D")
 
@@ -83,6 +114,25 @@ transform = Transform3D(8.00327, 0.755636, 0, -9.23304, 0.654991, 0, 0, 0, 10.88
 shape = SubResource("BoxShape3D_dah51")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/StaticBody3D5"]
-transform = Transform3D(8.00327, 0.755636, 0, -9.23304, 0.654991, 0, 0, 0, 19.9194, -10.0299, 4.49177, 0)
+transform = Transform3D(7.85415, 0.766044, 0, -9.36022, 0.642787, 0, 0, 0, 19.9194, -10.0299, 4.49177, 0)
 mesh = SubResource("BoxMesh_okudw")
 skeleton = NodePath("../CollisionShape3D")
+
+[node name="Blenders" type="Node3D" parent="."]
+
+[node name="BlenderPaddle" parent="Blenders" instance=ExtResource("3_xawxm")]
+transform = Transform3D(1, 0, 0, 0, 0.642788, 0.766044, 0, -0.766044, 0.642788, -1.48758, 9.82034, 13.1611)
+rotation_speed = 1.0
+
+[node name="BlenderPaddle2" parent="Blenders" instance=ExtResource("3_xawxm")]
+transform = Transform3D(1, 0, 0, 0, 0.642788, -0.766044, 0, 0.766044, 0.642788, -1.48758, 6.10083, -9.93255)
+
+[node name="BlenderPaddle3" parent="Blenders" instance=ExtResource("3_xawxm")]
+transform = Transform3D(-4.37114e-08, 0.766044, -0.642788, 0, 0.642788, 0.766044, 1, 3.34849e-08, -2.80971e-08, -9.35305, 4.59656, -3.09113)
+rotation_speed = 1.0
+
+[node name="BlenderPaddle4" parent="Blenders" instance=ExtResource("3_xawxm")]
+transform = Transform3D(-4.37114e-08, -0.766044, -0.642788, 0, 0.642788, -0.766044, 1, -3.34849e-08, -2.80971e-08, 13.3019, 9.13824, -3.09112)
+
+[node name="BlenderPaddle5" parent="Blenders" instance=ExtResource("3_xawxm")]
+transform = Transform3D(2.62268e-08, -2.29282e-15, 0.6, -5.24537e-08, -0.6, 0, 0.6, -5.24537e-08, -2.62268e-08, 0, 1.09256, 0)

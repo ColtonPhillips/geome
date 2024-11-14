@@ -6,7 +6,7 @@ var object_scene = preload("res://scene/popcorn_ball.tscn")
 
 # Timer variables
 var timer = 0.0
-var spawn_interval = 0.08
+var spawn_interval = 0.02
 
 func _process(delta):
 	# Update the timer
