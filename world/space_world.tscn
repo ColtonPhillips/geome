@@ -43,10 +43,9 @@ far = 8000.0
 [node name="Fireballs" type="Node3D" parent="."]
 
 [node name="Fireball" parent="Fireballs" instance=ExtResource("1_ksnmi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1651, 0, 8.33433)
-motion_type = 1
-rotation_speed = 1.1
-orbit_distance = 7.0
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.485102, 0, -0.769918)
+rotation_speed = 0.01
+orbit_distance = 0.01
 chaos_intensity = 1.4
 
 [node name="Fireball6" parent="Fireballs" instance=ExtResource("1_ksnmi")]

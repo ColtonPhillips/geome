@@ -1,0 +1,213 @@
+[gd_scene load_steps=15 format=3 uid="uid://760eajkvqsx7"]
+
+[ext_resource type="Texture2D" uid="uid://c7qnts53vyfqi" path="res://hdri/inside_aircraft_hangar_8k.hdr" id="1_kt5dw"]
+[ext_resource type="ArrayMesh" uid="uid://crcchcgwhan7m" path="res://obj/ww1_airplane.obj" id="3_q61gr"]
+[ext_resource type="PackedScene" uid="uid://dqyvha71t1lxr" path="res://scene/camera_ship.tscn" id="4_1kdnc"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_4gphw"]
+panorama = ExtResource("1_kt5dw")
+energy_multiplier = 0.1
+
+[sub_resource type="Sky" id="Sky_80jnk"]
+sky_material = SubResource("PanoramaSkyMaterial_4gphw")
+process_mode = 3
+
+[sub_resource type="Environment" id="Environment_pxufs"]
+background_mode = 2
+sky = SubResource("Sky_80jnk")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_osr1n"]
+offsets = PackedFloat32Array(0, 0.480412, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.813522, 0.708499, 0.626464, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_q0khh"]
+frequency = 0.0023
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4oyke"]
+seamless = true
+color_ramp = SubResource("Gradient_osr1n")
+noise = SubResource("FastNoiseLite_q0khh")
+
+[sub_resource type="Gradient" id="Gradient_nrgee"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4262a"]
+gradient = SubResource("Gradient_nrgee")
+
+[sub_resource type="Gradient" id="Gradient_eae0r"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_linni"]
+gradient = SubResource("Gradient_eae0r")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_upngf"]
+blend_mode = 1
+cull_mode = 2
+albedo_color = Color(0.45098, 0.631373, 1, 1)
+albedo_texture = SubResource("NoiseTexture2D_4oyke")
+metallic_texture = SubResource("GradientTexture2D_4262a")
+roughness_texture = SubResource("GradientTexture1D_linni")
+emission = Color(0.18, 0.1566, 0.1566, 1)
+emission_energy_multiplier = 15.0
+backlight_enabled = true
+backlight = Color(0.75, 1, 0.7625, 1)
+
+[node name="AircraftHangerWorld" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.724172, -0.00722155, -0.689582, 0, 0.999945, -0.0104718, 0.68962, 0.00758337, 0.724132, 0, 0, 0)
+light_color = Color(0.472108, 0.994201, 1, 1)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_pxufs")
+
+[node name="CameraShip" parent="." instance=ExtResource("4_1kdnc")]
+transform = Transform3D(0.513541, 0, -0.858065, 0, 1, 0, 0.858065, 0, 0.513541, 9.125, 20.25, 0.267)
+fov = 95.0
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Ww1Airplane" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-0.219365, -0.210312, -1.97678, -0.448515, 1.94273, -0.156918, 1.93668, 0.426096, -0.260248, 25.958, 5.105, -23.582)
+mesh = ExtResource("3_q61gr")
+skeleton = NodePath("../../root/@EditorNode@17792/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@EditorMainScreen@98/MainScreen/@CanvasItemEditor@9907/@VSplitContainer@9729/@HSplitContainer@9731/@HSplitContainer@9733/@Control@9734/@SubViewportContainer@9735/@SubViewport@9736/AircraftHangerWorld")
+surface_material_override/0 = SubResource("StandardMaterial3D_upngf")
+
+[node name="Ww1Airplane2" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(0.678608, -0.7345, 0, 0.70223, 0.648794, -0.293156, 0.215323, 0.198938, 0.956065, 81.6985, 43.7355, -53.3061)
+mesh = ExtResource("3_q61gr")
+skeleton = NodePath("../../root/@EditorNode@17792/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@EditorMainScreen@98/MainScreen/@CanvasItemEditor@9907/@VSplitContainer@9729/@HSplitContainer@9731/@HSplitContainer@9733/@Control@9734/@SubViewportContainer@9735/@SubViewport@9736/AircraftHangerWorld")
+
+[node name="Ww1Airplane3" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(0.678608, -0.7345, -8.73673e-09, -0.133285, -0.123142, -0.983398, 0.722306, 0.667342, -0.181463, -191.549, -100.505, -53.3061)
+mesh = ExtResource("3_q61gr")
+skeleton = NodePath("../../root/@EditorNode@17792/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@EditorMainScreen@98/MainScreen/@CanvasItemEditor@9907/@VSplitContainer@9729/@HSplitContainer@9731/@HSplitContainer@9733/@Control@9734/@SubViewportContainer@9735/@SubViewport@9736/AircraftHangerWorld")
+
+[node name="Ww1Airplane4" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(0.0817169, 0.178196, 0.980596, 0.686729, -0.723119, 0.0741789, 0.722306, 0.667342, -0.181463, -236.482, 24.521, -92.6162)
+mesh = ExtResource("3_q61gr")
+skeleton = NodePath("../../root/@EditorNode@17792/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@EditorMainScreen@98/MainScreen/@CanvasItemEditor@9907/@VSplitContainer@9729/@HSplitContainer@9731/@HSplitContainer@9733/@Control@9734/@SubViewportContainer@9735/@SubViewport@9736/AircraftHangerWorld")
+
+[node name="Ww1Airplane5" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-0.371206, 0.595507, 0.712445, 0.583507, -0.447243, 0.677859, 0.722306, 0.667342, -0.181463, 28.6486, -51.7774, -11.6629)
+mesh = ExtResource("3_q61gr")
+skeleton = NodePath("../../root/@EditorNode@17792/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@EditorMainScreen@98/MainScreen/@CanvasItemEditor@9907/@VSplitContainer@9729/@HSplitContainer@9731/@HSplitContainer@9733/@Control@9734/@SubViewportContainer@9735/@SubViewport@9736/AircraftHangerWorld")
+
+[node name="Ww1Airplane6" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-0.52907, 0.7022, 0.476445, 0.445375, -0.248133, 0.860274, 0.722306, 0.667342, -0.181463, 60.7744, -241.775, -11.6629)
+mesh = ExtResource("3_q61gr")
+skeleton = NodePath("../../root/@EditorNode@17792/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@EditorMainScreen@98/MainScreen/@CanvasItemEditor@9907/@VSplitContainer@9729/@HSplitContainer@9731/@HSplitContainer@9733/@Control@9734/@SubViewportContainer@9735/@SubViewport@9736/AircraftHangerWorld")
+
+[node name="Ww1Airplane7" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(0.8412, 0.517014, -0.15836, -0.539964, 0.818708, -0.195338, 0.0286584, 0.249827, 0.967866, -80.5761, -74.2016, -11.6629)
+mesh = ExtResource("3_q61gr")
+skeleton = NodePath("../../root/@EditorNode@17792/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@EditorMainScreen@98/MainScreen/@CanvasItemEditor@9907/@VSplitContainer@9729/@HSplitContainer@9731/@HSplitContainer@9733/@Control@9734/@SubViewportContainer@9735/@SubViewport@9736/AircraftHangerWorld")
+
+[node name="Ww1Airplane8" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(0.302022, -1.8299, -0.748498, -0.39758, 0.685499, -1.83631, 1.93668, 0.426096, -0.260248, -67.7795, 34.1825, -23.582)
+mesh = ExtResource("3_q61gr")
+skeleton = NodePath("../../root/@EditorNode@17792/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@EditorMainScreen@98/MainScreen/@CanvasItemEditor@9907/@VSplitContainer@9729/@HSplitContainer@9731/@HSplitContainer@9733/@Control@9734/@SubViewportContainer@9735/@SubViewport@9736/AircraftHangerWorld")
+surface_material_override/0 = SubResource("StandardMaterial3D_upngf")
+
+[node name="Ww1Airplane9" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-0.322199, -0.909734, 0.261863, 0.921859, -0.364428, -0.131789, 0.215323, 0.198938, 0.956065, -77.2281, 101.339, -53.3061)
+mesh = ExtResource("3_q61gr")
+skeleton = NodePath("../../root/@EditorNode@17792/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@EditorMainScreen@98/MainScreen/@CanvasItemEditor@9907/@VSplitContainer@9729/@HSplitContainer@9731/@HSplitContainer@9733/@Control@9734/@SubViewportContainer@9735/@SubViewport@9736/AircraftHangerWorld")
+
+[node name="Ww1Airplane10" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(0.424128, -0.220199, 0.878424, 0.546251, -0.711454, -0.442089, 0.722306, 0.667342, -0.181463, -71.2243, -207.584, -53.3061)
+mesh = ExtResource("3_q61gr")
+skeleton = NodePath("../../root/@EditorNode@17792/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@EditorMainScreen@98/MainScreen/@CanvasItemEditor@9907/@VSplitContainer@9729/@HSplitContainer@9731/@HSplitContainer@9733/@Control@9734/@SubViewportContainer@9735/@SubViewport@9736/AircraftHangerWorld")
+
+[node name="Ww1Airplane11" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-0.576687, 0.726037, 0.374569, 0.381715, -0.165906, 0.909268, 0.722306, 0.667342, -0.181463, -203.104, -191.514, -92.6162)
+mesh = ExtResource("3_q61gr")
+skeleton = NodePath("../../root/@EditorNode@17792/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@EditorMainScreen@98/MainScreen/@CanvasItemEditor@9907/@VSplitContainer@9729/@HSplitContainer@9731/@HSplitContainer@9733/@Control@9734/@SubViewportContainer@9735/@SubViewport@9736/AircraftHangerWorld")
+
+[node name="Ww1Airplane12" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-0.688096, 0.667213, -0.285219, -0.0692639, 0.33088, 0.941128, 0.722306, 0.667342, -0.181463, -15.7596, 11.0142, -11.6629)
+mesh = ExtResource("3_q61gr")
+skeleton = NodePath("../../root/@EditorNode@17792/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@EditorMainScreen@98/MainScreen/@CanvasItemEditor@9907/@VSplitContainer@9729/@HSplitContainer@9731/@HSplitContainer@9733/@Control@9734/@SubViewportContainer@9735/@SubViewport@9736/AircraftHangerWorld")
+
+[node name="Ww1Airplane13" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-0.635678, 0.537321, -0.554255, -0.272374, 0.515694, 0.812325, 0.722306, 0.667342, -0.181463, 168.399, -45.7034, -11.6629)
+mesh = ExtResource("3_q61gr")
+skeleton = NodePath("../../root/@EditorNode@17792/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@EditorMainScreen@98/MainScreen/@CanvasItemEditor@9907/@VSplitContainer@9729/@HSplitContainer@9731/@HSplitContainer@9733/@Control@9734/@SubViewportContainer@9735/@SubViewport@9736/AircraftHangerWorld")
+
+[node name="Ww1Airplane14" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(0.860489, -0.498889, 0.103295, 0.508663, 0.829877, -0.229271, 0.0286584, 0.249827, 0.967866, -44.8314, -96.632, -11.6629)
+mesh = ExtResource("3_q61gr")
+skeleton = NodePath("../../root/@EditorNode@17792/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@EditorMainScreen@98/MainScreen/@CanvasItemEditor@9907/@VSplitContainer@9729/@HSplitContainer@9731/@HSplitContainer@9733/@Control@9734/@SubViewportContainer@9735/@SubViewport@9736/AircraftHangerWorld")
+
+[node name="Ww1Airplane15" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-1.97228, -0.307858, 0.123792, -0.0379504, -0.531969, -1.92758, 0.329638, -1.90322, 0.518755, -49.1354, 2.51198, -110.525)
+mesh = ExtResource("3_q61gr")
+skeleton = NodePath("../../root/@EditorNode@17792/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@EditorMainScreen@98/MainScreen/@CanvasItemEditor@9907/@VSplitContainer@9729/@HSplitContainer@9731/@HSplitContainer@9733/@Control@9734/@SubViewportContainer@9735/@SubViewport@9736/AircraftHangerWorld")
+surface_material_override/0 = SubResource("StandardMaterial3D_upngf")
+
+[node name="Ww1Airplane16" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-0.124654, -0.201174, -0.971592, 0.552336, -0.827543, 0.100484, -0.824249, -0.52412, 0.214273, -13.4365, 48.8929, -155.882)
+mesh = ExtResource("3_q61gr")
+skeleton = NodePath("../../root/@EditorNode@17792/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@EditorMainScreen@98/MainScreen/@CanvasItemEditor@9907/@VSplitContainer@9729/@HSplitContainer@9731/@HSplitContainer@9733/@Control@9734/@SubViewportContainer@9735/@SubViewport@9736/AircraftHangerWorld")
+
+[node name="Ww1Airplane17" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-0.685279, -0.719138, 0.115032, 0.727009, -0.666163, 0.166391, -0.0430282, 0.197654, 0.979327, -40.329, -193.868, 33.3623)
+mesh = ExtResource("3_q61gr")
+skeleton = NodePath("../../root/@EditorNode@17792/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@EditorMainScreen@98/MainScreen/@CanvasItemEditor@9907/@VSplitContainer@9729/@HSplitContainer@9731/@HSplitContainer@9733/@Control@9734/@SubViewportContainer@9735/@SubViewport@9736/AircraftHangerWorld")
+
+[node name="Ww1Airplane18" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-0.668232, -0.701544, 0.247594, -0.00589588, 0.337792, 0.941203, -0.74393, 0.627482, -0.229859, 4.32432, -262.318, -78.5142)
+mesh = ExtResource("3_q61gr")
+skeleton = NodePath("../../root/@EditorNode@17792/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@EditorMainScreen@98/MainScreen/@CanvasItemEditor@9907/@VSplitContainer@9729/@HSplitContainer@9731/@HSplitContainer@9733/@Control@9734/@SubViewportContainer@9735/@SubViewport@9736/AircraftHangerWorld")
+
+[node name="Ww1Airplane19" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-0.703736, -0.656761, 0.270963, -0.432536, 0.69862, 0.56995, -0.563621, 0.283893, -0.775717, -64.6322, 15.9095, -56.071)
+mesh = ExtResource("3_q61gr")
+skeleton = NodePath("../../root/@EditorNode@17792/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@EditorMainScreen@98/MainScreen/@CanvasItemEditor@9907/@VSplitContainer@9729/@HSplitContainer@9731/@HSplitContainer@9733/@Control@9734/@SubViewportContainer@9735/@SubViewport@9736/AircraftHangerWorld")
+
+[node name="Ww1Airplane20" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-0.722932, -0.636726, 0.268235, -0.563006, 0.767922, 0.305484, -0.400493, 0.0698269, -0.913636, -75.2893, 81.3917, 124.843)
+mesh = ExtResource("3_q61gr")
+skeleton = NodePath("../../root/@EditorNode@17792/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@EditorMainScreen@98/MainScreen/@CanvasItemEditor@9907/@VSplitContainer@9729/@HSplitContainer@9731/@HSplitContainer@9733/@Control@9734/@SubViewportContainer@9735/@SubViewport@9736/AircraftHangerWorld")
+
+[node name="Ww1Airplane21" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-0.0114515, -0.161443, -0.986816, 0.924431, 0.374493, -0.0719943, 0.381179, -0.913067, 0.144954, -73.0294, -87.4176, -15.0116)
+mesh = ExtResource("3_q61gr")
+skeleton = NodePath("../../root/@EditorNode@17792/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@EditorMainScreen@98/MainScreen/@CanvasItemEditor@9907/@VSplitContainer@9729/@HSplitContainer@9731/@HSplitContainer@9733/@Control@9734/@SubViewportContainer@9735/@SubViewport@9736/AircraftHangerWorld")
+
+[node name="Ww1Airplane22" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-0.598918, 0.400191, 1.86578, -0.869733, 1.68335, -0.640245, -1.69849, -1.00309, -0.330063, -101.941, 18.1949, -44.538)
+mesh = ExtResource("3_q61gr")
+skeleton = NodePath("../../root/@EditorNode@17792/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@EditorMainScreen@98/MainScreen/@CanvasItemEditor@9907/@VSplitContainer@9729/@HSplitContainer@9731/@HSplitContainer@9733/@Control@9734/@SubViewportContainer@9735/@SubViewport@9736/AircraftHangerWorld")
+surface_material_override/0 = SubResource("StandardMaterial3D_upngf")
+
+[node name="Ww1Airplane23" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-0.564855, 0.717412, -0.407748, 0.804174, 0.367765, -0.466962, -0.185049, -0.591666, -0.784658, -134.443, 75.8261, -11.2953)
+mesh = ExtResource("3_q61gr")
+skeleton = NodePath("../../root/@EditorNode@17792/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@EditorMainScreen@98/MainScreen/@CanvasItemEditor@9907/@VSplitContainer@9729/@HSplitContainer@9731/@HSplitContainer@9733/@Control@9734/@SubViewportContainer@9735/@SubViewport@9736/AircraftHangerWorld")
+
+[node name="Ww1Airplane24" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-0.90915, 0.399317, -0.118289, -0.0828464, -0.451757, -0.888286, -0.408145, -0.797785, 0.443797, 87.1171, -135.096, -54.796)
+mesh = ExtResource("3_q61gr")
+skeleton = NodePath("../../root/@EditorNode@17792/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@EditorMainScreen@98/MainScreen/@CanvasItemEditor@9907/@VSplitContainer@9729/@HSplitContainer@9731/@HSplitContainer@9733/@Control@9734/@SubViewportContainer@9735/@SubViewport@9736/AircraftHangerWorld")
+
+[node name="Ww1Airplane25" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-0.211395, -0.544462, -0.81171, 0.523639, -0.764327, 0.376307, -0.825296, -0.345493, 0.446677, 166.058, -22.0617, -68.4781)
+mesh = ExtResource("3_q61gr")
+skeleton = NodePath("../../root/@EditorNode@17792/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@EditorMainScreen@98/MainScreen/@CanvasItemEditor@9907/@VSplitContainer@9729/@HSplitContainer@9731/@HSplitContainer@9733/@Control@9734/@SubViewportContainer@9735/@SubViewport@9736/AircraftHangerWorld")
+
+[node name="Ww1Airplane26" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(0.181441, -0.872366, -0.453934, 0.301765, -0.389936, 0.869993, -0.935958, -0.294833, 0.1925, -119.498, -36.9303, -38.3835)
+mesh = ExtResource("3_q61gr")
+skeleton = NodePath("../../root/@EditorNode@17792/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@EditorMainScreen@98/MainScreen/@CanvasItemEditor@9907/@VSplitContainer@9729/@HSplitContainer@9731/@HSplitContainer@9733/@Control@9734/@SubViewportContainer@9735/@SubViewport@9736/AircraftHangerWorld")
+
+[node name="Ww1Airplane27" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(0.299123, -0.931986, -0.204761, 0.128386, -0.173326, 0.976461, -0.945538, -0.31837, 0.0678081, -184.522, -206.715, 25.4626)
+mesh = ExtResource("3_q61gr")
+skeleton = NodePath("../../root/@EditorNode@17792/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@EditorMainScreen@98/MainScreen/@CanvasItemEditor@9907/@VSplitContainer@9729/@HSplitContainer@9731/@HSplitContainer@9733/@Control@9734/@SubViewportContainer@9735/@SubViewport@9736/AircraftHangerWorld")
+
+[node name="Ww1Airplane28" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-0.877965, -0.40855, -0.249529, -0.281584, 0.862248, -0.420997, 0.387155, -0.299357, -0.872065, -24.2985, -88.1156, -65.7706)
+mesh = ExtResource("3_q61gr")
+skeleton = NodePath("../../root/@EditorNode@17792/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@EditorMainScreen@98/MainScreen/@CanvasItemEditor@9907/@VSplitContainer@9729/@HSplitContainer@9731/@HSplitContainer@9733/@Control@9734/@SubViewportContainer@9735/@SubViewport@9736/AircraftHangerWorld")
