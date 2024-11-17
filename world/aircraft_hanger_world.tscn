@@ -1,11 +1,11 @@
 [gd_scene load_steps=15 format=3 uid="uid://760eajkvqsx7"]
 
-[ext_resource type="Texture2D" uid="uid://c7qnts53vyfqi" path="res://hdri/inside_aircraft_hangar_8k.hdr" id="1_kt5dw"]
+[ext_resource type="Texture2D" uid="uid://dog7knehs27dg" path="res://hdri/inside_aircraft_hangar_2k.hdr" id="1_66401"]
 [ext_resource type="ArrayMesh" uid="uid://crcchcgwhan7m" path="res://obj/ww1_airplane.obj" id="3_q61gr"]
 [ext_resource type="PackedScene" uid="uid://dqyvha71t1lxr" path="res://scene/camera_ship.tscn" id="4_1kdnc"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_4gphw"]
-panorama = ExtResource("1_kt5dw")
+panorama = ExtResource("1_66401")
 energy_multiplier = 0.1
 
 [sub_resource type="Sky" id="Sky_80jnk"]
