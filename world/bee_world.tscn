@@ -41,7 +41,7 @@ height = 64.0
 
 [node name="BeeWorld" type="Node3D"]
 script = ExtResource("1_8lkv7")
-num_bees = 17
+num_bees = 25
 spawn_radius = 100.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -173,9 +173,7 @@ far = 10000.0
 
 [node name="CartoonSounds3D" parent="." instance=ExtResource("4_ymp83")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.06756, 10.5553, 49.3119)
-volume_db = 3.0
-unit_size = 400.0
-max_db = 5.0
+unit_size = 44.0
 autoplay = true
 play_interval = 4.0
 

@@ -22,6 +22,8 @@ size = Vector3(20, 20, 20)
 
 [node name="CartoonSounds3D" type="AudioStreamPlayer3D"]
 stream = SubResource("AudioStreamRandomizer_dyk5r")
+unit_size = 15.0
+max_db = 1.0
 script = ExtResource("7_7ue7w")
 min_range = Vector3(-1000, -1000, -1000)
 max_range = Vector3(1000, 1000, 1000)

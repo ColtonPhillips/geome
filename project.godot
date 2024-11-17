@@ -15,6 +15,11 @@ run/main_scene="res://world/bee_world.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
 [editor]
 
 movie_writer/movie_file="C:/Users/Blair/Videos/geome.avi"

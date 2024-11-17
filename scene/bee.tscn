@@ -14,14 +14,14 @@ height = 8.0
 
 [node name="Bee" type="Node3D"]
 script = ExtResource("1_yspt2")
-speed = 0.15
-sinusoidal_offset = 3.0
-radius_range = Vector2(100, 800)
+speed = 0.11
+sinusoidal_offset = 111.0
+radius_range = Vector2(25, 400)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_imqpr")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = SubResource("AudioStreamGenerator_hd74l")
-unit_size = 1.0
-max_distance = 80.0
+max_db = 1.0
+max_distance = 100.0
