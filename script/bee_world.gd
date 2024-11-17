@@ -1,6 +1,7 @@
 extends Node3D
 
-@export var bee_scene: PackedScene  # The PackedScene of the bee object
+#@export var bee_scene: PackedScene  # The PackedScene of the bee object
+var bee_scene = preload("res://scene/bee.tscn")  # The PackedScene of the bee object
 @export var num_bees: int = 10  # Number of bees to spawn
 @export var spawn_radius: float = 300.0  # Maximum spawn radius from the world origin
 

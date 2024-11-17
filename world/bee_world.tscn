@@ -1,16 +1,17 @@
-[gd_scene load_steps=12 format=3 uid="uid://cd6304w56dptc"]
+[gd_scene load_steps=13 format=3 uid="uid://cd6304w56dptc"]
 
 [ext_resource type="PackedScene" uid="uid://dqyvha71t1lxr" path="res://scene/camera_ship.tscn" id="1_2igjg"]
 [ext_resource type="Script" path="res://script/bee_world.gd" id="1_8lkv7"]
-[ext_resource type="AudioStream" uid="uid://bhbd0phoeei6n" path="res://ogg/emmntt_-_i_think_id_stay_jungle_chill.ogg" id="1_56p5d"]
-[ext_resource type="PackedScene" uid="uid://b3ar0e615tf4o" path="res://scene/bee.tscn" id="3_vuoe5"]
+[ext_resource type="AudioStream" uid="uid://bhbd0phoeei6n" path="res://ogg/music/emmntt_-_i_think_id_stay_jungle_chill.ogg" id="1_56p5d"]
+[ext_resource type="PackedScene" uid="uid://da02qt3lyqc22" path="res://scene/cartoon_sounds_3d.tscn" id="4_ymp83"]
+[ext_resource type="PackedScene" uid="uid://ugen7q1plphi" path="res://scene/bunch_of_planes.tscn" id="5_7cjdn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yy6qo"]
-sky_top_color = Color(0.324552, 0.506413, 0.624581, 1)
-sky_horizon_color = Color(0.649926, 0.682002, 0.682899, 1)
-sky_energy_multiplier = 4.2
-ground_bottom_color = Color(0.275154, 0.221596, 0.107015, 1)
-ground_horizon_color = Color(0.649926, 0.682002, 0.682899, 1)
+sky_top_color = Color(0.284849, 0.454883, 0.564972, 1)
+sky_horizon_color = Color(0.311558, 0.520234, 0.433545, 1)
+ground_bottom_color = Color(0.508077, 0.408538, 0.18232, 1)
+ground_horizon_color = Color(0.347055, 0.345409, 0.19516, 1)
+ground_curve = 0.0746424
 
 [sub_resource type="Sky" id="Sky_q8af8"]
 sky_material = SubResource("ProceduralSkyMaterial_yy6qo")
@@ -40,14 +41,12 @@ height = 64.0
 
 [node name="BeeWorld" type="Node3D"]
 script = ExtResource("1_8lkv7")
-bee_scene = ExtResource("3_vuoe5")
-num_bees = 12
+num_bees = 17
 spawn_radius = 100.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.911403, -0.00430929, 0.411492, 0, 0.999945, 0.0104718, -0.411514, 0.00954402, -0.911353, 0, 0, 0)
-light_color = Color(0.788235, 0.921569, 0.901961, 1)
-light_energy = 4.0
+light_color = Color(0.86352, 0.908771, 0.802239, 1)
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -60,6 +59,17 @@ mesh = SubResource("SphereMesh_lp1lh")
 skeleton = NodePath("../../root/@EditorNode@17792/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@EditorMainScreen@98/MainScreen/@CanvasItemEditor@9907/@VSplitContainer@9729/@HSplitContainer@9731/@HSplitContainer@9733/@Control@9734/@SubViewportContainer@9735/@SubViewport@9736/BeeWorld")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Earths/EarthShape"]
+stream = ExtResource("1_56p5d")
+attenuation_model = 1
+unit_size = 75.0
+max_db = 4.0
+autoplay = true
+
+[node name="EarthShape9" type="MeshInstance3D" parent="Earths"]
+mesh = SubResource("SphereMesh_lp1lh")
+skeleton = NodePath("../../root/@EditorNode@17792/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@EditorMainScreen@98/MainScreen/@CanvasItemEditor@9907/@VSplitContainer@9729/@HSplitContainer@9731/@HSplitContainer@9733/@Control@9734/@SubViewportContainer@9735/@SubViewport@9736/BeeWorld")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Earths/EarthShape9"]
 stream = ExtResource("1_56p5d")
 attenuation_model = 1
 unit_size = 75.0
@@ -158,3 +168,16 @@ autoplay = true
 
 [node name="CameraShip" parent="." instance=ExtResource("1_2igjg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 100)
+fov = 90.0
+far = 10000.0
+
+[node name="CartoonSounds3D" parent="." instance=ExtResource("4_ymp83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.06756, 10.5553, 49.3119)
+volume_db = 3.0
+unit_size = 400.0
+max_db = 5.0
+autoplay = true
+play_interval = 4.0
+
+[node name="BunchOfPlanes" parent="." instance=ExtResource("5_7cjdn")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -478.669, -1833.79, -636.1)
