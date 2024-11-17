@@ -53,12 +53,13 @@ func _update_target_velocity():
 	# Normalize direction to prevent faster diagonal movement
 	if direction != Vector3.ZERO:
 		direction = direction.normalized()
-
+	
+	var moreward_speed = forward_speed if not Input.is_physical_key_pressed(KEY_SHIFT) else forward_speed * 8
 	# Assign direction-specific maximum speeds
 	target_velocity = Vector3(
 		direction.x * lateral_speed,                          # X-axis (strafe)
 		direction.y * lateral_speed,                          # Y-axis (ascend/descend)
-		direction.z * (forward_speed if direction.z != 0 else lateral_speed)  # Z-axis
+		direction.z * (moreward_speed if direction.z != 0 else lateral_speed)  # Z-axis
 	)
 
 # --- Update Target Angular Velocity ---

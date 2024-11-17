@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3ar0e615tf4o"]
+
+[ext_resource type="Script" path="res://script/bee.gd" id="1_yspt2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ams2j"]
+albedo_color = Color(1, 0.768627, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_imqpr"]
+material = SubResource("StandardMaterial3D_ams2j")
+radius = 2.0
+height = 8.0
+
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_hd74l"]
+
+[node name="Bee" type="Node3D"]
+script = ExtResource("1_yspt2")
+speed = 0.15
+sinusoidal_offset = 3.0
+radius_range = Vector2(100, 800)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_imqpr")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = SubResource("AudioStreamGenerator_hd74l")
+unit_size = 1.0
+max_distance = 80.0
