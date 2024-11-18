@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://b4r0a7fnsem2w"]
+
+[ext_resource type="PackedScene" uid="uid://ce0b1yqttuwpc" path="res://gltf/cloud_1.glb" id="1_5br65"]
+[ext_resource type="PackedScene" uid="uid://ywr45lln3bwi" path="res://gltf/cloud_2.glb" id="2_dy37i"]
+[ext_resource type="PackedScene" uid="uid://b3mdsprw1agdp" path="res://gltf/cloud_3.glb" id="3_hqg6x"]
+[ext_resource type="PackedScene" uid="uid://c5q60iu3a4cd6" path="res://gltf/ring.glb" id="4_ty45u"]
+[ext_resource type="PackedScene" uid="uid://dqyvha71t1lxr" path="res://scene/camera_ship.tscn" id="5_56cwt"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fcpso"]
+sky_top_color = Color(0.62, 0.3224, 0.58032, 1)
+sky_horizon_color = Color(0.700148, 0.700236, 0.801894, 1)
+sky_energy_multiplier = 3.0
+ground_bottom_color = Color(0.18059, 0.478544, 0.627257, 1)
+ground_horizon_color = Color(0.700148, 0.700236, 0.801894, 1)
+
+[sub_resource type="Sky" id="Sky_mgjw0"]
+sky_material = SubResource("ProceduralSkyMaterial_fcpso")
+
+[sub_resource type="Environment" id="Environment_d68ft"]
+background_mode = 2
+sky = SubResource("Sky_mgjw0")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="CloudWorld" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.948324, -0.18516, 0.257678, 0.227741, 0.168279, 0.959071, -0.220944, 0.968193, -0.117414, 0, -1.11391, 0.326293)
+light_color = Color(0.7912, 0.92, 0.92, 1)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_d68ft")
+
+[node name="cloud_1" parent="." instance=ExtResource("1_5br65")]
+transform = Transform3D(0.889616, 7.20707e-09, 0.45671, 0.236445, 0.855554, -0.460566, -0.39074, 0.517714, 0.761114, -0.498007, 2.80823, 1.93402)
+
+[node name="cloud_2" parent="." instance=ExtResource("2_dy37i")]
+transform = Transform3D(-0.998973, -0.0422434, 0.016388, -0.0171487, 0.687261, 0.726208, -0.0419403, 0.725181, -0.687279, 1.39118, 5.40429, -3.2848)
+
+[node name="cloud_3" parent="." instance=ExtResource("3_hqg6x")]
+transform = Transform3D(-0.839534, -6.27223e-09, -0.543306, -0.11115, 0.97885, 0.171753, 0.531815, 0.204581, -0.821778, 2.24044, -4.58256, -1.28008)
+
+[node name="ring" parent="." instance=ExtResource("4_ty45u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000730097, 0, 10.4539)
+
+[node name="CameraShip" parent="." instance=ExtResource("5_56cwt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12.4427)
