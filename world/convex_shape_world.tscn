@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://d3iqhvufvcvul"]
+
+[ext_resource type="PackedScene" uid="uid://cgte2p3hjd4if" path="res://scene/crate_shape.tscn" id="1_1kwko"]
+[ext_resource type="PackedScene" uid="uid://dqyvha71t1lxr" path="res://scene/camera_ship.tscn" id="2_kjf25"]
+[ext_resource type="PackedScene" uid="uid://bjvok8asadaun" path="res://scene/popcorn_spawner.tscn" id="3_327yq"]
+[ext_resource type="PackedScene" uid="uid://csctuabsl4g0m" path="res://scene/funky_csg_combiner_3d.tscn" id="4_ueydk"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oo4tx"]
+sky_top_color = Color(0.62, 0.3224, 0.58032, 1)
+sky_horizon_color = Color(0.700148, 0.700236, 0.801894, 1)
+sky_energy_multiplier = 3.0
+ground_bottom_color = Color(0.18059, 0.478544, 0.627257, 1)
+ground_horizon_color = Color(0.700148, 0.700236, 0.801894, 1)
+
+[sub_resource type="Sky" id="Sky_spf02"]
+sky_material = SubResource("ProceduralSkyMaterial_oo4tx")
+
+[sub_resource type="Environment" id="Environment_1cfx6"]
+background_mode = 2
+sky = SubResource("Sky_spf02")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="ConvexShapeWorld" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.307, -67, -2.10963)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1cfx6")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.193314, 0.340294, -0.920233, -0.0667485, 0.931191, 0.358368, 0.978864, 0.130702, -0.157298, 0, 0, 0)
+light_color = Color(0.7912, 0.92, 0.92, 1)
+shadow_enabled = true
+
+[node name="CameraShip" parent="." instance=ExtResource("2_kjf25")]
+transform = Transform3D(-0.0104718, 0.766002, -0.642752, 0, 0.642788, 0.766044, 0.999945, 0.00802186, -0.00673114, -17.23, 79.68, -13.92)
+
+[node name="CrateShape" parent="." instance=ExtResource("1_1kwko")]
+transform = Transform3D(53.033, -53.033, 0, 37.5, 37.5, -53.033, 37.5, 37.5, 53.033, 31.283, -178.212, -9.05079)
+
+[node name="CrateShape2" parent="." instance=ExtResource("1_1kwko")]
+transform = Transform3D(-54.7014, -14.7848, -49.1342, 37.5, 37.5, -53.033, 35.0215, -63.2468, -19.9583, 74.0078, -90.3041, -9.05079)
+
+[node name="CrateShape3" parent="." instance=ExtResource("1_1kwko")]
+transform = Transform3D(-54.7014, -14.7848, -49.1342, 37.5, 37.5, -53.033, 35.0215, -63.2468, -19.9583, 3.87536, -100.038, 17.9897)
+
+[node name="CrateShape4" parent="." instance=ExtResource("1_1kwko")]
+transform = Transform3D(400, 0, 0, 0, 400, 0, 0, 0, 400, -102.881, -490.938, 85.2007)
+
+[node name="PopcornSpawner" parent="." instance=ExtResource("3_327yq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 0, 2)
+spawn_radius = 55.0
+spawn_height = 99
+
+[node name="FunkyCSGCombiner3D" parent="." instance=ExtResource("4_ueydk")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 17.1489, 21.6671, -9.66217)

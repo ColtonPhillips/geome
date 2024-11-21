@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjvok8asadaun"]
+
+[ext_resource type="Script" path="res://script/popcorn_spawner.gd" id="1_lp82h"]
+
+[node name="PopcornSpawner" type="Node3D"]
+script = ExtResource("1_lp82h")
+spawn_interval = 0.001
+spawn_height = 30

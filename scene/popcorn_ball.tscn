@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhmnv08ps8ftx"]
+[gd_scene load_steps=10 format=3 uid="uid://dhmnv08ps8ftx"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6ii4q"]
 friction = 0.2
@@ -6,7 +6,37 @@ bounce = 0.4
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_l0630"]
 
+[sub_resource type="Gradient" id="Gradient_xvvho"]
+offsets = PackedFloat32Array(0.00173913, 0.318261, 0.354783, 0.401739, 1)
+colors = PackedColorArray(0.4214, 0.98, 0.74725, 1, 0.298142, 0.488209, 0.408141, 1, 0, 0, 0, 1, 0.020286, 0.558426, 0.890212, 1, 1, 0.603922, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_dx14k"]
+noise_type = 3
+frequency = 0.0109
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_60a85"]
+width = 256
+height = 236
+in_3d_space = true
+seamless = true
+color_ramp = SubResource("Gradient_xvvho")
+noise = SubResource("FastNoiseLite_dx14k")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_l4pab"]
+frequency = 0.0257
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2mlox"]
+width = 128
+height = 128
+noise = SubResource("FastNoiseLite_l4pab")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gqcby"]
+albedo_color = Color(0.521569, 0.847059, 0.909804, 1)
+albedo_texture = SubResource("NoiseTexture2D_60a85")
+roughness_texture = SubResource("NoiseTexture2D_2mlox")
+
 [sub_resource type="SphereMesh" id="SphereMesh_7x626"]
+material = SubResource("StandardMaterial3D_gqcby")
 
 [node name="PopcornBall" type="RigidBody3D"]
 physics_material_override = SubResource("PhysicsMaterial_6ii4q")

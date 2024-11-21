@@ -1,13 +1,13 @@
 extends Camera3D
 
 # --- Configurable Variables ---
-@export var forward_speed: float = 10.0         # Maximum forward/backward speed (m/s)
-@export var lateral_speed: float = 5.0         # Maximum strafe/vertical speed (m/s)
-@export var rotation_speed: float = 2.0        # Maximum angular speed for keyboard input (rad/s)
-@export var movement_easing: float = 4.0       # Time to reach max speed (approx 4 seconds)
+@export var forward_speed: float = 12.0         # Maximum forward/backward speed (m/s)
+@export var lateral_speed: float = 8.0         # Maximum strafe/vertical speed (m/s)
+@export var rotation_speed: float = 3.0        # Maximum angular speed for keyboard input (rad/s)
+@export var movement_easing: float = 3.0       # Time to reach max speed (approx 4 seconds)
 @export var rotation_easing: float = 5.0       # Time to reach max angular speed for keyboard input
-@export var linear_drag: float = 2.0           # Linear drag factor (higher = slower stop)
-@export var angular_drag: float = 2.0          # Angular drag factor for smooth keyboard rotation
+@export var linear_drag: float = 1.0           # Linear drag factor (higher = slower stop)
+@export var angular_drag: float = 1.0          # Angular drag factor for smooth keyboard rotation
 @export var mouse_sensitivity: float = 0.1     # Sensitivity for mouse movement
 
 # --- Internal Variables ---

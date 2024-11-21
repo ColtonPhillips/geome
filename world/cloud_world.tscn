@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://b4r0a7fnsem2w"]
+[gd_scene load_steps=11 format=3 uid="uid://b4r0a7fnsem2w"]
 
 [ext_resource type="PackedScene" uid="uid://ce0b1yqttuwpc" path="res://gltf/cloud_1.glb" id="1_5br65"]
 [ext_resource type="PackedScene" uid="uid://ywr45lln3bwi" path="res://gltf/cloud_2.glb" id="2_dy37i"]
 [ext_resource type="PackedScene" uid="uid://b3mdsprw1agdp" path="res://gltf/cloud_3.glb" id="3_hqg6x"]
 [ext_resource type="PackedScene" uid="uid://c5q60iu3a4cd6" path="res://gltf/ring.glb" id="4_ty45u"]
 [ext_resource type="PackedScene" uid="uid://dqyvha71t1lxr" path="res://scene/camera_ship.tscn" id="5_56cwt"]
+[ext_resource type="ArrayMesh" uid="uid://bath7kiay6ock" path="res://obj/crateStrong.obj" id="6_btmet"]
+[ext_resource type="PackedScene" uid="uid://cpmqs20cy55f1" path="res://gltf/crateStrong.glb" id="7_14sxj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fcpso"]
 sky_top_color = Color(0.62, 0.3224, 0.58032, 1)
@@ -46,3 +48,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000730097, 0, 10.4539)
 
 [node name="CameraShip" parent="." instance=ExtResource("5_56cwt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12.4427)
+
+[node name="CrateStrong" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.91846, 0.395513, 0, -0.395513, 0.91846, 0, 0, 0, 1, 2.08575, 0.597559, 7.04519)
+mesh = ExtResource("6_btmet")
+
+[node name="CrateStrong2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.0370972, 0.582275, -0.812145, -0.999312, -0.0216157, 0.0301491, 0, 0.812704, 0.582676, -2.75029, 0, 3.23048)
+mesh = ExtResource("6_btmet")
+
+[node name="crateStrong" parent="." instance=ExtResource("7_14sxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.698949, 0, 7.41237)
+
+[node name="CrateStrong3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.535884, 0.762126, 7.5691)
+mesh = ExtResource("6_btmet")
+
+[node name="crateStrong2" parent="." instance=ExtResource("7_14sxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.70607, 0, 7.62478)
+
+[node name="CrateStrong4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.92527, 0.649856, 7.71133)
+mesh = ExtResource("6_btmet")
+
+[node name="crateStrong3" parent="." instance=ExtResource("7_14sxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.77993, 0, 7.79553)
+
+[node name="cloud_4" parent="." instance=ExtResource("1_5br65")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.52504, -1.89291, 6.6938)

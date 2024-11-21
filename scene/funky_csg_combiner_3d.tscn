@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://csctuabsl4g0m"]
+
+[sub_resource type="Gradient" id="Gradient_a7lpx"]
+offsets = PackedFloat32Array(0, 0.215789, 0.412281, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0.763473, 0, 0.296482, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_y0aav"]
+gradient = SubResource("Gradient_a7lpx")
+fill_from = Vector2(0.252991, 0.801709)
+fill_to = Vector2(0.584615, 0.377778)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4sjbf"]
+albedo_color = Color(1, 0.55, 0.55, 1)
+albedo_texture = SubResource("GradientTexture2D_y0aav")
+
+[node name="FunkyCSGCombiner3D" type="CSGCombiner3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_4sjbf")
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+size = Vector3(5, 3, 5)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+operation = 2
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="CSGCombiner3D"]
+transform = Transform3D(4.71889, 0, 0, 0, 4.71889, 0, 0, 0, 4.71889, 0, 2.5183, 0)
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="CSGCombiner3D"]
+transform = Transform3D(2.67207, 0, 0, 0, 2.67207, 0, 0, 0, 2.67207, 0, 0.672387, 0)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.0509745, 0.839436, -0.541064, -0.989048, -0.0327068, -0.143923, -0.13851, 0.542474, 0.828575, 0, 0.116243, 0)
+radius = 0.357428
+height = 9.39881
+
+[node name="CSGCombiner3D2" type="CSGCombiner3D" parent="."]
+operation = 1
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="CSGCombiner3D2"]
+transform = Transform3D(4.21367, 0, 0, 0, 9.27281, 0, 0, 0, 4.21367, 1.23372, -0.0694656, -0.987081)
+inner_radius = 0.0570926
