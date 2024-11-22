@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://csctuabsl4g0m"]
+[gd_scene load_steps=5 format=3 uid="uid://csctuabsl4g0m"]
+
+[ext_resource type="Script" uid="uid://b12pr46ep3d1x" path="res://script/funky_csg_combiner_3d.gd" id="1_qyjki"]
 
 [sub_resource type="Gradient" id="Gradient_a7lpx"]
 offsets = PackedFloat32Array(0, 0.215789, 0.412281, 1)
@@ -13,10 +15,12 @@ fill_to = Vector2(0.584615, 0.377778)
 albedo_color = Color(1, 0.55, 0.55, 1)
 albedo_texture = SubResource("GradientTexture2D_y0aav")
 
-[node name="FunkyCSGCombiner3D" type="CSGCombiner3D"]
+[node name="FunkyCSGCombiner3D" type="CSGCombiner3D" node_paths=PackedStringArray("_n")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_4sjbf")
 use_collision = true
+script = ExtResource("1_qyjki")
+_n = NodePath("CSGCombiner3D/CSGSphere3D")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://b1ku58ht1rrpg"]
 
 [ext_resource type="PackedScene" uid="uid://bgwcwkfi4hekd" path="res://scene/pellet.tscn" id="1_1w8jl"]
-[ext_resource type="Script" path="res://script/test_world.gd" id="1_t8vno"]
+[ext_resource type="Script" uid="uid://rrwvb8jupg8k" path="res://script/test_world.gd" id="1_t8vno"]
 [ext_resource type="PackedScene" uid="uid://cveu3y5t7k1tr" path="res://scene/airplane.tscn" id="2_o6dk5"]
 [ext_resource type="PackedScene" uid="uid://bvoas4vmxgv87" path="res://scene/mesh_floor.tscn" id="3_6wmpx"]
 

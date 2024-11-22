@@ -43,8 +43,8 @@ func _physics_process(delta: float) -> void:
 
 	# Apply translation (movement) and keyboard rotation
 	translate(current_velocity * delta)
-	rotate_object_local(Vector3(1, 0, 0), current_rotation_velocity.x * delta)  # Pitch
 	rotate_object_local(Vector3(0, 1, 0), current_rotation_velocity.y * delta)  # Yaw
+	rotate_object_local(Vector3(1, 0, 0), current_rotation_velocity.x * delta)  # Pitch
 	rotate_object_local(Vector3(0, 0, 1), current_rotation_velocity.z * delta)  # Roll
 
 	# Apply mouse-based rotation directly for FPS-like responsiveness
