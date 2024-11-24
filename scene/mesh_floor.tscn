@@ -1,9 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://bvoas4vmxgv87"]
 
-[ext_resource type="Shader" path="res://shader/mesh_floor.gdshader" id="1_wt7fe"]
-[ext_resource type="Script" path="res://script/mesh_floor.gd" id="2_105fs"]
+[ext_resource type="Shader" uid="uid://ct8rw7t3udj28" path="res://shader/mesh_floor.gdshader" id="1_wt7fe"]
+[ext_resource type="Script" uid="uid://dl2wd07jqp2bm" path="res://script/mesh_floor.gd" id="2_105fs"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ua3d6"]
+size = Vector2(3, 3)
 subdivide_width = 100
 subdivide_depth = 100
 
