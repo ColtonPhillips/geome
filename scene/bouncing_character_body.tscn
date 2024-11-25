@@ -1,0 +1,54 @@
+[gd_scene load_steps=12 format=3 uid="uid://blishpntmnq1g"]
+
+[ext_resource type="Script" uid="uid://dd4t7nnpf5wm" path="res://script/bouncing_character_body.gd" id="1_cpvb2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iajyt"]
+
+[sub_resource type="Gradient" id="Gradient_cpvb2"]
+offsets = PackedFloat32Array(0, 0.249123, 0.491228, 0.792982, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.567187, 0.506241, 0.999845, 1, 0.0983407, 0.213876, 0.387868, 1, 1, 1, 0.721569, 0.0862745, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_a6usc"]
+frequency = 0.0735
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_i5lwp"]
+width = 128
+color_ramp = SubResource("Gradient_cpvb2")
+noise = SubResource("FastNoiseLite_a6usc")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5qpmn"]
+noise_type = 2
+frequency = 0.0171
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dw323"]
+noise = SubResource("FastNoiseLite_5qpmn")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_h684t"]
+frequency = 0.0455
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_s52nf"]
+in_3d_space = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_h684t")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oaj5o"]
+albedo_texture = SubResource("NoiseTexture2D_i5lwp")
+metallic = 0.4
+roughness = 0.45
+normal_enabled = true
+normal_texture = SubResource("NoiseTexture2D_s52nf")
+clearcoat_enabled = true
+clearcoat_roughness = 1.0
+clearcoat_texture = SubResource("NoiseTexture2D_dw323")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5u7fq"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_cpvb2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_iajyt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+material_override = SubResource("StandardMaterial3D_oaj5o")
+mesh = SubResource("CapsuleMesh_5u7fq")
