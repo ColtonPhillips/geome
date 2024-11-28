@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://codvuotcbr6ib"]
+
+[ext_resource type="Script" uid="uid://baiicxiings1c" path="res://script/immediate_mesh_test.gd" id="1_as8u4"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_qmadg"]
+radial_segments = 16
+rings = 2
+
+[node name="ImmediateMeshTest" type="Node3D"]
+script = ExtResource("1_as8u4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_qmadg")
+
+[node name="ImmediateMeshInstance3D" type="MeshInstance3D" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b4r0a7fnsem2w"]
+[gd_scene load_steps=14 format=3 uid="uid://b4r0a7fnsem2w"]
 
 [ext_resource type="PackedScene" uid="uid://ce0b1yqttuwpc" path="res://gltf/cloud_1.glb" id="1_5br65"]
 [ext_resource type="PackedScene" uid="uid://ywr45lln3bwi" path="res://gltf/cloud_2.glb" id="2_dy37i"]
@@ -8,6 +8,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bath7kiay6ock" path="res://obj/crateStrong.obj" id="6_btmet"]
 [ext_resource type="PackedScene" uid="uid://cpmqs20cy55f1" path="res://gltf/crateStrong.glb" id="7_14sxj"]
 [ext_resource type="PackedScene" uid="uid://bnf51wb1sdiqn" path="res://scene/directional_test_object.tscn" id="8_381eg"]
+[ext_resource type="PackedScene" uid="uid://codvuotcbr6ib" path="res://scene/immediate_mesh_test.tscn" id="9_mkl44"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fcpso"]
 sky_top_color = Color(0.62, 0.3224, 0.58032, 1)
@@ -82,4 +83,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.77993, 0, 7.79553)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.52504, -1.89291, 6.6938)
 
 [node name="DirectionalTestObject" parent="." instance=ExtResource("8_381eg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.101394, 0, 0.445216)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.101394, 5.11706, 0.445216)
+
+[node name="ImmediateMeshTest" parent="." instance=ExtResource("9_mkl44")]
