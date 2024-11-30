@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://bnt3uidrc5w5a"]
 
 [ext_resource type="PackedScene" uid="uid://dhmnv08ps8ftx" path="res://scene/popcorn_ball.tscn" id="1_cgphj"]
-[ext_resource type="Script" path="res://script/physics_world.gd" id="1_s20gy"]
+[ext_resource type="Script" uid="uid://bpf17imyw2bvh" path="res://script/physics_world.gd" id="1_s20gy"]
 [ext_resource type="PackedScene" uid="uid://dowwkux4r1tgy" path="res://scene/blender_paddle.tscn" id="3_xawxm"]
 [ext_resource type="PackedScene" uid="uid://owsh46128kk2" path="res://scene/zig_zag_animation.tscn" id="4_n5nu6"]
 
@@ -54,11 +54,11 @@ transform = Transform3D(-0.866025, -0.484074, 0.12519, 0, 0.25038, 0.968148, -0.
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.622517, 0.372879, -0.688066, 0, 0.879197, 0.476458, 0.782607, -0.296603, 0.547315, -25.0745, 25.1634, 23.6816)
+transform = Transform3D(0.622517, 0.372879, -0.688066, 0, 0.879197, 0.476458, 0.782607, -0.296603, 0.547315, -6.42686, 8.85382, 4.84241)
 fov = 60.4
 
 [node name="PopcornBall" parent="." instance=ExtResource("1_cgphj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.00315, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.105, 4.003, 0)
 
 [node name="Walls" type="Node3D" parent="."]
 
@@ -143,7 +143,7 @@ transform = Transform3D(-4.37114e-08, -0.766044, -0.642788, 0, 0.642788, -0.7660
 transform = Transform3D(2.62268e-08, -2.29282e-15, 0.6, -5.24537e-08, -0.6, 0, 0.6, -5.24537e-08, -2.62268e-08, 0, 1.09256, 0)
 
 [node name="ZigZagAnimation" parent="." instance=ExtResource("4_n5nu6")]
-transform = Transform3D(0.620108, 0.0998885, 0.778132, 0.69548, 0.388954, -0.604171, -0.363007, 0.915826, 0.171723, 216.697, -207.645, -494.335)
+transform = Transform3D(0.808754, -0.563086, 0.568478, 0.791233, 0.442505, -0.687353, 0.119089, 0.88399, 0.706183, 480.317, -127.928, -362.163)
 
 [node name="ZigZagAnimation2" parent="." instance=ExtResource("4_n5nu6")]
-transform = Transform3D(0.443766, -0.893921, -0.0630561, -0.896044, -0.441572, -0.0460323, 0.0133054, 0.0769285, -0.996948, 269.623, -188.741, -58.9734)
+transform = Transform3D(-1.07262, -1.36988, -0.364952, -1.40119, 0.954864, 0.534011, -0.215473, 0.609858, -1.65587, 606.891, -978.884, -482.092)
