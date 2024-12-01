@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxe4prdocbmdk"]
+
+[ext_resource type="Script" uid="uid://cmktpg4lgjnyc" path="res://script/cutscene_camera_3d.gd" id="1_6hc3j"]
+
+[node name="Camera3D" type="Camera3D"]
+script = ExtResource("1_6hc3j")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2fn8a73ygp3n"]
+[gd_scene load_steps=7 format=3 uid="uid://d2fn8a73ygp3n"]
 
-[ext_resource type="Script" path="res://script/space_world.gd" id="1_6a7tt"]
+[ext_resource type="Script" uid="uid://ddxe862kwekyo" path="res://script/space_world.gd" id="1_6a7tt"]
 [ext_resource type="PackedScene" uid="uid://bvcsh2a25qngd" path="res://scene/fireball.tscn" id="1_ksnmi"]
+[ext_resource type="Script" uid="uid://cmktpg4lgjnyc" path="res://script/cutscene_camera_3d.gd" id="2_pl0hi"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_duri5"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -35,10 +36,14 @@ transform = Transform3D(-0.716911, -0.452772, 0.530128, 0, 0.760406, 0.649448, -
 light_color = Color(1, 0.9865, 0.73, 1)
 shadow_enabled = true
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.987688, 0.156434, 0, -0.156434, 0.987688, 0, 5, 30)
+[node name="CutsceneCamera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.647628, 0.523244, 0.55389, 0.724637, -0.198238, -0.660002, -0.23554, 0.828805, -0.507547, 31, -53, -25)
 fov = 55.0
 far = 8000.0
+script = ExtResource("2_pl0hi")
+positions = Array[Vector3]([Vector3(0, 5, 30), Vector3(-10, 2, -1), Vector3(-116, 130, -131), Vector3(31, -53, -25), Vector3(-6, -16, 3), Vector3(0, 5, 30)])
+rotations = Array[Vector3]([Vector3(-9, 0, 0), Vector3(-9, -80, 1), Vector3(-48, -146, 74), Vector3(138, -47, -74), Vector3(71, -28, 55), Vector3(-9, 0, 0)])
+metadata/_custom_type_script = ExtResource("2_pl0hi")
 
 [node name="Fireballs" type="Node3D" parent="."]
 
