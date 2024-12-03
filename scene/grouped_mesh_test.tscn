@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1fw6vy2tlhlg"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_uet6a"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ltwpw"]
+
+[node name="GroupedMeshTest" type="Node3D"]
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_uet6a")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.260091, 0, 0.00158428, 0, 0.260095, 0, -0.00158428, 0, 0.260091, 0.0155455, 0, 1.18287)
+mesh = SubResource("SphereMesh_ltwpw")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.260091, 0, 0.00158428, 0, 0.260095, 0, -0.00158428, 0, 0.260091, 0.00149223, 0, -1.12425)
+mesh = SubResource("SphereMesh_ltwpw")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.156381, 0, -0.207833, 0, 0.260095, 0, 0.207833, 0, 0.156381, -0.913268, 0, 0.722889)
+mesh = SubResource("SphereMesh_ltwpw")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.156381, 0, -0.207833, 0, 0.260095, 0, 0.207833, 0, 0.156381, 0.930306, 0, -0.664276)
+mesh = SubResource("SphereMesh_ltwpw")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(-0.0908704, 0, -0.243705, 0, 0.260095, 0, 0.243705, 0, -0.0908704, -1.07237, 0, -0.373724)
+mesh = SubResource("SphereMesh_ltwpw")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(-0.0908704, 0, -0.243705, 0, 0.260095, 0, 0.243705, 0, -0.0908704, 1.0894, 0, 0.432337)
+mesh = SubResource("SphereMesh_ltwpw")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.73147, 0)
+mesh = SubResource("SphereMesh_uet6a")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D2"]
+transform = Transform3D(0.260091, 0, 0.00158428, 0, 0.260095, 0, -0.00158428, 0, 0.260091, 0.0155455, 0, 1.18287)
+mesh = SubResource("SphereMesh_ltwpw")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D2"]
+transform = Transform3D(0.260091, 0, 0.00158428, 0, 0.260095, 0, -0.00158428, 0, 0.260091, 0.00149223, 0, -1.12425)
+mesh = SubResource("SphereMesh_ltwpw")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="MeshInstance3D2"]
+transform = Transform3D(0.156381, 0, -0.207833, 0, 0.260095, 0, 0.207833, 0, 0.156381, -0.913268, 0, 0.722889)
+mesh = SubResource("SphereMesh_ltwpw")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="MeshInstance3D2"]
+transform = Transform3D(0.156381, 0, -0.207833, 0, 0.260095, 0, 0.207833, 0, 0.156381, 0.930306, 0, -0.664276)
+mesh = SubResource("SphereMesh_ltwpw")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="MeshInstance3D2"]
+transform = Transform3D(-0.0908704, 0, -0.243705, 0, 0.260095, 0, 0.243705, 0, -0.0908704, -1.07237, 0, -0.373724)
+mesh = SubResource("SphereMesh_ltwpw")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="MeshInstance3D2"]
+transform = Transform3D(-0.0908704, 0, -0.243705, 0, 0.260095, 0, 0.243705, 0, -0.0908704, 1.0894, 0, 0.432337)
+mesh = SubResource("SphereMesh_ltwpw")
