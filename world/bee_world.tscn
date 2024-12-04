@@ -1,16 +1,17 @@
-[gd_scene load_steps=13 format=3 uid="uid://cd6304w56dptc"]
+[gd_scene load_steps=12 format=3 uid="uid://cd6304w56dptc"]
 
 [ext_resource type="PackedScene" uid="uid://dqyvha71t1lxr" path="res://scene/camera_ship.tscn" id="1_2igjg"]
-[ext_resource type="Script" path="res://script/bee_world.gd" id="1_8lkv7"]
-[ext_resource type="AudioStream" uid="uid://bhbd0phoeei6n" path="res://ogg/music/emmntt_-_i_think_id_stay_jungle_chill.ogg" id="1_56p5d"]
+[ext_resource type="Script" uid="uid://3dxwrusoi6wb" path="res://script/bee_world.gd" id="1_8lkv7"]
+[ext_resource type="AudioStream" uid="uid://bhbd0phoeei6n" path="res://assets/ogg/music/emmntt_-_i_think_id_stay_jungle_chill.ogg" id="1_56p5d"]
+[ext_resource type="Texture2D" uid="uid://cx445epijm7xt" path="res://assets/png/Terrestrial-Clouds-EQUIRECTANGULAR-XLARGE.png" id="2_3m6bj"]
 [ext_resource type="PackedScene" uid="uid://da02qt3lyqc22" path="res://scene/cartoon_sounds_3d.tscn" id="4_ymp83"]
 [ext_resource type="PackedScene" uid="uid://ugen7q1plphi" path="res://scene/bunch_of_planes.tscn" id="5_7cjdn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yy6qo"]
-sky_top_color = Color(0.284849, 0.454883, 0.564972, 1)
-sky_horizon_color = Color(0.311558, 0.520234, 0.433545, 1)
-ground_bottom_color = Color(0.508077, 0.408538, 0.18232, 1)
-ground_horizon_color = Color(0.347055, 0.345409, 0.19516, 1)
+sky_top_color = Color(0.819608, 0.870588, 0.984314, 1)
+sky_horizon_color = Color(0.784314, 0.768627, 0.772549, 1)
+ground_bottom_color = Color(0.54902, 0.466667, 0.415686, 1)
+ground_horizon_color = Color(0.458824, 0.439216, 0.458824, 1)
 ground_curve = 0.0746424
 
 [sub_resource type="Sky" id="Sky_q8af8"]
@@ -22,20 +23,11 @@ sky = SubResource("Sky_q8af8")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_s61w8"]
-noise_type = 3
-frequency = 0.03
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_giysw"]
-seamless = true
-noise = SubResource("FastNoiseLite_s61w8")
-
-[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_52gyi"]
-albedo_color = Color(0.324552, 0.506413, 0.624581, 1)
-orm_texture = SubResource("NoiseTexture2D_giysw")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eaj23"]
+albedo_texture = ExtResource("2_3m6bj")
 
 [sub_resource type="SphereMesh" id="SphereMesh_lp1lh"]
-material = SubResource("ORMMaterial3D_52gyi")
+material = SubResource("StandardMaterial3D_eaj23")
 radius = 32.0
 height = 64.0
 
@@ -169,6 +161,7 @@ autoplay = true
 [node name="CameraShip" parent="." instance=ExtResource("1_2igjg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 100)
 fov = 90.0
+size = 250.0
 far = 10000.0
 
 [node name="CartoonSounds3D" parent="." instance=ExtResource("4_ymp83")]

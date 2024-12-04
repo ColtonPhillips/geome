@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ugen7q1plphi"]
 
-[ext_resource type="ArrayMesh" uid="uid://crcchcgwhan7m" path="res://obj/ww1_airplane.obj" id="1_fl7ac"]
+[ext_resource type="ArrayMesh" uid="uid://crcchcgwhan7m" path="res://assets/obj/ww1_airplane.obj" id="1_fl7ac"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_saqud"]
 top_radius = 11.0

@@ -1,12 +1,12 @@
 [gd_scene load_steps=14 format=3 uid="uid://b4r0a7fnsem2w"]
 
-[ext_resource type="PackedScene" uid="uid://ce0b1yqttuwpc" path="res://gltf/cloud_1.glb" id="1_5br65"]
-[ext_resource type="PackedScene" uid="uid://ywr45lln3bwi" path="res://gltf/cloud_2.glb" id="2_dy37i"]
-[ext_resource type="PackedScene" uid="uid://b3mdsprw1agdp" path="res://gltf/cloud_3.glb" id="3_hqg6x"]
-[ext_resource type="PackedScene" uid="uid://c5q60iu3a4cd6" path="res://gltf/ring.glb" id="4_ty45u"]
+[ext_resource type="PackedScene" uid="uid://ce0b1yqttuwpc" path="res://assets/gltf/cloud_1.glb" id="1_5br65"]
+[ext_resource type="PackedScene" uid="uid://ywr45lln3bwi" path="res://assets/gltf/cloud_2.glb" id="2_dy37i"]
+[ext_resource type="PackedScene" uid="uid://b3mdsprw1agdp" path="res://assets/gltf/cloud_3.glb" id="3_hqg6x"]
+[ext_resource type="PackedScene" uid="uid://c5q60iu3a4cd6" path="res://assets/gltf/ring.glb" id="4_ty45u"]
 [ext_resource type="PackedScene" uid="uid://dqyvha71t1lxr" path="res://scene/camera_ship.tscn" id="5_56cwt"]
-[ext_resource type="ArrayMesh" uid="uid://bath7kiay6ock" path="res://obj/crateStrong.obj" id="6_btmet"]
-[ext_resource type="PackedScene" uid="uid://cpmqs20cy55f1" path="res://gltf/crateStrong.glb" id="7_14sxj"]
+[ext_resource type="ArrayMesh" uid="uid://bath7kiay6ock" path="res://assets/obj/crateStrong.obj" id="6_btmet"]
+[ext_resource type="PackedScene" uid="uid://cpmqs20cy55f1" path="res://assets/gltf/crateStrong.glb" id="7_14sxj"]
 [ext_resource type="PackedScene" uid="uid://bnf51wb1sdiqn" path="res://scene/directional_test_object.tscn" id="8_381eg"]
 [ext_resource type="PackedScene" uid="uid://codvuotcbr6ib" path="res://scene/immediate_mesh_test.tscn" id="9_mkl44"]
 

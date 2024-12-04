@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=3 uid="uid://da02qt3lyqc22"]
 
-[ext_resource type="AudioStream" uid="uid://de8hglkbj0231" path="res://ogg/nes_sounds/achieved.ogg" id="1_marxh"]
-[ext_resource type="AudioStream" uid="uid://dhgxuroag23yn" path="res://ogg/nes_sounds/arrow_hit.ogg" id="2_6fbdm"]
-[ext_resource type="AudioStream" uid="uid://ckwpbryykeh2u" path="res://ogg/nes_sounds/bird.ogg" id="3_uuixk"]
-[ext_resource type="AudioStream" uid="uid://cvsqfy4qp7ixl" path="res://ogg/nes_sounds/bling.ogg" id="4_27heg"]
-[ext_resource type="AudioStream" uid="uid://dvyqfxs4tgyjj" path="res://ogg/nes_sounds/bomb.ogg" id="5_3ss3g"]
-[ext_resource type="AudioStream" uid="uid://bcbp8eopotnu8" path="res://ogg/nes_sounds/coin.ogg" id="6_88cyk"]
-[ext_resource type="Script" path="res://script/cartoon_sounds_3d.gd" id="7_7ue7w"]
+[ext_resource type="AudioStream" uid="uid://de8hglkbj0231" path="res://assets/ogg/nes_sounds/achieved.ogg" id="1_marxh"]
+[ext_resource type="AudioStream" uid="uid://dhgxuroag23yn" path="res://assets/ogg/nes_sounds/arrow_hit.ogg" id="2_6fbdm"]
+[ext_resource type="AudioStream" uid="uid://ckwpbryykeh2u" path="res://assets/ogg/nes_sounds/bird.ogg" id="3_uuixk"]
+[ext_resource type="AudioStream" uid="uid://cvsqfy4qp7ixl" path="res://assets/ogg/nes_sounds/bling.ogg" id="4_27heg"]
+[ext_resource type="AudioStream" uid="uid://dvyqfxs4tgyjj" path="res://assets/ogg/nes_sounds/bomb.ogg" id="5_3ss3g"]
+[ext_resource type="AudioStream" uid="uid://bcbp8eopotnu8" path="res://assets/ogg/nes_sounds/coin.ogg" id="6_88cyk"]
+[ext_resource type="Script" uid="uid://dqv0csu2nsew3" path="res://script/cartoon_sounds_3d.gd" id="7_7ue7w"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_dyk5r"]
 streams_count = 6
