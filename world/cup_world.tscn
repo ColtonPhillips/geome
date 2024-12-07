@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://bopn55ef2herc"]
+
+[ext_resource type="PackedScene" uid="uid://dngq4di3mv7c2" path="res://scene/csg_cup_animatable_body_3d.tscn" id="1_1qvxw"]
+[ext_resource type="Script" uid="uid://v3x035f25urd" path="res://script/cup_world.gd" id="1_iq47e"]
+[ext_resource type="PackedScene" uid="uid://dhmnv08ps8ftx" path="res://scene/popcorn_ball.tscn" id="2_iq47e"]
+[ext_resource type="PackedScene" uid="uid://dqyvha71t1lxr" path="res://scene/camera_ship.tscn" id="4_novxf"]
+[ext_resource type="PackedScene" uid="uid://bjvok8asadaun" path="res://scene/popcorn_spawner.tscn" id="5_2b1es"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2b1es"]
+sky_top_color = Color(0.865366, 0.0915576, 0.551325, 1)
+sky_horizon_color = Color(0.508417, 0.50715, 0.5325, 1)
+sky_energy_multiplier = 0.0
+ground_bottom_color = Color(0.26922, 0.252088, 0.610993, 1)
+ground_horizon_color = Color(0.508417, 0.50715, 0.5325, 1)
+
+[sub_resource type="Sky" id="Sky_750sr"]
+sky_material = SubResource("ProceduralSkyMaterial_2b1es")
+
+[sub_resource type="Environment" id="Environment_c106n"]
+background_mode = 2
+sky = SubResource("Sky_750sr")
+ambient_light_color = Color(0.565763, 0.565763, 0.565763, 1)
+ambient_light_energy = 2.16
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="CupWorld" type="Node3D"]
+script = ExtResource("1_iq47e")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_c106n")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+light_color = Color(1, 0.9865, 0.73, 1)
+shadow_enabled = true
+
+[node name="CSGCupAnimatableBody3D" parent="." instance=ExtResource("1_1qvxw")]
+
+[node name="PopcornBall" parent="." instance=ExtResource("2_iq47e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 20, 0)
+
+[node name="CameraShip" parent="." instance=ExtResource("4_novxf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.690742, 8.19297, 24.9786)
+
+[node name="PopcornSpawner" parent="." instance=ExtResource("5_2b1es")]
+spawn_interval = 0.01
+spawn_radius = 10.0
+spawn_height = 40
