@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://ca8cgyk7k3ed1"]
+
+[ext_resource type="Script" uid="uid://cd4xubrv1hxv3" path="res://script/marble_body_3d.gd" id="1_f7dtb"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ye5eh"]
+friction = 0.5
+bounce = 0.6
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_f7dtb"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_n3app"]
+
+[sub_resource type="Gradient" id="Gradient_fierw"]
+offsets = PackedFloat32Array(0, 0.458716, 0.489679, 0.518349, 0.605505, 0.688073, 1)
+colors = PackedColorArray(0.503341, 1.00473e-06, 4.33177e-07, 1, 0.772315, 0, 0.391817, 1, 0, 0, 0, 1, 0.765456, 0.748166, 0.94188, 1, 0.855092, 0.919373, 0.926239, 1, 0.420035, 0, 0.105708, 1, 0.912729, 0.821211, 0.952132, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_fh80k"]
+noise_type = 3
+frequency = 0.0121
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_nteh2"]
+width = 256
+height = 1024
+seamless = true
+seamless_blend_skirt = 0.167
+color_ramp = SubResource("Gradient_fierw")
+noise = SubResource("FastNoiseLite_fh80k")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aurfj"]
+albedo_texture = SubResource("NoiseTexture2D_nteh2")
+
+[node name="MarbleBody3D" type="RigidBody3D"]
+mass = 10.0
+physics_material_override = SubResource("PhysicsMaterial_ye5eh")
+linear_damp = 0.8
+script = ExtResource("1_f7dtb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_f7dtb")
+debug_color = Color(0, 0.6, 0.7, 0.42)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_n3app")
+surface_material_override/0 = SubResource("StandardMaterial3D_aurfj")

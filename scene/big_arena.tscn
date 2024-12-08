@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b1t0h4odgcn73"]
+
+[node name="BigArena" type="Node3D"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.06348, 0)
+radius = 100.0
+height = 6.12695
+sides = 32
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.330679, 0.943743, 0, -0.943743, 0.330679, 0, 0, 0, 1, -1.32515, 1.46859, 0)
+size = Vector3(1, 6.9845, 1)
