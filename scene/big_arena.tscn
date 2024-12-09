@@ -14,3 +14,31 @@ sides = 32
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.330679, 0.943743, 0, -0.943743, 0.330679, 0, 0, 0, 1, -1.32515, 1.46859, 0)
 size = Vector3(1, 6.9845, 1)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(4.7197, 1.08746, 0, -1.08746, 4.7197, 0, 0, 0, 4.84336, -50.6812, 5.41479, 50.4032)
+polygon = PackedVector2Array(-0.12248, 2.12416, 0.581783, 0.792188, 0.842054, 0.646742, 1.22481, 0.516606, 1.91376, 0.493641, 2.75581, 0.378816, 3.22277, -0.264208, -0.0765505, -1.0144, -0.979845, 1.08308)
+depth = 20.0
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(11.8051, 4.97744, 0, -4.97744, 11.8051, 0, 0, 0, 12.8115, -34.6067, -3.59816, -0.176796)
+size = Vector3(2.79639, 1, 1)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="CSGCombiner3D"]
+operation = 2
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="CSGCombiner3D/CSGCombiner3D"]
+transform = Transform3D(6.82429, -1.16096, -2.35046, 0.792428, 7.16145, -1.23652, 2.49891, 0.899503, 6.811, 11.4952, 2.03442, 7.75152)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 0.291103, -0.956692, 0, 0.956692, 0.291103, 13.6781, 1.65305, 16.1708)
+size = Vector3(20, 10, 1)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="CSGCombiner3D/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 14.8589, 32)
+radius = 19.011
+radial_segments = 24
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCombiner3D"]
+transform = Transform3D(-20.0021, 2.39086, -19.1224, -1.35919, 27.317, 4.83714, 19.2233, 4.41918, -19.5551, 6.99674, -13.3778, -14.7346)
+height = 1.15039
