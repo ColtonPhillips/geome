@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://1hsfdbwpis5b"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ih1as"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ih1as"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_4u2pn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j7krk"]
+albedo_color = Color(0.50801, 0.419364, 0.368595, 1)
+
+[node name="ShotgunPellet" type="RigidBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_ih1as")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_ih1as")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("SphereMesh_4u2pn")
+surface_material_override/0 = SubResource("StandardMaterial3D_j7krk")

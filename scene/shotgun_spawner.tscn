@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhetp8j5eubta"]
+
+[ext_resource type="Script" uid="uid://dy1wwk6sjlk0k" path="res://script/shotgun_spawner.gd" id="1_x4k5x"]
+[ext_resource type="PackedScene" uid="uid://1hsfdbwpis5b" path="res://scene/shotgun_pellet.tscn" id="2_u83b7"]
+
+[node name="ShotgunSpawner" type="Node3D"]
+script = ExtResource("1_x4k5x")
+shotgun_pellet_scene = ExtResource("2_u83b7")
