@@ -1,0 +1,86 @@
+[gd_scene load_steps=12 format=3 uid="uid://cch8jul7sfss4"]
+
+[ext_resource type="Script" uid="uid://cfgo7274isvyn" path="res://script/precision_error_world.gd" id="1_x5as6"]
+[ext_resource type="Script" uid="uid://c11atpvrd341b" path="res://script/camera_ship.gd" id="2_wbtlm"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jckii"]
+sky_top_color = Color(0.442999, 0.762478, 0.836291, 1)
+sky_horizon_color = Color(1.38675, 1.56674, 1.55457, 1)
+ground_bottom_color = Color(0.403789, 0.804309, 0.681791, 1)
+ground_horizon_color = Color(1.38675, 1.56674, 1.55457, 1)
+energy_multiplier = 0.5
+
+[sub_resource type="Sky" id="Sky_0kicr"]
+sky_material = SubResource("ProceduralSkyMaterial_jckii")
+
+[sub_resource type="Environment" id="Environment_ehtqf"]
+background_mode = 2
+sky = SubResource("Sky_0kicr")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f731i"]
+albedo_color = Color(0, 1, 0.35, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_x5as6"]
+material = SubResource("StandardMaterial3D_f731i")
+radius = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wbtlm"]
+albedo_color = Color(0, 0.483333, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_jckii"]
+material = SubResource("StandardMaterial3D_wbtlm")
+radius = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0kicr"]
+albedo_color = Color(0.92, 0, 0.0153331, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ehtqf"]
+material = SubResource("StandardMaterial3D_0kicr")
+radius = 0.1
+
+[node name="PrecisionErrorWorld" type="Node3D"]
+script = ExtResource("1_x5as6")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ehtqf")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.455545, -0.882998, 0.113112, 0, 0.127062, 0.991895, -0.890213, 0.451852, -0.0578823, 0, 0, 0)
+light_color = Color(1, 0.9865, 0.73, 1)
+light_energy = 0.5
+shadow_enabled = true
+
+[node name="AxisNode3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.146736, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="AxisNode3D"]
+mesh = SubResource("CapsuleMesh_x5as6")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="AxisNode3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_jckii")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="AxisNode3D"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_ehtqf")
+skeleton = NodePath("../..")
+
+[node name="CameraShip3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.86996, 0.493122, 0, -0.493122, 0.86996, -0.580932, 1.42209, 2.36782)
+script = ExtResource("2_wbtlm")
+metadata/_custom_type_script = ExtResource("2_wbtlm")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.973507, 0.228657, 0, -0.228657, 0.973507, -3.78459, 0.281044, -0.270509)
+text = "asdfa fadf sad
+fasdf
+ a
+sdfa
+sdf a
+asd
+f"
+horizontal_alignment = 0
