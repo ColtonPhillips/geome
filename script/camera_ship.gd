@@ -1,4 +1,5 @@
 extends Camera3D
+class_name CameraShip3D
 
 # --- Configurable Variables ---
 @export var forward_speed: float = 12.0         # Maximum forward/backward speed (m/s)
@@ -87,6 +88,10 @@ func _update_target_rotation_velocity(delta):
 
 	target_rotation_velocity = rotation * rotation_speed
 
+# XXX: This doesn't follow best practices, i.e. the following is not satisfied:
+#		"keep the angles and rotations outside the transform and set them every frame. 
+#		Don't try to retrieve and reuse them because the transform is not meant to be used this way."
+# https://docs.godotengine.org/en/stable/tutorials/3d/using_transforms.html#setting-information
 func _apply_mouse_rotation(delta: float) -> void:
 	if mouse_captured:
 		# Only apply mouse input to yaw (left-right) and pitch (up-down), not roll.
@@ -95,12 +100,10 @@ func _apply_mouse_rotation(delta: float) -> void:
 			rotate_object_local(Vector3(1, 0, 0), rotation_input.y * delta)  # Pitch (mouse)
 			rotate_y(rotation_input.x * delta)
 			#rotate_object_local(Vector3(0, 1, 0), rotation_input.x * delta)  # Yaw (mouse)
-			
 
 			# Reset rotation input to avoid accumulation.
 			rotation_input.x = 0
 			rotation_input.y = 0
-
 
 # --- Mouse Capture Toggle ---
 func _toggle_mouse_capture():
