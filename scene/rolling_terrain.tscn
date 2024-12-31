@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwyipirypoqnb"]
+
+[ext_resource type="Script" uid="uid://bf0gioxbegr21" path="res://script/rolling_terrain.gd" id="1_wgvta"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wgvta"]
+
+[node name="RollingTerrain" type="Node3D"]
+script = ExtResource("1_wgvta")
+width = 250
+depth = 250
+terrain_scale = 0.7
+height_multiplier = 6.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_wgvta")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]

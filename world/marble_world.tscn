@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bjmdwn21vvi4f"]
+[gd_scene load_steps=10 format=3 uid="uid://bjmdwn21vvi4f"]
 
-[ext_resource type="Script" uid="uid://c77guuifs3x6g" path="res://script/marble_woirld.gd" id="1_1ol7p"]
-[ext_resource type="PackedScene" uid="uid://ca8cgyk7k3ed1" path="res://scene/marble_body_3d.tscn" id="1_4muec"]
-[ext_resource type="PackedScene" uid="uid://b3d1tvd33cdig" path="res://assets/gltf/BookTemp.glb" id="3_r7dad"]
-[ext_resource type="PackedScene" uid="uid://b1t0h4odgcn73" path="res://scene/big_arena.tscn" id="4_6hxfc"]
-[ext_resource type="PackedScene" uid="uid://ywr45lln3bwi" path="res://assets/gltf/cloud_2.glb" id="5_22krb"]
+[ext_resource type="Script" uid="uid://c77guuifs3x6g" path="res://script/marble_woirld.gd" id="1_1v810"]
+[ext_resource type="PackedScene" uid="uid://ca8cgyk7k3ed1" path="res://scene/marble_body_3d.tscn" id="2_ypx3h"]
+[ext_resource type="PackedScene" uid="uid://b3d1tvd33cdig" path="res://assets/gltf/BookTemp.glb" id="3_io8qg"]
+[ext_resource type="PackedScene" uid="uid://b1t0h4odgcn73" path="res://scene/big_arena.tscn" id="4_vg7bj"]
+[ext_resource type="PackedScene" uid="uid://ywr45lln3bwi" path="res://assets/gltf/cloud_2.glb" id="5_dq3tq"]
+[ext_resource type="PackedScene" uid="uid://bwyipirypoqnb" path="res://scene/rolling_terrain.tscn" id="6_ypx3h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4muec"]
 sky_top_color = Color(0.442999, 0.762478, 0.836291, 1)
@@ -22,8 +23,8 @@ sky = SubResource("Sky_1ol7p")
 tonemap_mode = 2
 glow_enabled = true
 
-[node name="MarbleWoirld" type="Node3D"]
-script = ExtResource("1_1ol7p")
+[node name="MarbleWorld" type="Node3D"]
+script = ExtResource("1_1v810")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_r7dad")
@@ -34,8 +35,8 @@ light_color = Color(1, 0.9865, 0.73, 1)
 light_energy = 0.5
 shadow_enabled = true
 
-[node name="MarbleBody3D" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("1_4muec")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.785634, 4.50993, -0.113203)
+[node name="MarbleBody3D" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("2_ypx3h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
 mass = 2.5
 speed = 20.0
 camera = NodePath("../Camera3D")
@@ -43,10 +44,15 @@ camera = NodePath("../Camera3D")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.814065, 0.158163, -0.558823, 0, 0.962204, 0.272331, 0.580774, -0.221695, 0.783296, -3.78834, 5.79294, 4.82646)
 
-[node name="BookTemp2" parent="." instance=ExtResource("3_r7dad")]
+[node name="BookTemp2" parent="." instance=ExtResource("3_io8qg")]
 transform = Transform3D(-0.947, 0.316469, -0.0551258, 0.0643786, 0.355098, 0.93261, 0.314717, 0.879632, -0.356651, -0.887583, 5.89232, -6.54999)
 
-[node name="BigArena" parent="." instance=ExtResource("4_6hxfc")]
+[node name="BigArena" parent="." instance=ExtResource("4_vg7bj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -81.3079, 0)
 
-[node name="cloud_2" parent="." instance=ExtResource("5_22krb")]
+[node name="cloud_2" parent="." instance=ExtResource("5_dq3tq")]
 transform = Transform3D(0.826039, 0, -0.563613, 0, 1, 0, 0.563613, 0, 0.826039, -11.1392, 17.3558, 39.3092)
+
+[node name="RollingTerrain" parent="." instance=ExtResource("6_ypx3h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+height_multiplier = 1.0
