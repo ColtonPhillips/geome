@@ -20,6 +20,7 @@ sky_material = SubResource("ProceduralSkyMaterial_4muec")
 [sub_resource type="Environment" id="Environment_r7dad"]
 background_mode = 2
 sky = SubResource("Sky_1ol7p")
+ambient_light_sky_contribution = 0.5
 tonemap_mode = 2
 glow_enabled = true
 
@@ -30,7 +31,7 @@ script = ExtResource("1_1v810")
 environment = SubResource("Environment_r7dad")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.455545, -0.882997, 0.113115, 0, 0.127065, 0.991894, -0.890213, 0.451852, -0.0578836, 0, 0, 0)
+transform = Transform3D(0.687088, 0.672234, 0.275703, 0, -0.379456, 0.925209, 0.726575, -0.6357, -0.26072, 0, 0, 0)
 light_color = Color(1, 0.9865, 0.73, 1)
 light_energy = 0.5
 shadow_enabled = true
@@ -45,7 +46,7 @@ camera = NodePath("../Camera3D")
 transform = Transform3D(0.814065, 0.158163, -0.558823, 0, 0.962204, 0.272331, 0.580774, -0.221695, 0.783296, -3.78834, 5.79294, 4.82646)
 
 [node name="BookTemp2" parent="." instance=ExtResource("3_io8qg")]
-transform = Transform3D(-0.947, 0.316469, -0.0551258, 0.0643786, 0.355098, 0.93261, 0.314717, 0.879632, -0.356651, -0.887583, 5.89232, -6.54999)
+transform = Transform3D(-0.794559, 0.58366, -0.167384, 0.0643786, 0.355098, 0.93261, 0.603764, 0.730237, -0.319721, -0.887583, 8.00291, -6.54999)
 
 [node name="BigArena" parent="." instance=ExtResource("4_vg7bj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -81.3079, 0)
