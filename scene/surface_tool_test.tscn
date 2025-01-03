@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3knunib85ph8"]
+
+[ext_resource type="Script" uid="uid://bn8o1pupwfbaf" path="res://script/surface_tool_test.gd" id="1_tw17n"]
+
+[node name="SurfaceToolTest" type="Node3D"]
+script = ExtResource("1_tw17n")

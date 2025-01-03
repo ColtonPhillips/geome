@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bjmdwn21vvi4f"]
+[gd_scene load_steps=11 format=3 uid="uid://bjmdwn21vvi4f"]
 
 [ext_resource type="Script" uid="uid://c77guuifs3x6g" path="res://script/marble_woirld.gd" id="1_1v810"]
 [ext_resource type="PackedScene" uid="uid://ca8cgyk7k3ed1" path="res://scene/marble_body_3d.tscn" id="2_ypx3h"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b1t0h4odgcn73" path="res://scene/big_arena.tscn" id="4_vg7bj"]
 [ext_resource type="PackedScene" uid="uid://ywr45lln3bwi" path="res://assets/gltf/cloud_2.glb" id="5_dq3tq"]
 [ext_resource type="PackedScene" uid="uid://bwyipirypoqnb" path="res://scene/rolling_terrain.tscn" id="6_ypx3h"]
+[ext_resource type="PackedScene" uid="uid://b3knunib85ph8" path="res://scene/surface_tool_test.tscn" id="7_io8qg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4muec"]
 sky_top_color = Color(0.442999, 0.762478, 0.836291, 1)
@@ -57,3 +58,6 @@ transform = Transform3D(0.826039, 0, -0.563613, 0, 1, 0, 0.563613, 0, 0.826039, 
 [node name="RollingTerrain" parent="." instance=ExtResource("6_ypx3h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 height_multiplier = 1.0
+
+[node name="SurfaceToolTest" parent="." instance=ExtResource("7_io8qg")]
+transform = Transform3D(0.0115118, -0.671766, -0.740674, -0.470443, -0.657262, 0.588804, -0.882355, 0.341667, -0.323594, -6.51277, 5.01641, -0.880627)
