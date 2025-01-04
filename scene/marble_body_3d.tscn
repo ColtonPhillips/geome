@@ -37,8 +37,13 @@ script = ExtResource("1_f7dtb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_f7dtb")
-debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_n3app")
 surface_material_override/0 = SubResource("StandardMaterial3D_aurfj")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0.99999, 0.640693, 0.640631, 1)
+light_energy = 0.8
+light_specular = 1.395
+omni_range = 6.43798

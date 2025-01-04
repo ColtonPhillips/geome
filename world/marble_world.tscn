@@ -22,6 +22,7 @@ sky_material = SubResource("ProceduralSkyMaterial_4muec")
 background_mode = 2
 sky = SubResource("Sky_1ol7p")
 ambient_light_sky_contribution = 0.5
+ambient_light_energy = 0.75
 tonemap_mode = 2
 glow_enabled = true
 
@@ -60,4 +61,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 height_multiplier = 1.0
 
 [node name="SurfaceToolTest" parent="." instance=ExtResource("7_io8qg")]
-transform = Transform3D(0.0115118, -0.671766, -0.740674, -0.470443, -0.657262, 0.588804, -0.882355, 0.341667, -0.323594, -6.51277, 5.01641, -0.880627)
+transform = Transform3D(0.0115118, -0.671766, -0.740674, -0.470443, -0.657262, 0.588804, -0.882355, 0.341667, -0.323594, -3.96843, 3.57336, 10.3222)
