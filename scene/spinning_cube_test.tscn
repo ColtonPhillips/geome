@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://dpek36fk02i6e"]
+
+[ext_resource type="Script" uid="uid://bk5tmck3nj0ih" path="res://script/spinning_cube_test.gd" id="1_fdm03"]
+[ext_resource type="Shader" uid="uid://dgn0l1wiityvc" path="res://shader/directional_test_object.gdshader" id="2_vqm0y"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fdm03"]
+sky_top_color = Color(0.62, 0.3224, 0.58032, 1)
+sky_horizon_color = Color(0.891935, 0.892023, 0.993681, 1)
+ground_bottom_color = Color(0.18059, 0.478544, 0.627257, 1)
+ground_horizon_color = Color(0.891935, 0.892023, 0.993681, 1)
+energy_multiplier = 3.0
+
+[sub_resource type="Sky" id="Sky_vqm0y"]
+sky_material = SubResource("ProceduralSkyMaterial_fdm03")
+
+[sub_resource type="Environment" id="Environment_mxkam"]
+background_mode = 1
+sky = SubResource("Sky_vqm0y")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vqm0y"]
+render_priority = 0
+shader = ExtResource("2_vqm0y")
+
+[sub_resource type="BoxMesh" id="BoxMesh_mxkam"]
+material = SubResource("ShaderMaterial_vqm0y")
+
+[node name="SpinningCubeTest" type="Node3D"]
+script = ExtResource("1_fdm03")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mxkam")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.291771, 0.406042, 0, 0.812084, 0.583541, -0.5, 0.505361, -0.703285, 0, 0, 0)
+light_color = Color(0.7912, 0.92, 0.92, 1)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.64545, 0, 0.95, 0, 1.9, 0, -0.95, 0, 1.64545, 0, 0, 0)
+mesh = SubResource("BoxMesh_mxkam")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 4.79477, 8.31005)
+projection = 1
+size = 3.0
