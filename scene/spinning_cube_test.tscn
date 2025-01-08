@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dpek36fk02i6e"]
+[gd_scene load_steps=10 format=3 uid="uid://dpek36fk02i6e"]
 
 [ext_resource type="Script" uid="uid://bk5tmck3nj0ih" path="res://script/spinning_cube_test.gd" id="1_fdm03"]
 [ext_resource type="Shader" uid="uid://dgn0l1wiityvc" path="res://shader/directional_test_object.gdshader" id="2_vqm0y"]
@@ -24,9 +24,20 @@ glow_enabled = true
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vqm0y"]
 render_priority = 0
 shader = ExtResource("2_vqm0y")
+shader_parameter/color_back = Color(1, 0, 0, 1)
+shader_parameter/color_front = Color(0, 0, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_mxkam"]
 material = SubResource("ShaderMaterial_vqm0y")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fdm03"]
+render_priority = 0
+shader = ExtResource("2_vqm0y")
+shader_parameter/color_back = Color(1, 0, 0, 1)
+shader_parameter/color_front = Color(0, 0, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_vqm0y"]
+material = SubResource("ShaderMaterial_fdm03")
 
 [node name="SpinningCubeTest" type="Node3D"]
 script = ExtResource("1_fdm03")
@@ -40,8 +51,13 @@ light_color = Color(0.7912, 0.92, 0.92, 1)
 shadow_enabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.64545, 0, 0.95, 0, 1.9, 0, -0.95, 0, 1.64545, 0, 0, 0)
+transform = Transform3D(1.9, 0, 0, 0, 1.9, 0, 0, 0, 1.9, 0, 0, 0)
 mesh = SubResource("BoxMesh_mxkam")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.9, 0, 0, 0, 1.9, 0, 0, 0, 1.9, 0, 0, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_vqm0y")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 4.79477, 8.31005)
