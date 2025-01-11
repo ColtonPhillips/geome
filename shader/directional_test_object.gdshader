@@ -30,7 +30,7 @@ uniform vec4 color_front : source_color = vec4(0.0, 0.0, 1.0, 1.0); // Fire colo
 	//CAMERA_DIRECTION_WORLD
     // Compute the dot product with the surface normal
     //float dot_product = 0.5 * (dot(NORMAL, CAMERA_DIRECTION_WORLD) + 1.0);
-	
+
     // Map the dot product to the albedo color
     //ALBEDO = vec3(dot_product, 0.5, 0.5);
     //ALBEDO = ALBEDO * dot(NORMAL, CAMERA_DIRECTION_WORLD);
@@ -67,7 +67,7 @@ render_mode unshaded;
 //render_mode world_vertex_coords;
 void fragment() {
     // Normalize the world-space normal
-	
+
 	//ALBEDO = (0.5 * NORMAL + 0.5);
 
     // Convert the normal vector to RGB colors
