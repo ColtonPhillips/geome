@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://q4xm4fm00uci"]
+
+[ext_resource type="Script" uid="uid://1tcdmlimdvg" path="res://scene/soap_bubble.gd" id="1_0w2ce"]
+[ext_resource type="PackedScene" uid="uid://b7jkrhp6imsf3" path="res://scene/soap_bubble_mesh.tscn" id="1_4oeo6"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0w2ce"]
+radius = 1.0
+
+[node name="SoapBubble" type="RigidBody3D"]
+mass = 0.01
+script = ExtResource("1_0w2ce")
+
+[node name="SoapBubbleMesh" parent="." instance=ExtResource("1_4oeo6")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_0w2ce")

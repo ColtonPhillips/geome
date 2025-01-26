@@ -12,7 +12,7 @@ sides = 10
 operation = 2
 
 [node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0874023, 0)
-radius = 14.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.7069, 0)
+radius = 12.028
 height = 40.0
-sides = 64
+sides = 16

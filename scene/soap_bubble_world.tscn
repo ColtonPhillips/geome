@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://ti8vs8clnh60"]
+
+[ext_resource type="PackedScene" uid="uid://das5apfalg6mh" path="res://scene/csg_cup_3d.tscn" id="1_8pa7s"]
+[ext_resource type="PackedScene" uid="uid://q4xm4fm00uci" path="res://scene/soap_bubble.tscn" id="2_avivb"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yo67d"]
+sky_top_color = Color(0.62, 0.3224, 0.58032, 1)
+sky_horizon_color = Color(0.891935, 0.892023, 0.993681, 1)
+ground_bottom_color = Color(0.18059, 0.478544, 0.627257, 1)
+ground_horizon_color = Color(0.891935, 0.892023, 0.993681, 1)
+energy_multiplier = 3.0
+
+[sub_resource type="Sky" id="Sky_4oeo6"]
+sky_material = SubResource("ProceduralSkyMaterial_yo67d")
+
+[sub_resource type="Environment" id="Environment_0w2ce"]
+background_mode = 2
+sky = SubResource("Sky_4oeo6")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4oeo6"]
+albedo_color = Color(0.179288, 0.179288, 0.179288, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8pa7s"]
+height = 14.0
+radius = 14.9795
+
+[node name="SoapBubbleWorld" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0w2ce")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.5, -0.00188556, 2.98023e-08, -0.00377083, 0.999993, -0.500003, 0.866017, 0.00326559, 0, 0, 0)
+light_color = Color(0.7912, 0.92, 0.92, 1)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.564405, 0.825498, 0, -0.825498, 0.564405, 0.154819, 49.8326, 28.543)
+fov = 51.9
+
+[node name="CSGCup3D" parent="." instance=ExtResource("1_8pa7s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0128093, -20, -0.838203)
+material_override = SubResource("StandardMaterial3D_4oeo6")
+use_collision = true
+
+[node name="SoapBubble" parent="." instance=ExtResource("2_avivb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.93649)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20.2331, 0)
+shape = SubResource("CylinderShape3D_8pa7s")
