@@ -41,8 +41,8 @@ shadow_enabled = true
 [node name="MarbleBody3D" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("2_ypx3h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
 mass = 2.5
-speed = 20.0
 camera = NodePath("../Camera3D")
+speed = 20.0
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.814065, 0.158163, -0.558823, 0, 0.962204, 0.272331, 0.580774, -0.221695, 0.783296, -3.78834, 5.79294, 4.82646)
