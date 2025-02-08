@@ -40,6 +40,7 @@ func _integrate_forces(state: PhysicsDirectBodyState3D):
 @export var speed: float = 30.0  # Speed multiplier for player input
 var jump_mutex := false
 func _physics_process(delta):
+	var applied_force := Vector3()
 	# Get player input for movement
 	var direction := Vector3.ZERO
 	# Hard-coded WASD keys
@@ -63,7 +64,8 @@ func _physics_process(delta):
 		var world_direction = (camera_right * direction.x) + (camera_forward * direction.z)
 
 		# Apply the force
-		apply_central_force(world_direction * speed)
+		applied_force += world_direction * speed
+		#apply_central_force(world_direction * speed)
 	
 	#Kind of a lazy approach but if it works it works
 	var reset_jump_mutex_later: Callable = func():
@@ -75,17 +77,25 @@ func _physics_process(delta):
 			should_activate_buffered_jump = false
 			jump_buffer_timer = jump_buffer_size
 		if Input.is_action_just_pressed("ui_select") and coyote_timer > 0 or should_activate_buffered_jump:
-			if should_activate_buffered_jump:
-				var velocity = linear_velocity
-				# Compute the component of velocity in the direction of the jump normal
-				var normal_velocity = jump_direction * velocity.dot(jump_direction)
-				velocity -= normal_velocity
-				set_linear_velocity(velocity)
-				
-			apply_central_force(jump_direction * jump_strength)
+			#if not should_activate_buffered_jump:
+			var velocity = linear_velocity
+			# Compute the component of velocity in the direction of the jump normal
+			var normal_velocity = jump_direction * velocity.dot(jump_direction)
+			velocity -= normal_velocity
+			set_linear_velocity(velocity)
+			
+			#apply_central_force(jump_direction * jump_strength)
+			applied_force += jump_direction * jump_strength
 			should_activate_buffered_jump = false
 			jump_buffer_timer = 0
 			coyote_timer = 0
-			
 			jump_mutex = true
 			reset_jump_mutex_later.call()
+			
+
+			# Limit the total force magnitude
+			if applied_force.length() >= jump_strength:
+				print(linear_velocity)
+				applied_force = applied_force.normalized() * jump_strength
+			
+	apply_central_force(applied_force)
