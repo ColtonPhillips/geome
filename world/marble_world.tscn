@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://bjmdwn21vvi4f"]
+[gd_scene load_steps=15 format=3 uid="uid://bjmdwn21vvi4f"]
 
 [ext_resource type="Script" uid="uid://c77guuifs3x6g" path="res://script/marble_woirld.gd" id="1_1v810"]
+[ext_resource type="PackedScene" uid="uid://b4kti7rtg7pt7" path="res://scene/marble_camera_3d_container.tscn" id="2_typ1x"]
 [ext_resource type="PackedScene" uid="uid://ca8cgyk7k3ed1" path="res://scene/marble_body_3d.tscn" id="2_ypx3h"]
 [ext_resource type="PackedScene" uid="uid://b3d1tvd33cdig" path="res://assets/gltf/BookTemp.glb" id="3_io8qg"]
 [ext_resource type="PackedScene" uid="uid://b1t0h4odgcn73" path="res://scene/big_arena.tscn" id="4_vg7bj"]
@@ -9,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b3knunib85ph8" path="res://scene/surface_tool_test.tscn" id="7_io8qg"]
 [ext_resource type="Texture2D" uid="uid://b4h3p2j18rhkl" path="res://assets/png/a_button_pressed.png" id="8_vg7bj"]
 [ext_resource type="Texture2D" uid="uid://c0a7l3et6j4um" path="res://assets/png/a_button_unpressed.png" id="9_dq3tq"]
+[ext_resource type="PackedScene" uid="uid://il1nq6upwdw" path="res://scene/diagonal_play_area_csg.tscn" id="11_wxtjt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4muec"]
 sky_top_color = Color(0.442999, 0.762478, 0.836291, 1)
@@ -40,29 +42,33 @@ light_color = Color(1, 0.9865, 0.73, 1)
 light_energy = 0.5
 shadow_enabled = true
 
-[node name="MarbleBody3D" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("2_ypx3h")]
+[node name="MarbleCamera3DContainer" parent="." node_paths=PackedStringArray("marble_body_3d") instance=ExtResource("2_typ1x")]
+marble_body_3d = NodePath("../MarbleBody3D")
+
+[node name="MarbleBody3D" parent="." node_paths=PackedStringArray("camera_container") instance=ExtResource("2_ypx3h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
 mass = 2.5
-camera = NodePath("../Camera3D")
+camera_container = NodePath("../MarbleCamera3DContainer")
 speed = 20.0
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.814065, 0.158163, -0.558823, 0, 0.962204, 0.272331, 0.580774, -0.221695, 0.783296, -3.78834, 5.79294, 4.82646)
 
 [node name="BookTemp2" parent="." instance=ExtResource("3_io8qg")]
 transform = Transform3D(-0.794559, 0.58366, -0.167384, 0.0643786, 0.355098, 0.93261, 0.603764, 0.730237, -0.319721, -0.887583, 8.00291, -6.54999)
 
 [node name="BigArena" parent="." instance=ExtResource("4_vg7bj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -81.3079, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76731, 0)
 
 [node name="cloud_2" parent="." instance=ExtResource("5_dq3tq")]
 transform = Transform3D(0.826039, 0, -0.563613, 0, 1, 0, 0.563613, 0, 0.826039, -11.1392, 17.3558, 39.3092)
 
-[node name="RollingTerrain" parent="." instance=ExtResource("6_ypx3h")]
+[node name="ProcGenFloors" type="Node3D" parent="."]
+process_mode = 4
+visible = false
+
+[node name="RollingTerrain" parent="ProcGenFloors" instance=ExtResource("6_ypx3h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 height_multiplier = 1.0
 
-[node name="SurfaceToolTest" parent="." instance=ExtResource("7_io8qg")]
+[node name="SurfaceToolTest" parent="ProcGenFloors" instance=ExtResource("7_io8qg")]
 transform = Transform3D(0.0115118, -0.671766, -0.740674, -0.470443, -0.657262, 0.588804, -0.882355, 0.341667, -0.323594, -3.96843, 3.57336, 10.3222)
 
 [node name="DemoButtonCanvasLayer" type="CanvasLayer" parent="."]
@@ -78,3 +84,6 @@ texture_filter = 1
 position = Vector2(830, 755)
 scale = Vector2(12, 12)
 texture = ExtResource("9_dq3tq")
+
+[node name="DiagonalPlayAreaCSG" parent="." instance=ExtResource("11_wxtjt")]
+transform = Transform3D(0.993795, -0.111226, 0, 0.111226, 0.993795, 0, 0, 0, 1, 4.51393, 5.16001, -0.304397)

@@ -12,7 +12,7 @@ height = 6.12695
 sides = 32
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.330679, 0.943743, 0, -0.943743, 0.330679, 0, 0, 0, 1, -1.32515, 1.46859, 0)
+transform = Transform3D(0.173304, 0.984868, 0, -0.984868, 0.173304, 0, 0, 0, 1, -1.32515, 1.03458, 0)
 size = Vector3(1, 6.9845, 1)
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="CSGCombiner3D"]

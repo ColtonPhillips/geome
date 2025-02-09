@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bvcsh2a25qngd"]
 
-[ext_resource type="Script" path="res://script/fireball.gd" id="1_aaekp"]
-[ext_resource type="Shader" path="res://shader/fireball.gdshader" id="1_d2mdh"]
+[ext_resource type="Script" uid="uid://no614abgyi57" path="res://script/fireball.gd" id="1_aaekp"]
+[ext_resource type="Shader" uid="uid://j8h6pvv2k0o0" path="res://shader/fireball.gdshader" id="1_d2mdh"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_jh6xl"]
 

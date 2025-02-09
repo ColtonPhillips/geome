@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4kti7rtg7pt7"]
+
+[ext_resource type="Script" uid="uid://ccfrtgsifvm8y" path="res://script/marble_camera_3d_container.gd" id="1_c2lki"]
+
+[node name="MarbleCamera3DContainer" type="Node3D"]
+script = ExtResource("1_c2lki")
+
+[node name="HRotation" type="Node3D" parent="."]
+
+[node name="VRotation" type="Node3D" parent="HRotation"]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="HRotation/VRotation"]
+spring_length = 8.0
+margin = 1.0
+
+[node name="Camera3D" type="Camera3D" parent="HRotation/VRotation/SpringArm3D"]

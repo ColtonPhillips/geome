@@ -1,7 +1,8 @@
 extends RigidBody3D
+class_name MarbleBody3D
 
 # Adjustable properties for gameplay tweaking
-@export var camera: Camera3D
+@export var camera_container: MarbleCamera3DContainer
 
 # Physics material for the marble
 func _ready():
@@ -9,11 +10,12 @@ func _ready():
 
 var jump_direction := Vector3(0,0,0)
 # XXX: maybe buggy to run on frames not delta but big woop
-var jump_buffer_size := 15
+var jump_buffer_size := 11
 var jump_buffer_timer = 0
 var should_activate_buffered_jump := false
 
-var coyote_buffer_size := 15
+#XXX: when buffer sizes increase, bug below starts happening more often
+var coyote_buffer_size := 10
 var coyote_timer = 0
 func _integrate_forces(state: PhysicsDirectBodyState3D):
 	var normal_temp = Vector3()
@@ -36,8 +38,8 @@ func _integrate_forces(state: PhysicsDirectBodyState3D):
 	if jump_buffer_timer <= 0:
 		should_activate_buffered_jump = false
 
-@export var jump_strength: float = 1200.0  # Strength of the jump
-@export var speed: float = 30.0  # Speed multiplier for player input
+@export var jump_strength: float = 1400.0  # Strength of the jump
+@export var speed: float = 40.0  # Speed multiplier for player input
 var jump_mutex := false
 func _physics_process(delta):
 	var applied_force := Vector3()
@@ -55,6 +57,7 @@ func _physics_process(delta):
 	direction = direction.normalized()
 
 	# Apply directional force relative to the camera
+	var camera := camera_container.camera_3d
 	if direction != Vector3.ZERO and camera:
 		# Get the camera's forward and right vectors
 		var camera_forward = camera.global_transform.basis.z.normalized()
@@ -67,9 +70,9 @@ func _physics_process(delta):
 		applied_force += world_direction * speed
 		#apply_central_force(world_direction * speed)
 	
-	#Kind of a lazy approach but if it works it works
 	var reset_jump_mutex_later: Callable = func():
-		await get_tree().create_timer(1).timeout
+		#XXX: FIX THIS Kind of a lazy approach but if it works it works
+		await get_tree().create_timer(0.2).timeout
 		jump_mutex = false
 
 	if jump_mutex == false:
@@ -92,10 +95,10 @@ func _physics_process(delta):
 			jump_mutex = true
 			reset_jump_mutex_later.call()
 			
+			print("jump", randi_range(0,40))
 
 			# Limit the total force magnitude
 			if applied_force.length() >= jump_strength:
-				print(linear_velocity)
 				applied_force = applied_force.normalized() * jump_strength
 			
 	apply_central_force(applied_force)
