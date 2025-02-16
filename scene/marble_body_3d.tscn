@@ -30,12 +30,13 @@ noise = SubResource("FastNoiseLite_fh80k")
 albedo_texture = SubResource("NoiseTexture2D_nteh2")
 
 [node name="MarbleBody3D" type="RigidBody3D"]
-mass = 10.0
+mass = 2.5
 physics_material_override = SubResource("PhysicsMaterial_ye5eh")
 contact_monitor = true
 max_contacts_reported = 8
 linear_damp = 0.8
 script = ExtResource("1_f7dtb")
+speed = 20.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_f7dtb")

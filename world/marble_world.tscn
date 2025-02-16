@@ -47,9 +47,7 @@ marble_body_3d = NodePath("../MarbleBody3D")
 
 [node name="MarbleBody3D" parent="." node_paths=PackedStringArray("camera_container") instance=ExtResource("2_ypx3h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
-mass = 2.5
 camera_container = NodePath("../MarbleCamera3DContainer")
-speed = 20.0
 
 [node name="BookTemp2" parent="." instance=ExtResource("3_io8qg")]
 transform = Transform3D(-0.794559, 0.58366, -0.167384, 0.0643786, 0.355098, 0.93261, 0.603764, 0.730237, -0.319721, -0.887583, 8.00291, -6.54999)

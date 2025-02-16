@@ -1,0 +1,98 @@
+[gd_scene load_steps=17 format=3 uid="uid://m20navyl1dfq"]
+
+[ext_resource type="Texture2D" uid="uid://cqi8ljqduvh20" path="res://assets/png/mandelbrot.png" id="1_j0gx6"]
+[ext_resource type="PackedScene" uid="uid://ca8cgyk7k3ed1" path="res://scene/marble_body_3d.tscn" id="1_yp3vy"]
+[ext_resource type="PackedScene" uid="uid://b4kti7rtg7pt7" path="res://scene/marble_camera_3d_container.tscn" id="2_j0gx6"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j0gx6"]
+sky_top_color = Color(0.1377, 0.441745, 0.51, 1)
+sky_horizon_color = Color(0.441296, 0.514376, 0.566615, 1)
+ground_bottom_color = Color(0.081025, 0.0693, 0.21, 1)
+ground_horizon_color = Color(0.441296, 0.514376, 0.566615, 1)
+energy_multiplier = 0.6
+
+[sub_resource type="Sky" id="Sky_tmx6x"]
+sky_material = SubResource("ProceduralSkyMaterial_j0gx6")
+
+[sub_resource type="Environment" id="Environment_q8nkd"]
+background_mode = 2
+sky = SubResource("Sky_tmx6x")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_tmx6x"]
+size = Vector2(300, 300)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tmx6x"]
+albedo_texture = ExtResource("1_j0gx6")
+
+[sub_resource type="QuadMesh" id="QuadMesh_j0gx6"]
+size = Vector2(100, 100)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j0gx6"]
+load_path = "res://.godot/imported/mandelbrot.png-ab8611bc2b5a68012da84d25a06741e7.bptc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q8nkd"]
+albedo_texture = SubResource("CompressedTexture2D_j0gx6")
+uv1_scale = Vector3(64, 64, 64)
+
+[sub_resource type="QuadMesh" id="QuadMesh_q8nkd"]
+size = Vector2(24, 24)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rhuhl"]
+load_path = "res://.godot/imported/mandelbrot.png-ab8611bc2b5a68012da84d25a06741e7.bptc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sxv5i"]
+albedo_texture = SubResource("CompressedTexture2D_rhuhl")
+uv1_scale = Vector3(4, 4, 4)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_j0gx6"]
+rough = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j0gx6"]
+transparency = 1
+albedo_color = Color(0.168627, 0, 1, 0.0470588)
+metallic_specular = 0.0
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_q8nkd")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.495947, 0.0635323, 0, 0.127065, 0.991894, -0.5, 0.859006, -0.110041, 0, 0, 0)
+light_color = Color(1, 0.9865, 0.73, 1)
+light_energy = 0.5
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -6.016, -0.99, -2.265)
+mesh = SubResource("QuadMesh_tmx6x")
+surface_material_override/0 = SubResource("StandardMaterial3D_tmx6x")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 86.52, -0.952334, 58.8218)
+mesh = SubResource("QuadMesh_j0gx6")
+surface_material_override/0 = SubResource("StandardMaterial3D_q8nkd")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -55.2139, -0.952349, 69.6528)
+mesh = SubResource("QuadMesh_q8nkd")
+surface_material_override/0 = SubResource("StandardMaterial3D_sxv5i")
+
+[node name="MarbleBody3D" parent="." node_paths=PackedStringArray("camera_container") instance=ExtResource("1_yp3vy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.59257, 0)
+mass = 2.0
+physics_material_override = SubResource("PhysicsMaterial_j0gx6")
+camera_container = NodePath("../MarbleCamera3DContainer")
+speed = 40.0
+
+[node name="MarbleCamera3DContainer" parent="." node_paths=PackedStringArray("marble_body_3d") instance=ExtResource("2_j0gx6")]
+marble_body_3d = NodePath("../MarbleBody3D")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.72192, 0)
+material_override = SubResource("StandardMaterial3D_j0gx6")
+use_collision = true
+radius = 316.486
+height = 5.44385
