@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://bqv3flbhq7v5r"]
+
+[ext_resource type="PackedScene" uid="uid://dqyvha71t1lxr" path="res://scene/camera_ship.tscn" id="1_kfcfm"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_frhlf"]
+sky_top_color = Color(0.35488, 0.786546, 0.889505, 1)
+sky_horizon_color = Color(0.441296, 0.514376, 0.566615, 1)
+sky_curve = 0.126135
+sky_energy_multiplier = 0.3
+ground_bottom_color = Color(0.0749152, 0.070202, 0.0552888, 1)
+ground_horizon_color = Color(0.441296, 0.514376, 0.566615, 1)
+
+[sub_resource type="Sky" id="Sky_vgj81"]
+sky_material = SubResource("ProceduralSkyMaterial_frhlf")
+
+[sub_resource type="Environment" id="Environment_x3tfr"]
+background_mode = 2
+sky = SubResource("Sky_vgj81")
+tonemap_mode = 2
+
+[sub_resource type="Gradient" id="Gradient_kfcfm"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_frhlf"]
+gradient = SubResource("Gradient_kfcfm")
+fill_from = Vector2(0.299145, 0.336182)
+fill_to = Vector2(0.626781, 0.663818)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kcw8o"]
+albedo_texture = SubResource("GradientTexture2D_frhlf")
+
+[sub_resource type="QuadMesh" id="QuadMesh_7va4d"]
+material = SubResource("StandardMaterial3D_kcw8o")
+size = Vector2(11, 11)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_x3tfr")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.495951, 0.0635314, 0, 0.127062, 0.991895, -0.500003, 0.859004, -0.110039, 0, 0, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.833404, -0.0883416, 0.545558, 0, 0.987142, 0.159847, -0.552664, -0.133217, 0.822688, 0, 0, -5.56959)
+mesh = SubResource("QuadMesh_7va4d")
+
+[node name="CameraShip" parent="." instance=ExtResource("1_kfcfm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.08717)
