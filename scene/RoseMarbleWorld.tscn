@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://cwkdgopoewhky"]
+
+[ext_resource type="PackedScene" uid="uid://ca8cgyk7k3ed1" path="res://scene/marble_body_3d.tscn" id="2_ug800"]
+[ext_resource type="PackedScene" uid="uid://b4kti7rtg7pt7" path="res://scene/marble_camera_3d_container.tscn" id="3_1akjm"]
+[ext_resource type="PackedScene" uid="uid://vswi5yym2o02" path="res://scene/marbles_baked.tscn" id="3_ug800"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ug800"]
+sky_top_color = Color(0.1377, 0.441745, 0.51, 1)
+sky_horizon_color = Color(0.441296, 0.514376, 0.566615, 1)
+ground_bottom_color = Color(0.081025, 0.0693, 0.21, 1)
+ground_horizon_color = Color(0.441296, 0.514376, 0.566615, 1)
+energy_multiplier = 0.6
+
+[sub_resource type="Sky" id="Sky_1akjm"]
+sky_material = SubResource("ProceduralSkyMaterial_ug800")
+
+[sub_resource type="Environment" id="Environment_l6rht"]
+background_mode = 2
+sky = SubResource("Sky_1akjm")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_l6rht")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.495947, 0.0635323, 0, 0.127065, 0.991894, -0.5, 0.859006, -0.110041, 0, 0, 0)
+light_color = Color(1, 0.9865, 0.73, 1)
+light_energy = 0.5
+shadow_enabled = true
+
+[node name="MarbleBody3D" parent="." node_paths=PackedStringArray("camera_container") instance=ExtResource("2_ug800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.1706, 16.3664, 0)
+camera_container = NodePath("../MarbleCamera3DContainer")
+
+[node name="MarbleCamera3DContainer" parent="." node_paths=PackedStringArray("marble_body_3d") instance=ExtResource("3_1akjm")]
+marble_body_3d = NodePath("../MarbleBody3D")
+
+[node name="MarblesBaked" parent="." instance=ExtResource("3_ug800")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
