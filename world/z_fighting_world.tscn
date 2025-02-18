@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqykr56iwljnu"]
+
+[ext_resource type="Script" uid="uid://8dnceqb6j8hr" path="res://script/z_fighting_world.gd" id="1_rxa40"]
+[ext_resource type="Script" uid="uid://c11atpvrd341b" path="res://script/camera_ship.gd" id="2_5yb36"]
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.4599)
+script = ExtResource("1_rxa40")
+
+[node name="CameraShip3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.82654)
+script = ExtResource("2_5yb36")
+metadata/_custom_type_script = ExtResource("2_5yb36")
