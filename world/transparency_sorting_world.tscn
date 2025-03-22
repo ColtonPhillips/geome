@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=3 uid="uid://bludbr475geut"]
+
+[ext_resource type="Script" uid="uid://bybvjo8l08tg5" path="res://script/transparency_sorting_world.gd" id="1_r0xio"]
+[ext_resource type="PackedScene" uid="uid://owsh46128kk2" path="res://scene/zig_zag_animation.tscn" id="2_ahuma"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_toy4d"]
+sky_top_color = Color(0.1377, 0.441745, 0.51, 1)
+sky_horizon_color = Color(0.441296, 0.514376, 0.566615, 1)
+ground_bottom_color = Color(0.081025, 0.0693, 0.21, 1)
+ground_horizon_color = Color(0.441296, 0.514376, 0.566615, 1)
+energy_multiplier = 0.6
+
+[sub_resource type="Sky" id="Sky_r0xio"]
+sky_material = SubResource("ProceduralSkyMaterial_toy4d")
+
+[sub_resource type="Environment" id="Environment_ahuma"]
+background_mode = 2
+background_energy_multiplier = 2.36
+sky = SubResource("Sky_r0xio")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k8830"]
+transparency = 1
+albedo_color = Color(0.803076, 0.000623967, 0.824988, 0.698039)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_vnm1x"]
+material = SubResource("StandardMaterial3D_k8830")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_toy4d"]
+transparency = 1
+albedo_color = Color(0, 1, 1, 0.776471)
+
+[sub_resource type="PrismMesh" id="PrismMesh_toy4d"]
+material = SubResource("StandardMaterial3D_toy4d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r0xio"]
+transparency = 4
+albedo_color = Color(1, 1, 0, 0.505882)
+
+[sub_resource type="TorusMesh" id="TorusMesh_ahuma"]
+material = SubResource("StandardMaterial3D_r0xio")
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_r0xio")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ahuma")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.495947, 0.0635323, 0, 0.127065, 0.991894, -0.5, 0.859006, -0.110041, 0, 0, 0)
+light_color = Color(1, 0.9865, 0.73, 1)
+light_energy = 1.007
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.42033)
+
+[node name="Capsule" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_vnm1x")
+
+[node name="Prism" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41854, 0, 0.0143691)
+mesh = SubResource("PrismMesh_toy4d")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.866025, -0.5, 0, 0.353553, 0.612372, -0.707107, 0.353553, 0.612372, 0.707107, 0.385691, 0, 0)
+mesh = SubResource("TorusMesh_ahuma")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 4, 4)
+light_color = Color(0.984038, 0.724942, 0.843107, 1)
+light_energy = 16.0
+spot_range = 8.18712
+spot_angle = 20.7082
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.982674, 0.185341, 0, -0.185341, 0.982674, 0, 41.6682, -5.49207)
+light_color = Color(0.437841, 0.766685, 0.666871, 1)
+light_energy = 666.0
+spot_range = 840.04
+spot_angle = 25.3125
+
+[node name="ZigZagAnimation" parent="." instance=ExtResource("2_ahuma")]
+transform = Transform3D(0.887807, -0.121152, 0.443982, 0.455615, 0.0953145, -0.885059, 0.0649085, 0.988047, 0.139819, 0, 7.64767, -258.436)
