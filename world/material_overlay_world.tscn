@@ -1,0 +1,136 @@
+[gd_scene load_steps=26 format=3 uid="uid://d18k3khcb4tur"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_myeu7"]
+sky_top_color = Color(0.692895, 0.915574, 0.974858, 1)
+sky_horizon_color = Color(1.40615, 1.49233, 1.60312, 1)
+ground_bottom_color = Color(0.37178, 0.49383, 0.877715, 1)
+ground_horizon_color = Color(1.40615, 1.49233, 1.60312, 1)
+energy_multiplier = 0.6
+
+[sub_resource type="Sky" id="Sky_vjgsv"]
+sky_material = SubResource("ProceduralSkyMaterial_myeu7")
+
+[sub_resource type="Environment" id="Environment_dh1sn"]
+background_mode = 2
+sky = SubResource("Sky_vjgsv")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_142p0"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_h76mp"]
+seamless = true
+noise = SubResource("FastNoiseLite_142p0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_omkpu"]
+albedo_color = Color(0.243137, 1, 0.521569, 1)
+albedo_texture = SubResource("NoiseTexture2D_h76mp")
+
+[sub_resource type="Gradient" id="Gradient_pq06o"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_nlh0u"]
+gradient = SubResource("Gradient_pq06o")
+width = 128
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_yt327"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1w6us"]
+as_normal_map = true
+bump_strength = 6000.0
+noise = SubResource("FastNoiseLite_yt327")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wpufq"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 1, 0.576471)
+albedo_texture = SubResource("GradientTexture1D_nlh0u")
+roughness = 0.88
+roughness_texture = SubResource("NoiseTexture2D_1w6us")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nw2tq"]
+albedo_color = Color(1, 0.356863, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_fjbru"]
+material = SubResource("StandardMaterial3D_nw2tq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_10uxi"]
+albedo_color = Color(1, 0.568627, 0.254902, 1)
+
+[sub_resource type="Gradient" id="Gradient_myeu7"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vjgsv"]
+gradient = SubResource("Gradient_myeu7")
+
+[sub_resource type="Curve" id="Curve_dh1sn"]
+_limits = [-2.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 0.17868), 0.0, 0.0, 0, 0, Vector2(1, -2), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_142p0"]
+curve = SubResource("Curve_dh1sn")
+
+[sub_resource type="Curve" id="Curve_h76mp"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_omkpu"]
+width = 128
+curve = SubResource("Curve_h76mp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pq06o"]
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 4.0
+orbit_velocity_min = -0.403
+orbit_velocity_max = 0.102
+orbit_velocity_curve = SubResource("CurveTexture_142p0")
+gravity = Vector3(0, -3, 0)
+scale_min = 0.01
+scale_curve = SubResource("CurveTexture_omkpu")
+color_ramp = SubResource("GradientTexture1D_vjgsv")
+turbulence_enabled = true
+turbulence_noise_strength = 0.2
+turbulence_noise_scale = 2.0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_nlh0u"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yt327"]
+noise = SubResource("FastNoiseLite_nlh0u")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1w6us"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.552941)
+albedo_texture = SubResource("NoiseTexture2D_yt327")
+
+[sub_resource type="SphereMesh" id="SphereMesh_wpufq"]
+material = SubResource("StandardMaterial3D_1w6us")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_dh1sn")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.700909, -0.402963, 0.588513, 0, 0.825114, 0.564967, -0.71325, -0.395991, 0.57833, 0, 0, 0)
+light_color = Color(1, 0.9865, 0.73, 1)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0290381, 0)
+material_override = SubResource("StandardMaterial3D_omkpu")
+material_overlay = SubResource("StandardMaterial3D_wpufq")
+cast_shadow = 0
+mesh = SubResource("CapsuleMesh_fjbru")
+surface_material_override/0 = SubResource("StandardMaterial3D_10uxi")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0290381, 0)
+amount = 55
+lifetime = 3.0
+process_material = SubResource("ParticleProcessMaterial_pq06o")
+draw_pass_1 = SubResource("SphereMesh_wpufq")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.987114, 0.118986, 0.106997, -0.140949, 0.963089, 0.229334, -0.0757598, -0.241459, 0.967449, 1.03554, -0.243701, 4.85677)
