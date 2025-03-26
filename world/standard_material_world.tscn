@@ -1,0 +1,298 @@
+[gd_scene load_steps=59 format=3 uid="uid://b7qq57h6x68na"]
+
+[ext_resource type="Script" uid="uid://6u62xt65qhxl" path="res://script/standard_material_world.gd" id="1_tqsb6"]
+[ext_resource type="Script" uid="uid://c11atpvrd341b" path="res://script/camera_ship.gd" id="2_6pmnb"]
+[ext_resource type="Texture2D" uid="uid://ldrfwdlv5e4c" path="res://assets/png/Terrestrial-Clouds-EQUIRECTANGULAR-7-1024x512.png" id="3_gf3tv"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b3nhu"]
+sky_top_color = Color(0.262887, 0.694863, 0.794133, 1)
+sky_horizon_color = Color(1.40615, 1.49233, 1.60312, 1)
+ground_bottom_color = Color(0.37178, 0.49383, 0.877715, 1)
+ground_horizon_color = Color(1.40615, 1.49233, 1.60312, 1)
+energy_multiplier = 0.4
+
+[sub_resource type="Sky" id="Sky_tqsb6"]
+sky_material = SubResource("ProceduralSkyMaterial_b3nhu")
+
+[sub_resource type="Environment" id="Environment_6pmnb"]
+background_mode = 2
+sky = SubResource("Sky_tqsb6")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gf3tv"]
+transparency = 1
+blend_mode = 2
+
+[sub_resource type="TorusMesh" id="TorusMesh_g06gp"]
+material = SubResource("StandardMaterial3D_gf3tv")
+
+[sub_resource type="TorusMesh" id="TorusMesh_6qwab"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ldnhm"]
+disable_ambient_light = true
+
+[sub_resource type="TorusMesh" id="TorusMesh_6pmnb"]
+material = SubResource("StandardMaterial3D_ldnhm")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_g06gp"]
+noise_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cg3sa"]
+seamless = true
+noise = SubResource("FastNoiseLite_g06gp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d8k6g"]
+albedo_color = Color(0.772549, 1, 0.85098, 1)
+albedo_texture = SubResource("NoiseTexture2D_cg3sa")
+
+[sub_resource type="TorusMesh" id="TorusMesh_xg1km"]
+material = SubResource("StandardMaterial3D_d8k6g")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cjt0r"]
+diffuse_mode = 2
+
+[sub_resource type="TorusMesh" id="TorusMesh_m4why"]
+material = SubResource("StandardMaterial3D_cjt0r")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6pmnb"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.333333)
+
+[sub_resource type="TorusMesh" id="TorusMesh_gf3tv"]
+material = SubResource("StandardMaterial3D_6pmnb")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g06gp"]
+transparency = 3
+alpha_hash_scale = 1.0
+alpha_antialiasing_mode = 0
+albedo_color = Color(1, 1, 1, 0.454902)
+
+[sub_resource type="TorusMesh" id="TorusMesh_cg3sa"]
+material = SubResource("StandardMaterial3D_g06gp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cg3sa"]
+transparency = 1
+blend_mode = 3
+
+[sub_resource type="TorusMesh" id="TorusMesh_vua3r"]
+material = SubResource("StandardMaterial3D_cg3sa")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6qwab"]
+transparency = 1
+cull_mode = 1
+albedo_color = Color(1, 1, 1, 0.745098)
+
+[sub_resource type="TorusMesh" id="TorusMesh_ldnhm"]
+material = SubResource("StandardMaterial3D_6qwab")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rec7f"]
+transparency = 1
+cull_mode = 2
+albedo_color = Color(1, 1, 1, 0.627451)
+
+[sub_resource type="TorusMesh" id="TorusMesh_d8k6g"]
+material = SubResource("StandardMaterial3D_rec7f")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vua3r"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6qwab"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_vua3r")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xg1km"]
+albedo_texture = SubResource("NoiseTexture2D_6qwab")
+
+[sub_resource type="TorusMesh" id="TorusMesh_cjt0r"]
+material = SubResource("StandardMaterial3D_xg1km")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_m4why"]
+noise_type = 2
+frequency = 0.1699
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lhj75"]
+seamless = true
+noise = SubResource("FastNoiseLite_m4why")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2dfdh"]
+albedo_texture = SubResource("NoiseTexture2D_lhj75")
+
+[sub_resource type="TorusMesh" id="TorusMesh_2ana1"]
+material = SubResource("StandardMaterial3D_2dfdh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rvg2i"]
+albedo_texture = ExtResource("3_gf3tv")
+
+[sub_resource type="TorusMesh" id="TorusMesh_7s2tg"]
+material = SubResource("StandardMaterial3D_rvg2i")
+
+[sub_resource type="Gradient" id="Gradient_nkdja"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lnosi"]
+gradient = SubResource("Gradient_nkdja")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3qeqs"]
+albedo_texture = SubResource("GradientTexture1D_lnosi")
+
+[sub_resource type="TorusMesh" id="TorusMesh_2r3ht"]
+material = SubResource("StandardMaterial3D_3qeqs")
+
+[sub_resource type="Gradient" id="Gradient_ibdxv"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.341772, 0.526371, 0.567511, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.564706, 0.898039, 0.823529, 1, 0.729504, 5.29438e-07, 0.382264, 1, 0.736171, 0.0246484, 0.39749, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5oylo"]
+gradient = SubResource("Gradient_ibdxv")
+fill_from = Vector2(0.148148, 0.851852)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rjpvp"]
+albedo_texture = SubResource("GradientTexture2D_5oylo")
+
+[sub_resource type="TorusMesh" id="TorusMesh_vg18t"]
+material = SubResource("StandardMaterial3D_rjpvp")
+
+[sub_resource type="Gradient" id="Gradient_7b4w8"]
+offsets = PackedFloat32Array(0, 0.341772, 0.526371, 0.567511, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.564706, 0.898039, 0.823529, 1, 0.729504, 5.29438e-07, 0.382264, 1, 0.736171, 0.0246484, 0.39749, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_q1fbh"]
+gradient = SubResource("Gradient_7b4w8")
+fill_from = Vector2(0.148148, 0.851852)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vyyyt"]
+albedo_texture = SubResource("GradientTexture2D_q1fbh")
+
+[sub_resource type="TorusMesh" id="TorusMesh_6asot"]
+material = SubResource("StandardMaterial3D_vyyyt")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lhj75"]
+shading_mode = 2
+albedo_color = Color(1, 0.713726, 1, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_2dfdh"]
+material = SubResource("StandardMaterial3D_lhj75")
+rings = 12
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gf3tv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yqjgw"]
+albedo_texture = SubResource("PlaceholderTexture2D_gf3tv")
+
+[sub_resource type="TorusMesh" id="TorusMesh_2oghi"]
+material = SubResource("StandardMaterial3D_yqjgw")
+rings = 12
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ana1"]
+shading_mode = 0
+albedo_color = Color(1, 0.560784, 1, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_rvg2i"]
+material = SubResource("StandardMaterial3D_2ana1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7s2tg"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.384314, 1, 1, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_nkdja"]
+material = SubResource("StandardMaterial3D_7s2tg")
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_tqsb6")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6pmnb")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.282484, 0.412557, 0, 0.825114, 0.564967, -0.5, 0.489276, -0.714569, 0, 0, 0)
+light_color = Color(1, 0.9865, 0.73, 1)
+shadow_enabled = true
+
+[node name="CameraShip3D" type="Camera3D" parent="."]
+transform = Transform3D(0.978148, 0, 0.207912, 0, 1, 0, -0.207912, 0, 0.978148, 0, 1.02, 3.22)
+script = ExtResource("2_6pmnb")
+metadata/_custom_type_script = "uid://c11atpvrd341b"
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Subtraction Blending" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+mesh = SubResource("TorusMesh_g06gp")
+skeleton = NodePath("../..")
+
+[node name="No Material" type="MeshInstance3D" parent="Node3D"]
+mesh = SubResource("TorusMesh_6qwab")
+
+[node name="Disable Ambient Light" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -8)
+mesh = SubResource("TorusMesh_6pmnb")
+
+[node name="Seamless Simplex Noise" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -16)
+mesh = SubResource("TorusMesh_xg1km")
+
+[node name="Lambert Wrap Diffuse Mode" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -16)
+mesh = SubResource("TorusMesh_m4why")
+
+[node name="Alpha Transparency" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+mesh = SubResource("TorusMesh_gf3tv")
+
+[node name="Alpha Hash" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -8)
+mesh = SubResource("TorusMesh_cg3sa")
+
+[node name="Multiply Blending" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+mesh = SubResource("TorusMesh_vua3r")
+
+[node name="Front Culling" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16)
+mesh = SubResource("TorusMesh_ldnhm")
+
+[node name="Disabled Culling" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -16)
+mesh = SubResource("TorusMesh_d8k6g")
+
+[node name="Noise as Normal Map" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -16)
+mesh = SubResource("TorusMesh_cjt0r")
+
+[node name="Cellular Noise" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -24)
+mesh = SubResource("TorusMesh_2ana1")
+
+[node name="Compressed Image" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -24)
+mesh = SubResource("TorusMesh_7s2tg")
+
+[node name="Gradient Texture 1D" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -24)
+mesh = SubResource("TorusMesh_2r3ht")
+
+[node name="Gradient Texture 2D (Constant)" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -24)
+mesh = SubResource("TorusMesh_vg18t")
+
+[node name="Gradient Texture 2D (Linear)" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -24)
+mesh = SubResource("TorusMesh_6asot")
+
+[node name="Per Vertex Shading" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
+mesh = SubResource("TorusMesh_2dfdh")
+
+[node name="Placeholder Texture" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -8)
+mesh = SubResource("TorusMesh_2oghi")
+
+[node name="Unshaded" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 0)
+mesh = SubResource("TorusMesh_rvg2i")
+
+[node name="Toon" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -8)
+mesh = SubResource("TorusMesh_nkdja")
