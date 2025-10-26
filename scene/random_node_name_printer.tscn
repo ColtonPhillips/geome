@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cigggo6b5j5yn"]
+
+[ext_resource type="Script" uid="uid://dv5ev4r7avfpl" path="res://scene/random_node_name_printer.gd" id="1_y32rl"]
+
+[node name="RandomNodeNamePrinter" type="Node3D"]
+script = ExtResource("1_y32rl")

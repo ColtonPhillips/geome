@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b4r0a7fnsem2w"]
+[gd_scene load_steps=15 format=3 uid="uid://b4r0a7fnsem2w"]
 
 [ext_resource type="PackedScene" uid="uid://ce0b1yqttuwpc" path="res://assets/gltf/cloud_1.glb" id="1_5br65"]
 [ext_resource type="PackedScene" uid="uid://ywr45lln3bwi" path="res://assets/gltf/cloud_2.glb" id="2_dy37i"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cpmqs20cy55f1" path="res://assets/gltf/crateStrong.glb" id="7_14sxj"]
 [ext_resource type="PackedScene" uid="uid://bnf51wb1sdiqn" path="res://scene/directional_test_object.tscn" id="8_381eg"]
 [ext_resource type="PackedScene" uid="uid://codvuotcbr6ib" path="res://scene/immediate_mesh_test.tscn" id="9_mkl44"]
+[ext_resource type="PackedScene" uid="uid://cigggo6b5j5yn" path="res://scene/random_node_name_printer.tscn" id="10_5gwon"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fcpso"]
 sky_top_color = Color(0.62, 0.3224, 0.58032, 1)
@@ -86,3 +87,78 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.52504, -1.89291, 6.6938)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.101394, 5.11706, 0.445216)
 
 [node name="ImmediateMeshTest" parent="." instance=ExtResource("9_mkl44")]
+
+[node name="RandomNodeName" parent="." instance=ExtResource("10_5gwon")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.4773936)
+
+[node name="RandomNodeNamePrinter" parent="." instance=ExtResource("10_5gwon")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.524786, -4.7683716e-07, 9.59942)
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 11.964203, 9555.127, 127.1872)
+
+[node name="RandomNodeNamePrinter2" parent="Node3D" instance=ExtResource("10_5gwon")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -0.07063358, -95.55127, -1.1905825)
+
+[node name="RandomNodeNamePrinter3" parent="Node3D" instance=ExtResource("10_5gwon")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -0.07164132, -95.55127, -1.3293157)
+
+[node name="RandomNodeNamePrinter4" parent="Node3D" instance=ExtResource("10_5gwon")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -0.027894862, -95.46362, -1.2602127)
+
+[node name="RandomNodeNamePrinter5" parent="Node3D" instance=ExtResource("10_5gwon")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.027894862, -91.042564, -1.2602127)
+
+[node name="RandomNodeNamePrinter6" parent="Node3D" instance=ExtResource("10_5gwon")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.237008, -101.30587, -1.2602127)
+
+[node name="RandomNodeNamePrinter7" parent="Node3D" instance=ExtResource("10_5gwon")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2861688, -101.30587, 0)
+
+[node name="RandomNodeNamePrinter8" parent="Node3D" instance=ExtResource("10_5gwon")]
+
+[node name="Node3D2" type="Node3D" parent="."]
+transform = Transform3D(64.7362, 76.21827, 0, -76.21827, 64.7362, 0, 0, 0, 100, 0.964, 402.5543, -2812.7607)
+
+[node name="RandomNodeNamePrinter2" parent="Node3D2" instance=ExtResource("10_5gwon")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -0.07063358, -95.55127, -1.1905825)
+
+[node name="RandomNodeNamePrinter3" parent="Node3D2" instance=ExtResource("10_5gwon")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -0.07164132, -95.55127, -1.3293157)
+
+[node name="RandomNodeNamePrinter4" parent="Node3D2" instance=ExtResource("10_5gwon")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -0.027894862, -95.46362, -1.2602127)
+
+[node name="RandomNodeNamePrinter5" parent="Node3D2" instance=ExtResource("10_5gwon")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.027894862, -91.042564, -1.2602127)
+
+[node name="RandomNodeNamePrinter6" parent="Node3D2" instance=ExtResource("10_5gwon")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.237008, -101.30587, -1.2602127)
+
+[node name="RandomNodeNamePrinter7" parent="Node3D2" instance=ExtResource("10_5gwon")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2861688, -101.30587, 0)
+
+[node name="RandomNodeNamePrinter8" parent="Node3D2" instance=ExtResource("10_5gwon")]
+
+[node name="Node3D3" type="Node3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -19.200027, 10.903431, 0)
+
+[node name="RandomNodeNamePrinter" parent="Node3D3" instance=ExtResource("10_5gwon")]
+
+[node name="RandomNodeNamePrinter2" parent="Node3D3" instance=ExtResource("10_5gwon")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.06361, 0, 0)
+
+[node name="RandomNodeNamePrinter3" parent="Node3D3" instance=ExtResource("10_5gwon")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.063612, 2.1447625, 0)
+
+[node name="RandomNodeNamePrinter4" parent="Node3D3" instance=ExtResource("10_5gwon")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30991268, 2.1447625, 0)
+
+[node name="RandomNodeNamePrinter5" parent="Node3D3" instance=ExtResource("10_5gwon")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30991268, 2.1447625, -19.358322)
+
+[node name="RandomNodeNamePrinter6" parent="Node3D3" instance=ExtResource("10_5gwon")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3024807, 2.1447625, -19.358322)
+
+[node name="RandomNodeNamePrinter7" parent="Node3D3" instance=ExtResource("10_5gwon")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3024807, 4.8813267, -19.358322)
