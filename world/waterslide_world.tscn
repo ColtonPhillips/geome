@@ -1,0 +1,116 @@
+[gd_scene load_steps=19 format=3 uid="uid://b1rouq5h6r2ua"]
+
+[ext_resource type="PackedScene" uid="uid://ce0b1yqttuwpc" path="res://assets/gltf/cloud_1.glb" id="1_y6lgn"]
+[ext_resource type="PackedScene" uid="uid://ywr45lln3bwi" path="res://assets/gltf/cloud_2.glb" id="2_72d81"]
+[ext_resource type="PackedScene" uid="uid://b3mdsprw1agdp" path="res://assets/gltf/cloud_3.glb" id="3_x2wdx"]
+[ext_resource type="PackedScene" uid="uid://c5q60iu3a4cd6" path="res://assets/gltf/ring.glb" id="4_t45p2"]
+[ext_resource type="ArrayMesh" uid="uid://bath7kiay6ock" path="res://assets/obj/crateStrong.obj" id="6_nv1m1"]
+[ext_resource type="PackedScene" uid="uid://cpmqs20cy55f1" path="res://assets/gltf/crateStrong.glb" id="7_cphct"]
+[ext_resource type="PackedScene" uid="uid://bnf51wb1sdiqn" path="res://scene/directional_test_object.tscn" id="8_2y2if"]
+[ext_resource type="PackedScene" uid="uid://codvuotcbr6ib" path="res://scene/immediate_mesh_test.tscn" id="9_ssin7"]
+[ext_resource type="PackedScene" uid="uid://cigggo6b5j5yn" path="res://scene/random_node_name_printer.tscn" id="10_ft4k1"]
+[ext_resource type="PackedScene" uid="uid://cvfwbvyds761r" path="res://public_domain/scenes/inflatableScenes/inflatable_ball_pit_empty_a.tscn" id="11_7b513"]
+[ext_resource type="PackedScene" uid="uid://qtajas6lykmy" path="res://public_domain/scenes/inflatableScenes/inflatable_pool_slide_a.tscn" id="12_nv1m1"]
+[ext_resource type="PackedScene" uid="uid://ca88pulow1i63" path="res://public_domain/scenes/inflatableScenes/inflatable_tube_b.tscn" id="13_cphct"]
+[ext_resource type="PackedScene" uid="uid://ras1mpybd2tq" path="res://public_domain/scenes/inflatableScenes/inflatable_tube_duck_b.tscn" id="14_2y2if"]
+[ext_resource type="PackedScene" uid="uid://b10otbmvog2kt" path="res://public_domain/scenes/inflatables.tscn" id="15_nv1m1"]
+[ext_resource type="Script" uid="uid://c11atpvrd341b" path="res://script/camera_ship.gd" id="16_2y2if"]
+[ext_resource type="PackedScene" uid="uid://daasxqdnsqroc" path="res://scene/gba_post_process.tscn" id="17_2y2if"]
+[ext_resource type="PackedScene" uid="uid://bjvok8asadaun" path="res://scene/popcorn_spawner.tscn" id="17_ssin7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_381eg"]
+
+[node name="CloudWorld" type="Node3D"]
+
+[node name="OldLevelCrap" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="OldLevelCrap"]
+transform = Transform3D(-0.9483238, -0.18516071, 0.25767744, 0.22774094, 0.1682792, 0.95907044, -0.22094394, 0.968193, -0.11741449, 0, -1.11391, 0.326293)
+light_color = Color(0.7912, 0.92, 0.92, 1)
+shadow_enabled = true
+
+[node name="cloud_1" parent="OldLevelCrap" instance=ExtResource("1_y6lgn")]
+transform = Transform3D(0.889616, 7.20707e-09, 0.45671, 0.236445, 0.855554, -0.460566, -0.39074, 0.517714, 0.761114, -0.498007, 2.80823, 1.93402)
+
+[node name="cloud_2" parent="OldLevelCrap" instance=ExtResource("2_72d81")]
+transform = Transform3D(-0.998973, -0.0422434, 0.016388, -0.0171487, 0.687261, 0.726208, -0.0419403, 0.725181, -0.687279, 1.39118, 5.40429, -3.2848)
+
+[node name="cloud_3" parent="OldLevelCrap" instance=ExtResource("3_x2wdx")]
+transform = Transform3D(-0.839534, -6.27223e-09, -0.543306, -0.11115, 0.97885, 0.171753, 0.531815, 0.204581, -0.821778, 2.24044, -4.58256, -1.28008)
+
+[node name="ring" parent="OldLevelCrap" instance=ExtResource("4_t45p2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000730097, 0, 10.4539)
+
+[node name="CrateStrong" type="MeshInstance3D" parent="OldLevelCrap"]
+transform = Transform3D(0.91846, 0.395513, 0, -0.395513, 0.91846, 0, 0, 0, 1, 2.08575, 0.597559, 7.04519)
+mesh = ExtResource("6_nv1m1")
+skeleton = NodePath("../..")
+
+[node name="CrateStrong2" type="MeshInstance3D" parent="OldLevelCrap"]
+transform = Transform3D(-0.0370972, 0.582275, -0.812145, -0.999312, -0.0216157, 0.0301491, 0, 0.812704, 0.582676, -2.75029, 0, 3.23048)
+mesh = ExtResource("6_nv1m1")
+skeleton = NodePath("../..")
+
+[node name="crateStrong" parent="OldLevelCrap" instance=ExtResource("7_cphct")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.698949, 0, 7.41237)
+
+[node name="CrateStrong3" type="MeshInstance3D" parent="OldLevelCrap"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.535884, 0.762126, 7.5691)
+mesh = ExtResource("6_nv1m1")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_381eg")
+
+[node name="crateStrong2" parent="OldLevelCrap" instance=ExtResource("7_cphct")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.70607, 0, 7.62478)
+
+[node name="CrateStrong4" type="MeshInstance3D" parent="OldLevelCrap"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.92527, 0.649856, 7.71133)
+mesh = ExtResource("6_nv1m1")
+skeleton = NodePath("../..")
+
+[node name="crateStrong3" parent="OldLevelCrap" instance=ExtResource("7_cphct")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.77993, 0, 7.79553)
+
+[node name="cloud_4" parent="OldLevelCrap" instance=ExtResource("1_y6lgn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.52504, -1.89291, 6.6938)
+
+[node name="DirectionalTestObject" parent="OldLevelCrap" instance=ExtResource("8_2y2if")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.101394, 5.11706, 0.445216)
+
+[node name="ImmediateMeshTest" parent="OldLevelCrap" instance=ExtResource("9_ssin7")]
+
+[node name="RandomNodeName" parent="OldLevelCrap" instance=ExtResource("10_ft4k1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.4773936)
+
+[node name="RandomNodeNamePrinter" parent="OldLevelCrap" instance=ExtResource("10_ft4k1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.524786, -4.7683716e-07, 9.59942)
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 256.1886, 0, 0)
+
+[node name="inflatable_BallPit_Empty_A" parent="Node3D" instance=ExtResource("11_7b513")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7291856, 0, 0)
+
+[node name="inflatable_Pool_Slide_A" parent="Node3D" instance=ExtResource("12_nv1m1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1539497, 0, 1.2802162)
+
+[node name="inflatable_Tube_B" parent="Node3D" instance=ExtResource("13_cphct")]
+transform = Transform3D(1, 0, 0, 0, 0.74721843, -0.6645785, 0, 0.6645785, 0.74721843, -5.335548, 0.21677995, 1.1279379)
+
+[node name="inflatable_Tube_Duck_B" parent="Node3D" instance=ExtResource("14_2y2if")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8515997, 0, 1.4603993)
+
+[node name="inflatables" parent="." instance=ExtResource("15_nv1m1")]
+
+[node name="CameraShip3D" type="Camera3D" parent="."]
+transform = Transform3D(0.9231967, -0.027492398, -0.38334328, 0, 0.9974382, -0.07153371, 0.38432786, 0.06603968, 0.9208316, -21.55334, 0.6683941, 10.200138)
+script = ExtResource("16_2y2if")
+metadata/_custom_type_script = "uid://c11atpvrd341b"
+
+[node name="PopcornSpawner" parent="." instance=ExtResource("17_ssin7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.364487, 21.604992, 2)
+spawn_radius = 55.0
+spawn_height = 99
+
+[node name="GbaPostProcess" parent="." instance=ExtResource("17_2y2if")]

@@ -1,0 +1,386 @@
+[gd_scene load_steps=85 format=3 uid="uid://b10otbmvog2kt"]
+
+[ext_resource type="PackedScene" uid="uid://d4mccu3s118v3" path="res://public_domain/scenes/inflatableScenes/inflatable_pool_b.tscn" id="1_8wx6n"]
+[ext_resource type="Texture2D" uid="uid://db80bb5mykj12" path="res://public_domain/Textures/hdri/rocky_ridge_puresky_2k.exr" id="1_fvtrh"]
+[ext_resource type="PackedScene" uid="uid://l2ym4scflyqq" path="res://public_domain/scenes/inflatableScenes/inflatable_pool_e.tscn" id="2_1v744"]
+[ext_resource type="PackedScene" uid="uid://ca88pulow1i63" path="res://public_domain/scenes/inflatableScenes/inflatable_tube_b.tscn" id="3_fvtrh"]
+[ext_resource type="PackedScene" uid="uid://bigxmyly72ri0" path="res://public_domain/scenes/inflatableScenes/inflatable_tube_duck_a.tscn" id="4_yk56f"]
+[ext_resource type="PackedScene" uid="uid://ras1mpybd2tq" path="res://public_domain/scenes/inflatableScenes/inflatable_tube_duck_b.tscn" id="5_8t0qx"]
+[ext_resource type="PackedScene" uid="uid://cmkeo3opywm37" path="res://public_domain/scenes/inflatableScenes/inflatable_lounger_b.tscn" id="6_mwnvf"]
+[ext_resource type="PackedScene" uid="uid://cued28mdl7d2c" path="res://public_domain/scenes/inflatableScenes/inflatable_lounger_a.tscn" id="7_5rupe"]
+[ext_resource type="PackedScene" uid="uid://dsf3d5wqyvnht" path="res://public_domain/scenes/inflatableScenes/inflatable_pool_c.tscn" id="8_bjg4d"]
+[ext_resource type="PackedScene" uid="uid://opqrmdwchvai" path="res://public_domain/scenes/inflatableScenes/inflatable_pool_d.tscn" id="9_u1mt3"]
+[ext_resource type="PackedScene" uid="uid://c6m1ada2n7th4" path="res://public_domain/scenes/inflatableScenes/inflatable_pool_slide_b.tscn" id="10_o5t04"]
+[ext_resource type="PackedScene" uid="uid://ch87b8qkyyhyc" path="res://public_domain/scenes/inflatableScenes/inflatable_flaoter_f.tscn" id="11_iraq8"]
+[ext_resource type="PackedScene" uid="uid://dphgrgwte8u0a" path="res://public_domain/scenes/inflatableScenes/inflatable_bounce_house_b.tscn" id="12_x8t64"]
+[ext_resource type="PackedScene" uid="uid://clk86g37rb83n" path="res://public_domain/scenes/inflatableScenes/inflatable_pool_a.tscn" id="13_eduty"]
+[ext_resource type="PackedScene" uid="uid://co3wuvpqv4efn" path="res://public_domain/scenes/inflatableScenes/inflatable_pillar_d.tscn" id="14_5g0i1"]
+[ext_resource type="PackedScene" uid="uid://dnevx1kauotul" path="res://public_domain/scenes/inflatableScenes/inflatable_ball_d.tscn" id="15_3chf4"]
+[ext_resource type="PackedScene" uid="uid://b66nuqqwimp3b" path="res://public_domain/scenes/inflatableScenes/inflatable_duck_a.tscn" id="16_nossj"]
+[ext_resource type="PackedScene" uid="uid://bmrxxkofrkiox" path="res://public_domain/scenes/inflatableScenes/inflatable_dolphin.tscn" id="17_d28yi"]
+[ext_resource type="PackedScene" uid="uid://ty4jc37ln7ij" path="res://public_domain/scenes/inflatableScenes/inflatable_lounger_c.tscn" id="18_1v8fu"]
+[ext_resource type="PackedScene" uid="uid://otb2s1c2mxn8" path="res://public_domain/scenes/inflatableScenes/inflatable_lounger_d.tscn" id="19_kdjee"]
+[ext_resource type="PackedScene" uid="uid://c5u1wndhi7atq" path="res://public_domain/scenes/inflatableScenes/inflatable_floater_a.tscn" id="20_clpkl"]
+[ext_resource type="PackedScene" uid="uid://csqhu4kel1lr7" path="res://public_domain/scenes/inflatableScenes/inflatable_hammer_c.tscn" id="21_xn5tk"]
+[ext_resource type="PackedScene" uid="uid://bwhy3trt3b1mj" path="res://public_domain/scenes/inflatableScenes/inflatable_tube_lifesaver.tscn" id="22_ie7n2"]
+[ext_resource type="PackedScene" uid="uid://xp6ti6rmwdsp" path="res://public_domain/scenes/inflatableScenes/inflatable_bounce_house_f.tscn" id="23_2wdri"]
+[ext_resource type="PackedScene" uid="uid://cjyh6xh30hiv1" path="res://public_domain/scenes/inflatableScenes/inflatable_tube_a.tscn" id="24_7qpe5"]
+[ext_resource type="PackedScene" uid="uid://dx0ab64v5iquv" path="res://public_domain/scenes/inflatableScenes/inflatable_tube_d.tscn" id="25_vdjin"]
+[ext_resource type="PackedScene" uid="uid://dsuspr17o6ev0" path="res://public_domain/scenes/inflatableScenes/inflatable_tube_c.tscn" id="26_vwcke"]
+[ext_resource type="PackedScene" uid="uid://53m6lo63re8x" path="res://public_domain/scenes/inflatableScenes/inflatable_tube_duck_c.tscn" id="27_yt3ej"]
+[ext_resource type="PackedScene" uid="uid://dbkme1ss3lvuh" path="res://public_domain/scenes/inflatableScenes/inflatable_tube_duck_d.tscn" id="28_ql3ui"]
+[ext_resource type="PackedScene" uid="uid://cjt83to1ngl5v" path="res://public_domain/scenes/inflatableScenes/inflatable_floater_b.tscn" id="29_467sx"]
+[ext_resource type="PackedScene" uid="uid://cevpayq4ymmxb" path="res://public_domain/scenes/inflatableScenes/inflatable_floater_c.tscn" id="30_2denc"]
+[ext_resource type="PackedScene" uid="uid://b4fpq475vl800" path="res://public_domain/scenes/inflatableScenes/inflatable_floater_d.tscn" id="31_plj2j"]
+[ext_resource type="PackedScene" uid="uid://b0bodeqgc81hl" path="res://public_domain/scenes/inflatableScenes/inflatable_ball_c.tscn" id="32_3e6s5"]
+[ext_resource type="PackedScene" uid="uid://30ojjwyb8us4" path="res://public_domain/scenes/inflatableScenes/inflatable_ball_a.tscn" id="33_uorvh"]
+[ext_resource type="PackedScene" uid="uid://xxtlkfhdud05" path="res://public_domain/scenes/inflatableScenes/inflatable_ball_b.tscn" id="34_8etdn"]
+[ext_resource type="PackedScene" uid="uid://dnqcnjkkh7li2" path="res://public_domain/scenes/inflatableScenes/inflatable_ball_e.tscn" id="35_7rxeh"]
+[ext_resource type="PackedScene" uid="uid://rjk8beppq12" path="res://public_domain/scenes/inflatableScenes/inflatable_ball_f.tscn" id="36_wu44n"]
+[ext_resource type="PackedScene" uid="uid://b0pwe3xjnc2kw" path="res://public_domain/scenes/inflatableScenes/inflatable_ball_h.tscn" id="37_vdtcr"]
+[ext_resource type="PackedScene" uid="uid://ctbej4y5syh0y" path="res://public_domain/scenes/inflatableScenes/inflatable_ball_i.tscn" id="38_vdral"]
+[ext_resource type="PackedScene" uid="uid://sfnky2mgxutj" path="res://public_domain/scenes/inflatableScenes/inflatable_ball_g.tscn" id="39_x1skd"]
+[ext_resource type="PackedScene" uid="uid://dohj1qqoow8hp" path="res://public_domain/scenes/inflatableScenes/inflatable_ball_beach_a.tscn" id="40_uo37n"]
+[ext_resource type="PackedScene" uid="uid://blr56gdo58vsg" path="res://public_domain/scenes/inflatableScenes/inflatable_ball_beach_b.tscn" id="41_2a847"]
+[ext_resource type="PackedScene" uid="uid://cwnaanyqo4x7o" path="res://public_domain/scenes/inflatableScenes/inflatable_bounce_house_d.tscn" id="42_qmdil"]
+[ext_resource type="PackedScene" uid="uid://ciftjen3j8d25" path="res://public_domain/scenes/inflatableScenes/inflatable_bounce_house_e.tscn" id="43_lwiny"]
+[ext_resource type="PackedScene" uid="uid://dejppmky7gnqt" path="res://public_domain/scenes/inflatableScenes/inflatable_bounce_house_c.tscn" id="44_0w2c8"]
+[ext_resource type="PackedScene" uid="uid://cabqlmfqdrt3p" path="res://public_domain/scenes/inflatableScenes/inflatable_ring_d.tscn" id="45_xnraw"]
+[ext_resource type="PackedScene" uid="uid://bmde4lfwn4apa" path="res://public_domain/scenes/inflatableScenes/inflatable_ring_c.tscn" id="46_h1iw2"]
+[ext_resource type="PackedScene" uid="uid://ctkigdftmqakn" path="res://public_domain/scenes/inflatableScenes/inflatable_ring_b.tscn" id="47_4hk4p"]
+[ext_resource type="PackedScene" uid="uid://df0agt5rrtn3d" path="res://public_domain/scenes/inflatableScenes/inflatable_ring_a.tscn" id="48_dpyqu"]
+[ext_resource type="PackedScene" uid="uid://cfcyo1mgeq55r" path="res://public_domain/scenes/inflatableScenes/inflatable_hammer_d.tscn" id="49_xxr2t"]
+[ext_resource type="PackedScene" uid="uid://cotheclvmb61o" path="res://public_domain/scenes/inflatableScenes/inflatable_hammer_a.tscn" id="50_es63u"]
+[ext_resource type="PackedScene" uid="uid://db1u8xfb8he4" path="res://public_domain/scenes/inflatableScenes/inflatable_hammer_b.tscn" id="51_kqmia"]
+[ext_resource type="PackedScene" uid="uid://dudjwch3m05cc" path="res://public_domain/scenes/inflatableScenes/inflatable_octopuse_a.tscn" id="52_dedr4"]
+[ext_resource type="PackedScene" uid="uid://3wgj40q1gslu" path="res://public_domain/scenes/inflatableScenes/inflatable_duck_b.tscn" id="53_i1fhl"]
+[ext_resource type="PackedScene" uid="uid://dh7awfo00h5uh" path="res://public_domain/scenes/inflatableScenes/inflatable_floater_e.tscn" id="54_51d6x"]
+[ext_resource type="PackedScene" uid="uid://14ag2jwlo0y2" path="res://public_domain/scenes/inflatableScenes/inflatable_pillar_c.tscn" id="55_jph1p"]
+[ext_resource type="PackedScene" uid="uid://dcc23sg8busm" path="res://public_domain/scenes/inflatableScenes/inflatable_pillar_a.tscn" id="56_30idv"]
+[ext_resource type="PackedScene" uid="uid://cb52ig6qyikkv" path="res://public_domain/scenes/inflatableScenes/inflatable_pillar_b.tscn" id="57_wmcom"]
+[ext_resource type="PackedScene" uid="uid://drhbaigvxnikh" path="res://public_domain/scenes/inflatableScenes/inflatable_bounce_house_a.tscn" id="58_xyrgu"]
+[ext_resource type="PackedScene" uid="uid://diijq3uw71265" path="res://public_domain/scenes/inflatableScenes/inflatable_ball_pit_a.tscn" id="59_bujy2"]
+[ext_resource type="PackedScene" uid="uid://clcan1vieeh1w" path="res://public_domain/scenes/inflatableScenes/inflatable_ball_pit_b.tscn" id="60_g3y2e"]
+[ext_resource type="PackedScene" uid="uid://c6gbiad2pnlpf" path="res://public_domain/scenes/inflatableScenes/inflatable_ball_pit_c.tscn" id="61_5abl7"]
+[ext_resource type="PackedScene" uid="uid://j1rjy00dh58f" path="res://public_domain/scenes/inflatableScenes/inflatable_slide_b.tscn" id="62_athdy"]
+[ext_resource type="PackedScene" uid="uid://cywuiy274gfp3" path="res://public_domain/scenes/inflatableScenes/inflatable_slide_a.tscn" id="63_pd5gv"]
+[ext_resource type="PackedScene" uid="uid://06ht2m44w2v8" path="res://public_domain/scenes/inflatableScenes/inflatable_bowling_p_in.tscn" id="64_doxuu"]
+[ext_resource type="PackedScene" uid="uid://jl4f3rc3pdqb" path="res://public_domain/scenes/inflatableScenes/inflatable_goale_a.tscn" id="65_cd7wy"]
+[ext_resource type="PackedScene" uid="uid://dxtlast61s2t1" path="res://public_domain/scenes/inflatableScenes/inflatable_goale_b.tscn" id="66_ubk32"]
+[ext_resource type="PackedScene" uid="uid://qtajas6lykmy" path="res://public_domain/scenes/inflatableScenes/inflatable_pool_slide_a.tscn" id="67_bqawg"]
+[ext_resource type="PackedScene" uid="uid://bjma8ar84vt6g" path="res://public_domain/scenes/inflatableScenes/inflatable_pig_a.tscn" id="68_ug83h"]
+[ext_resource type="PackedScene" uid="uid://blq1xx861artu" path="res://public_domain/scenes/inflatableScenes/inflatable_pig_b.tscn" id="69_je7y0"]
+[ext_resource type="PackedScene" uid="uid://cl2msf03upqv" path="res://public_domain/scenes/inflatableScenes/inflatable_pig_c.tscn" id="70_kug1f"]
+[ext_resource type="PackedScene" uid="uid://cvfwbvyds761r" path="res://public_domain/scenes/inflatableScenes/inflatable_ball_pit_empty_a.tscn" id="71_1q48m"]
+[ext_resource type="PackedScene" uid="uid://dnplk5gh5oose" path="res://public_domain/scenes/inflatableScenes/inflatable_ball_pit_empty_b.tscn" id="72_0n22n"]
+[ext_resource type="PackedScene" uid="uid://c5k81bwcp5gd2" path="res://public_domain/scenes/inflatableScenes/inflatable_ball_pit_empty_c.tscn" id="73_duu4c"]
+[ext_resource type="PackedScene" uid="uid://bihj1tvx3dvbm" path="res://public_domain/scenes/inflatableScenes/inflatable_octopuse_b.tscn" id="74_yn85h"]
+[ext_resource type="PackedScene" uid="uid://dof5mh6dvvssk" path="res://public_domain/scenes/inflatableScenes/inflatable_octopuse_d.tscn" id="75_i7vwy"]
+[ext_resource type="PackedScene" uid="uid://cplcsqg6gd1ag" path="res://public_domain/scenes/inflatableScenes/inflatable_ball_big_a.tscn" id="76_1n2g8"]
+[ext_resource type="PackedScene" uid="uid://cihoygv0twv34" path="res://public_domain/scenes/inflatableScenes/inflatable_ball_big_b.tscn" id="77_7thgu"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_yk56f"]
+panorama = ExtResource("1_fvtrh")
+energy_multiplier = 0.25
+
+[sub_resource type="Sky" id="Sky_fvtrh"]
+sky_material = SubResource("PanoramaSkyMaterial_yk56f")
+process_mode = 1
+
+[sub_resource type="Environment" id="Environment_yk56f"]
+background_mode = 2
+background_energy_multiplier = 2.0
+sky = SubResource("Sky_fvtrh")
+sky_custom_fov = 69.0
+ambient_light_color = Color(0.473976, 0.473976, 0.473976, 1)
+ssr_enabled = true
+ssao_enabled = true
+ssao_horizon = 0.22
+ssil_enabled = true
+sdfgi_enabled = true
+sdfgi_energy = 2.0
+adjustment_saturation = 0.55
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_kaujc"]
+size = Vector2(50, 50)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yk56f"]
+albedo_color = Color(0.154257, 0.56456, 0.797244, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_1v744"]
+data = PackedVector3Array(25, 0, 25, -25, 0, 25, 25, 0, -25, -25, 0, 25, -25, 0, -25, 25, 0, -25)
+
+[node name="inflatables" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+process_mode = 4
+environment = SubResource("Environment_yk56f")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.283471, 0.607507, -0.74201, -0.546952, 0.737981, 0.395255, 0.78771, 0.293801, 0.541474, -16.901, 11.5966, 25.6969)
+light_color = Color(1, 1, 0.984314, 1)
+light_energy = 0.5
+shadow_enabled = true
+directional_shadow_max_distance = 500.0
+
+[node name="inflatable_Pool_B" parent="." instance=ExtResource("1_8wx6n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5209, 0, -0.493581)
+
+[node name="inflatable_Pool_E" parent="." instance=ExtResource("2_1v744")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.0437, 0, 0.121246)
+
+[node name="inflatable_Lounger_B" parent="." instance=ExtResource("6_mwnvf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7838, 0, 5.22693)
+
+[node name="inflatable_Lounger_A" parent="." instance=ExtResource("7_5rupe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7156, 0, 5.22693)
+
+[node name="inflatable_Pool_C" parent="." instance=ExtResource("8_bjg4d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1567, -5.96046e-08, 3.40191)
+
+[node name="inflatable_Pool_D" parent="." instance=ExtResource("9_u1mt3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4558, 0, 2.63903)
+
+[node name="inflatable_Pool_Slide_B" parent="." instance=ExtResource("10_o5t04")]
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, -14.1819, 0.0318536, 1.59201)
+
+[node name="inflatable_BounceHouse_B" parent="." instance=ExtResource("12_x8t64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6606, 0, -3.99429)
+
+[node name="inflatable_Pool_A" parent="." instance=ExtResource("13_eduty")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3546, 0, 1.51328)
+
+[node name="inflatable_Pillar_D" parent="." instance=ExtResource("14_5g0i1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.71387, 0, -2.12869)
+
+[node name="inflatable_Lounger_C" parent="." instance=ExtResource("18_1v8fu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8655, -0.0107134, 7.36417)
+
+[node name="inflatable_Lounger_D" parent="." instance=ExtResource("19_kdjee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.914, 0, 7.25272)
+
+[node name="inflatable_BounceHouse_F" parent="." instance=ExtResource("23_2wdri")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.43592, -0.0999383, -3.34847)
+
+[node name="inflatable_BounceHouse_D" parent="." instance=ExtResource("42_qmdil")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.00612, -0.0999383, -3.61073)
+
+[node name="inflatable_BounceHouse_E" parent="." instance=ExtResource("43_lwiny")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.612, -0.0999382, -3.38901)
+
+[node name="inflatable_BounceHouse_C" parent="." instance=ExtResource("44_0w2c8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7777, 0, -3.79886)
+
+[node name="inflatable_Pillar_C" parent="." instance=ExtResource("55_jph1p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.72106, 0, -1.97563)
+
+[node name="inflatable_Pillar_A" parent="." instance=ExtResource("56_30idv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3642, 0, -2.71551)
+
+[node name="inflatable_Pillar_B" parent="." instance=ExtResource("57_wmcom")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.61254, 0, -1.81691)
+
+[node name="inflatable_BounceHouse_A" parent="." instance=ExtResource("58_xyrgu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.8972, 0, -3.95382)
+
+[node name="inflatable_BallPit_A" parent="." instance=ExtResource("59_bujy2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.28904, -2.42983e-08, 3.39242)
+
+[node name="inflatable_BallPit_B" parent="." instance=ExtResource("60_g3y2e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.62418, 0, 0.448207)
+
+[node name="inflatable_BallPit_C" parent="." instance=ExtResource("61_5abl7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.51087, 0, 0.614023)
+
+[node name="inflatable_Slide_B" parent="." instance=ExtResource("62_athdy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.7999, 0.412441, -3.25662)
+
+[node name="inflatable_Slide_A" parent="." instance=ExtResource("63_pd5gv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.8576, 0, -2.89796)
+
+[node name="inflatable_Goale_A" parent="." instance=ExtResource("65_cd7wy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.172, 0, 4.443)
+
+[node name="inflatable_Goale_B" parent="." instance=ExtResource("66_ubk32")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.371, 0, 3.943)
+
+[node name="inflatable_Pool_Slide_A" parent="." instance=ExtResource("67_bqawg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -11.5693, 0.0318535, 2.71415)
+
+[node name="inflatable_BallPit_Empty_A" parent="." instance=ExtResource("71_1q48m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.28904, -2.42983e-08, 6.11704)
+
+[node name="inflatable_BallPit_Empty_B" parent="." instance=ExtResource("72_0n22n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3503, 0, 6.34376)
+
+[node name="inflatable_BallPit_Empty_C" parent="." instance=ExtResource("73_duu4c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.22178, 0, 3.50975)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 0)
+mesh = SubResource("PlaneMesh_kaujc")
+surface_material_override/0 = SubResource("StandardMaterial3D_yk56f")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_1v744")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -8.5, 0, -7.61292)
+material_override = SubResource("StandardMaterial3D_yk56f")
+mesh = SubResource("PlaneMesh_kaujc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_1v744")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 1, 0, -7.61292)
+material_override = SubResource("StandardMaterial3D_yk56f")
+mesh = SubResource("PlaneMesh_kaujc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_1v744")
+
+[node name="inflatable_Tube_B" parent="." instance=ExtResource("3_fvtrh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1329, 1.38505, 4.7674)
+
+[node name="inflatable_Tube_Duck_A" parent="." instance=ExtResource("4_yk56f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9924, 0.847448, 5.50969)
+
+[node name="inflatable_Tube_Duck_B" parent="." instance=ExtResource("5_8t0qx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9951, 0.847448, 5.58319)
+
+[node name="inflatable_Flaoter_F" parent="." instance=ExtResource("11_iraq8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5721, 0.23843, 5.58455)
+
+[node name="inflatable_Ball_D" parent="." instance=ExtResource("15_3chf4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.937, 0.573075, 1.28277)
+
+[node name="inflatable_Duck_A" parent="." instance=ExtResource("16_nossj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.768, 0.331752, 1.45312)
+
+[node name="inflatable_Dolphin" parent="." instance=ExtResource("17_d28yi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7665, 0.174846, 1.59551)
+collision_mask = 17
+
+[node name="inflatable_Floater_A" parent="." instance=ExtResource("20_clpkl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2146, 0.0718656, 4.71437)
+
+[node name="inflatable_Hammer_C" parent="." instance=ExtResource("21_xn5tk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2601, 0.948033, -0.998995)
+
+[node name="inflatable_Tube_lifesaver" parent="." instance=ExtResource("22_ie7n2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2303, 1.38505, 5.19392)
+
+[node name="inflatable_Tube_C" parent="." instance=ExtResource("26_vwcke")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7726, 0.847448, 7.07148)
+
+[node name="inflatable_Tube_A" parent="." instance=ExtResource("24_7qpe5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8837, 1.38505, 4.7674)
+
+[node name="inflatable_Tube_D" parent="." instance=ExtResource("25_vdjin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5765, 0.847448, 6.97118)
+
+[node name="inflatable_Tube_Duck_C" parent="." instance=ExtResource("27_yt3ej")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6965, 0.847448, 6.53497)
+
+[node name="inflatable_Tube_Duck_D" parent="." instance=ExtResource("28_ql3ui")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1947, 1.38505, 5.97663)
+
+[node name="inflatable_Floater_B" parent="." instance=ExtResource("29_467sx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9973, 0.0718656, 4.71437)
+
+[node name="inflatable_Floater_C" parent="." instance=ExtResource("30_2denc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2146, 0.0718656, 5.36068)
+
+[node name="inflatable_Floater_D" parent="." instance=ExtResource("31_plj2j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9973, 0.0718656, 5.36068)
+
+[node name="inflatable_Ball_C" parent="." instance=ExtResource("32_3e6s5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.167, 0.573075, 1.28277)
+
+[node name="inflatable_Ball_A" parent="." instance=ExtResource("33_uorvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.167, 0.573075, 1.08599)
+
+[node name="inflatable_Ball_B" parent="." instance=ExtResource("34_8etdn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.937, 0.573075, 1.07466)
+
+[node name="inflatable_Ball_E" parent="." instance=ExtResource("35_7rxeh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.167, 0.573075, 1.46921)
+
+[node name="inflatable_Ball_F" parent="." instance=ExtResource("36_wu44n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.937, 0.573075, 1.45787)
+
+[node name="inflatable_Ball_H" parent="." instance=ExtResource("37_vdtcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.167, 0.573075, 1.79001)
+
+[node name="inflatable_Ball_I" parent="." instance=ExtResource("38_vdral")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.937, 0.573075, 1.77867)
+
+[node name="inflatable_Ball_G" parent="." instance=ExtResource("39_x1skd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.167, 0.573075, 1.65235)
+
+[node name="inflatable_Ball_Beach_A" parent="." instance=ExtResource("40_uo37n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.71669, 0.924318, 5.98093)
+
+[node name="inflatable_Ball_Beach_B" parent="." instance=ExtResource("41_2a847")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.34025, 0.924318, 5.98093)
+
+[node name="inflatable_Ring_D" parent="." instance=ExtResource("45_xnraw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3428, 0.432841, 2.10046)
+
+[node name="inflatable_Ring_C" parent="." instance=ExtResource("46_h1iw2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5453, 0.381036, 2.10046)
+
+[node name="inflatable_Ring_B" parent="." instance=ExtResource("47_4hk4p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3513, 0.316043, 2.10046)
+
+[node name="inflatable_Ring_A" parent="." instance=ExtResource("48_dpyqu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.546, 0.515456, 2.10046)
+
+[node name="inflatable_Hammer_D" parent="." instance=ExtResource("49_xxr2t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0615, 0.948033, -0.413707)
+
+[node name="inflatable_Hammer_A" parent="." instance=ExtResource("50_es63u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6913, 1.06419, -0.722693)
+
+[node name="inflatable_Hammer_B" parent="." instance=ExtResource("51_kqmia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2144, 1.09427, -0.540457)
+
+[node name="inflatable_Octopuse_A" parent="." instance=ExtResource("52_dedr4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5796, 0.287821, 2.53754)
+
+[node name="inflatable_Duck_B" parent="." instance=ExtResource("53_i1fhl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0291, 0.320673, 1.38805)
+
+[node name="inflatable_Floater_E" parent="." instance=ExtResource("54_51d6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1317, 0.242189, 5.98992)
+
+[node name="inflatable_BowlingPIn" parent="." instance=ExtResource("64_doxuu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6823, -0.0270128, 3.39569)
+
+[node name="inflatable_Pig_A" parent="." instance=ExtResource("68_ug83h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6749, 0.234872, 3.38015)
+
+[node name="inflatable_Pig_B" parent="." instance=ExtResource("69_je7y0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1111, 0.131728, 2.40636)
+
+[node name="inflatable_Pig_C" parent="." instance=ExtResource("70_kug1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1191, 0.723668, 2.61928)
+
+[node name="inflatable_Octopuse_B" parent="." instance=ExtResource("74_yn85h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7725, 0.712139, 3.4543)
+
+[node name="inflatable_Octopuse_D" parent="." instance=ExtResource("75_i7vwy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1055, 0.181431, 3.43071)
+
+[node name="inflatable_Ball_Big_A" parent="." instance=ExtResource("76_1n2g8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9523, 1.22838, 0.321246)
+
+[node name="inflatable_Ball_Big_B" parent="." instance=ExtResource("77_7thgu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.75103, 1.14133, 6.22949)

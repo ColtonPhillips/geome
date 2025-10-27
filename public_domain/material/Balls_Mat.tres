@@ -1,0 +1,26 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://yjpvo6a6i0ki"]
+
+[ext_resource type="Shader" uid="uid://bbogie7gfro4o" path="res://Assets/LoafbrrAssets/inflatables/material/ORM_Shader_Cull_Back.gdshader" id="1_cxdaw"]
+[ext_resource type="Texture2D" uid="uid://hbgb75ldaahq" path="res://Assets/LoafbrrAssets/inflatables/Textures/balls/Balls_Diffuse_1K.png" id="2_0uuqs"]
+[ext_resource type="Texture2D" uid="uid://caledh05qbdod" path="res://Assets/LoafbrrAssets/inflatables/Textures/balls/Balls_Normal_1K.png" id="3_f2iut"]
+[ext_resource type="Texture2D" uid="uid://v1rx62eoumpq" path="res://Assets/LoafbrrAssets/inflatables/Textures/balls/Balls_ORM_1K.png" id="4_8uxt6"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_cxdaw")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("2_0uuqs")
+shader_parameter/texture_orm = ExtResource("4_8uxt6")
+shader_parameter/alpha_scissor_threshold = 0.9
+shader_parameter/roughness = 1.317
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("3_f2iut")
+shader_parameter/normal_scale = 0.500001
+shader_parameter/ao_light_affect = 0.0
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 0.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(0, 0, 0)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)

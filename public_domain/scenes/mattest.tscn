@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwkrkqyo7euai"]
+
+[ext_resource type="Material" uid="uid://cscqm02lm5rg8" path="res://Assets/LoafbrrAssets/inflatables/material/Inflatable_Mat.tres" id="1_3plka"]
+[ext_resource type="Material" uid="uid://yjpvo6a6i0ki" path="res://Assets/LoafbrrAssets/inflatables/material/Balls_Mat.tres" id="2_6pfhs"]
+[ext_resource type="PackedScene" uid="uid://d3x47qrw565sp" path="res://Assets/LoafbrrAssets/inflatables/glb/inflatables.glb" id="6_32lvd"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_c8i31"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sphr4"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.402449, 0.296712, 0, 0.593419, 0.804893, -0.500003, 0.697057, -0.513915, 0, 0, 0)
+light_indirect_energy = 2.0
+shadow_enabled = true
+directional_shadow_split_1 = 0.065
+directional_shadow_blend_splits = true
+directional_shadow_max_distance = 30.2
+directional_shadow_pancake_size = 52.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_c8i31")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+mesh = SubResource("BoxMesh_c8i31")
+surface_material_override/0 = ExtResource("1_3plka")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, -2)
+mesh = SubResource("PlaneMesh_sphr4")
+surface_material_override/0 = ExtResource("1_3plka")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.5, -2)
+mesh = SubResource("PlaneMesh_sphr4")
+surface_material_override/0 = ExtResource("2_6pfhs")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 2, 0.407805, -1.70699)
+mesh = SubResource("PlaneMesh_sphr4")
+
+[node name="inflatables" parent="." instance=ExtResource("6_32lvd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1.5)

@@ -1,0 +1,28 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://cscqm02lm5rg8"]
+
+[ext_resource type="Shader" uid="uid://bbogie7gfro4o" path="res://Assets/LoafbrrAssets/inflatables/material/ORM_Shader_Cull_Back.gdshader" id="1_4ej21"]
+[ext_resource type="Texture2D" uid="uid://doqoemoq6frov" path="res://Assets/LoafbrrAssets/inflatables/Textures/inflatables/inflatables_Diffuse_1K.png" id="2_27511"]
+[ext_resource type="Texture2D" uid="uid://cdntmnbh7krw0" path="res://Assets/LoafbrrAssets/inflatables/Textures/inflatables/inflatables_Alpha_1K.png" id="3_oa30c"]
+[ext_resource type="Texture2D" uid="uid://bngkmreailfwm" path="res://Assets/LoafbrrAssets/inflatables/Textures/inflatables/inflatables_Normal_1K.png" id="4_ndkre"]
+[ext_resource type="Texture2D" uid="uid://80vndl3ppg65" path="res://Assets/LoafbrrAssets/inflatables/Textures/inflatables/inflatables_ORM_1K.png" id="5_thpad"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_4ej21")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("2_27511")
+shader_parameter/texture_orm = ExtResource("5_thpad")
+shader_parameter/texture_alpha = ExtResource("3_oa30c")
+shader_parameter/alpha_scissor_threshold = 0.5
+shader_parameter/roughness = 1.607
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("4_ndkre")
+shader_parameter/normal_scale = 0.500001
+shader_parameter/ao_light_affect = 1.0
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 0.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(0, 0, 0)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)

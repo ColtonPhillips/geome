@@ -1,0 +1,233 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://d3x47qrw565sp"
+path="res://.godot/imported/inflatables.glb-deb3781fbf8d1df996267993ccbbfa50.scn"
+
+[deps]
+
+source_file="res://public_domain/glb/inflatables.glb"
+dest_files=["res://.godot/imported/inflatables.glb-deb3781fbf8d1df996267993ccbbfa50.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"Balls": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://public_domain/material/Balls_Mat.tres",
+"use_external/path": "uid://yjpvo6a6i0ki"
+},
+"inflatables": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://public_domain/material/Inflatable_Mat.tres",
+"use_external/path": "uid://cscqm02lm5rg8"
+}
+},
+"nodes": {
+"PATH:inflatable_Ball_A": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Ball_B": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Ball_Beach_A": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Ball_Beach_B": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Ball_Big_A": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Ball_Big_B": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Ball_C": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Ball_D": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Ball_E": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Ball_F": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Ball_G": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Ball_H": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Ball_I": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Duck_A": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Duck_B": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Flaoter_F": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Floater_A": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Floater_B": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Floater_C": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Floater_D": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Floater_E": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Hammer_A": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Hammer_B": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Hammer_C": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Hammer_D": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Octopuse_A": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Octopuse_B": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Octopuse_D": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Pig_A": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Pig_B": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Pig_C": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Ring_A": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Ring_B": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Ring_C": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Ring_D": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Tube_A": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Tube_B": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Tube_C": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Tube_D": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Tube_Duck_A": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Tube_Duck_B": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Tube_Duck_C": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Tube_Duck_D": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:inflatable_Tube_lifesaver": {
+"generate/physics": true,
+"physics/body_type": 1
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

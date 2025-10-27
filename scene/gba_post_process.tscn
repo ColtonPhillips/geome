@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://daasxqdnsqroc"]
+
+[ext_resource type="Shader" uid="uid://diaich1uc64ul" path="res://scene/gba_post_process.gdshader" id="1_yt7bi"]
+[ext_resource type="Script" uid="uid://bkw28c2nj4hbm" path="res://scene/gba_post_process.gd" id="2_n0d3u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n0d3u"]
+shader = ExtResource("1_yt7bi")
+shader_parameter/viewport_size = Vector2(240, 160)
+shader_parameter/pixel_scale = 2.4390000921025
+shader_parameter/vignette_strength = 0.610000028975
+shader_parameter/vignette_softness = 0.49700002290898004
+shader_parameter/aberration_strength = 1.3370000635075
+shader_parameter/posterize_enabled = true
+shader_parameter/posterize_levels = 340
+
+[node name="GbaPostProcess" type="ColorRect"]
+material = SubResource("ShaderMaterial_n0d3u")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_n0d3u")
