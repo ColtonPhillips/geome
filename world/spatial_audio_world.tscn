@@ -1,0 +1,61 @@
+[gd_scene load_steps=11 format=3 uid="uid://c6jbtk3c3vpi6"]
+
+[ext_resource type="Texture2D" uid="uid://db80bb5mykj12" path="res://public_domain/Textures/hdri/rocky_ridge_puresky_2k.exr" id="1_5c6x0"]
+[ext_resource type="PackedScene" uid="uid://chtdvp574qfb5" path="res://scene/chirper.tscn" id="2_3m6bi"]
+[ext_resource type="PackedScene" uid="uid://b4kti7rtg7pt7" path="res://scene/marble_camera_3d_container.tscn" id="3_e3k5e"]
+[ext_resource type="PackedScene" uid="uid://ca8cgyk7k3ed1" path="res://scene/marble_body_3d.tscn" id="4_o45hv"]
+[ext_resource type="PackedScene" uid="uid://b10otbmvog2kt" path="res://public_domain/scenes/inflatables.tscn" id="5_o45hv"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_aatty"]
+panorama = ExtResource("1_5c6x0")
+energy_multiplier = 0.25
+
+[sub_resource type="Sky" id="Sky_fvtrh"]
+sky_material = SubResource("PanoramaSkyMaterial_aatty")
+process_mode = 1
+
+[sub_resource type="Environment" id="Environment_3m6bi"]
+background_mode = 2
+background_energy_multiplier = 0.42
+sky = SubResource("Sky_fvtrh")
+sky_custom_fov = 69.0
+ambient_light_color = Color(0.473976, 0.473976, 0.473976, 1)
+ssr_enabled = true
+ssao_enabled = true
+ssao_horizon = 0.22
+ssil_enabled = true
+sdfgi_enabled = true
+sdfgi_energy = 2.0
+adjustment_saturation = 0.55
+
+[sub_resource type="BoxMesh" id="BoxMesh_3m6bi"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0sn75"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="SpatialAudioWorld" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+process_mode = 4
+environment = SubResource("Environment_3m6bi")
+
+[node name="Chirper" parent="." instance=ExtResource("2_3m6bi")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.233219, 0, 0, 0, 0.13159674, 0, 0, 0, 5.01714, 0, -2.8354206, 0)
+mesh = SubResource("BoxMesh_3m6bi")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_0sn75")
+
+[node name="MarbleCamera3DContainer" parent="." node_paths=PackedStringArray("marble_body_3d") instance=ExtResource("3_e3k5e")]
+marble_body_3d = NodePath("../MarbleBody3D")
+
+[node name="MarbleBody3D" parent="." node_paths=PackedStringArray("camera_container") instance=ExtResource("4_o45hv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
+camera_container = NodePath("../MarbleCamera3DContainer")
+
+[node name="inflatables" parent="." instance=ExtResource("5_o45hv")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 242.99973, -134.22955, -164.9534)

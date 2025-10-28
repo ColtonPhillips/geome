@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://chtdvp574qfb5"]
+
+[ext_resource type="Script" uid="uid://d18ip1hkk65ia" path="res://script/chirper.gd" id="1_1a6ya"]
+[ext_resource type="AudioStream" uid="uid://b606sxybogjro" path="res://assets/wav/random.wav" id="2_hmpmt"]
+
+[sub_resource type="Curve3D" id="Curve3D_hmpmt"]
+closed = true
+bake_interval = 32.0
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -6.755025, 0, -2.5872078, 0, 0, 0, 0, 0, 0, -5.3241577, 0, 2.870054, 0, 0, 0, 0, 0, 0, 3.3442364, 0, 3.7518675, 0, 0, 0, 0, 0, 0, 7.9030476, 0, -1.6055664, 0, 0, 0, 0, 0, 0, -0.41594887, 0, -5.515495, 0, 0, 0, 0, 0, 0, -6.588646, 0, -3.1196237, 0, 0, 0, 0, 0, 0, -1.4355806, -7.5643272, 3.9255743, 0, 0, 0, 0, 0, 0, 13.679175, -5.340717, 8.335817, 0, 0, 0, 0, 0, 0, 20.169485, -2.983076, -5.3383126, 0, 0, 0, 0, 0, 0, 3.7739542, -2.0772705, -11.66451, 0, 0, 0, 0, 0, 0, -4.927887, 6.152033, 9.40496, 0, 0, 0, 0, 0, 0, -14.45994, 9.56218, 1.2064743, 0, 0, 0, 0, 0, 0, -4.098298, 11.472605, -5.411319, 0, 0, 0, 0, 0, 0, -6.707218, -15.030682, -16.453907),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 14
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_tgx5y"]
+
+[node name="Chirper" type="Node3D"]
+script = ExtResource("1_1a6ya")
+speed_scale = 0.5
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(3.2504637, 0, 3.1769302, 0, 3.7194169, 0, -1.6589819, 0, 6.2245994, 0, 0, 0)
+curve = SubResource("Curve3D_hmpmt")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.9673046, 0, -0.25362235, 0, 1.0000002, 0, 0.25362262, 0, -0.9673036, -6.755025, 0, -2.5872078)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Path3D/PathFollow3D"]
+stream = ExtResource("2_hmpmt")
+attenuation_model = 1
+volume_db = -0.06
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Path3D/PathFollow3D"]
+mesh = SubResource("CapsuleMesh_tgx5y")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Path3D/PathFollow3D/MeshInstance3D"]
+transform = Transform3D(-0.2195917, 0, 0.15282096, 0, 0.26885927, 0, -0.12482441, 0, -0.09169179, 0, 0, 0)
+light_energy = 8.345
+light_indirect_energy = 7.784
+light_size = 0.3
+omni_range = 223.696
