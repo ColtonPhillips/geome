@@ -1,10 +1,19 @@
-[gd_scene load_steps=11 format=3 uid="uid://c6jbtk3c3vpi6"]
+[gd_scene load_steps=20 format=3 uid="uid://c6jbtk3c3vpi6"]
 
 [ext_resource type="Texture2D" uid="uid://db80bb5mykj12" path="res://public_domain/Textures/hdri/rocky_ridge_puresky_2k.exr" id="1_5c6x0"]
 [ext_resource type="PackedScene" uid="uid://chtdvp574qfb5" path="res://scene/chirper.tscn" id="2_3m6bi"]
 [ext_resource type="PackedScene" uid="uid://b4kti7rtg7pt7" path="res://scene/marble_camera_3d_container.tscn" id="3_e3k5e"]
 [ext_resource type="PackedScene" uid="uid://ca8cgyk7k3ed1" path="res://scene/marble_body_3d.tscn" id="4_o45hv"]
 [ext_resource type="PackedScene" uid="uid://b10otbmvog2kt" path="res://public_domain/scenes/inflatables.tscn" id="5_o45hv"]
+[ext_resource type="Script" uid="uid://bpo5cwaa1m14f" path="res://script/spawner.gd" id="6_0sn75"]
+[ext_resource type="PackedScene" uid="uid://b66nuqqwimp3b" path="res://public_domain/scenes/inflatableScenes/inflatable_duck_a.tscn" id="7_pnx2s"]
+[ext_resource type="PackedScene" uid="uid://bigxmyly72ri0" path="res://public_domain/scenes/inflatableScenes/inflatable_tube_duck_a.tscn" id="8_wkjbc"]
+[ext_resource type="PackedScene" uid="uid://ras1mpybd2tq" path="res://public_domain/scenes/inflatableScenes/inflatable_tube_duck_b.tscn" id="10_fd7st"]
+[ext_resource type="PackedScene" uid="uid://53m6lo63re8x" path="res://public_domain/scenes/inflatableScenes/inflatable_tube_duck_c.tscn" id="11_u8ci3"]
+[ext_resource type="PackedScene" uid="uid://dhmnv08ps8ftx" path="res://scene/popcorn_ball.tscn" id="12_lmy8i"]
+[ext_resource type="PackedScene" uid="uid://dbkme1ss3lvuh" path="res://public_domain/scenes/inflatableScenes/inflatable_tube_duck_d.tscn" id="12_tntl8"]
+[ext_resource type="PackedScene" uid="uid://cgte2p3hjd4if" path="res://scene/crate_shape.tscn" id="13_fd7st"]
+[ext_resource type="PackedScene" uid="uid://bgwcwkfi4hekd" path="res://scene/pellet.tscn" id="14_u8ci3"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_aatty"]
 panorama = ExtResource("1_5c6x0")
@@ -42,7 +51,7 @@ environment = SubResource("Environment_3m6bi")
 [node name="Chirper" parent="." instance=ExtResource("2_3m6bi")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.233219, 0, 0, 0, 0.13159674, 0, 0, 0, 5.01714, 0, -2.8354206, 0)
+transform = Transform3D(4.233219, 0, 0, 0, 0.13159674, 0, 0, 0, 5.01714, 0, -27.902122, 0)
 mesh = SubResource("BoxMesh_3m6bi")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
@@ -51,11 +60,103 @@ mesh = SubResource("BoxMesh_3m6bi")
 shape = SubResource("ConcavePolygonShape3D_0sn75")
 
 [node name="MarbleCamera3DContainer" parent="." node_paths=PackedStringArray("marble_body_3d") instance=ExtResource("3_e3k5e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -21.21836, 20.312592)
 marble_body_3d = NodePath("../MarbleBody3D")
 
+[node name="Camera3D" parent="MarbleCamera3DContainer/HRotation/VRotation/SpringArm3D" index="0"]
+transform = Transform3D(0.98927784, -0.01515037, 0.1452579, 0, 0.99460477, 0.10373707, -0.14604586, -0.10262479, 0.9839405, 0, 0, 0)
+
 [node name="MarbleBody3D" parent="." node_paths=PackedStringArray("camera_container") instance=ExtResource("4_o45hv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -27.119576, 0)
+camera_container = NodePath("../MarbleCamera3DContainer")
+
+[node name="MarbleBody3D3" parent="." node_paths=PackedStringArray("camera_container") instance=ExtResource("4_o45hv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6706023, -27.119576, -1.5838556)
+camera_container = NodePath("../MarbleCamera3DContainer")
+
+[node name="MarbleBody3D4" parent="." node_paths=PackedStringArray("camera_container") instance=ExtResource("4_o45hv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1232023, -27.119576, -2.3386374)
+camera_container = NodePath("../MarbleCamera3DContainer")
+
+[node name="MarbleBody3D5" parent="." node_paths=PackedStringArray("camera_container") instance=ExtResource("4_o45hv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0590563, -27.119576, -10.408045)
+camera_container = NodePath("../MarbleCamera3DContainer")
+
+[node name="MarbleBody3D6" parent="." node_paths=PackedStringArray("camera_container") instance=ExtResource("4_o45hv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.508771, -27.119576, 3.956667)
+camera_container = NodePath("../MarbleCamera3DContainer")
+
+[node name="MarbleBody3D7" parent="." node_paths=PackedStringArray("camera_container") instance=ExtResource("4_o45hv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.508771, -20.97141, 1.0414033)
+camera_container = NodePath("../MarbleCamera3DContainer")
+
+[node name="MarbleBody3D8" parent="." node_paths=PackedStringArray("camera_container") instance=ExtResource("4_o45hv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.508771, -31.109297, -11.644234)
+camera_container = NodePath("../MarbleCamera3DContainer")
+
+[node name="MarbleBody3D9" parent="." node_paths=PackedStringArray("camera_container") instance=ExtResource("4_o45hv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.800847, -31.109297, -11.644234)
+camera_container = NodePath("../MarbleCamera3DContainer")
+
+[node name="MarbleBody3D10" parent="." node_paths=PackedStringArray("camera_container") instance=ExtResource("4_o45hv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.98416, -23.12254, -11.644234)
+camera_container = NodePath("../MarbleCamera3DContainer")
+
+[node name="MarbleBody3D2" parent="." node_paths=PackedStringArray("camera_container") instance=ExtResource("4_o45hv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -23.153982, 0)
+camera_container = NodePath("../MarbleCamera3DContainer")
+
+[node name="MarbleBody3D11" parent="." node_paths=PackedStringArray("camera_container") instance=ExtResource("4_o45hv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7683716e-07, -30.280327, -5.0018616)
+camera_container = NodePath("../MarbleCamera3DContainer")
+
+[node name="MarbleBody3D12" parent="." node_paths=PackedStringArray("camera_container") instance=ExtResource("4_o45hv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6706028, -30.280327, -6.585717)
+camera_container = NodePath("../MarbleCamera3DContainer")
+
+[node name="MarbleBody3D13" parent="." node_paths=PackedStringArray("camera_container") instance=ExtResource("4_o45hv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1232018, -30.280327, -7.340499)
+camera_container = NodePath("../MarbleCamera3DContainer")
+
+[node name="MarbleBody3D14" parent="." node_paths=PackedStringArray("camera_container") instance=ExtResource("4_o45hv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0590568, -30.280327, -15.409906)
+camera_container = NodePath("../MarbleCamera3DContainer")
+
+[node name="MarbleBody3D15" parent="." node_paths=PackedStringArray("camera_container") instance=ExtResource("4_o45hv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5087714, -30.280327, -1.0451946)
+camera_container = NodePath("../MarbleCamera3DContainer")
+
+[node name="MarbleBody3D16" parent="." node_paths=PackedStringArray("camera_container") instance=ExtResource("4_o45hv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5087714, -24.132162, -3.9604583)
+camera_container = NodePath("../MarbleCamera3DContainer")
+
+[node name="MarbleBody3D17" parent="." node_paths=PackedStringArray("camera_container") instance=ExtResource("4_o45hv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5087714, -34.27005, -16.646095)
+camera_container = NodePath("../MarbleCamera3DContainer")
+
+[node name="MarbleBody3D18" parent="." node_paths=PackedStringArray("camera_container") instance=ExtResource("4_o45hv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.800846, -34.27005, -16.646095)
+camera_container = NodePath("../MarbleCamera3DContainer")
+
+[node name="MarbleBody3D19" parent="." node_paths=PackedStringArray("camera_container") instance=ExtResource("4_o45hv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.984159, -26.28329, -16.646095)
+camera_container = NodePath("../MarbleCamera3DContainer")
+
+[node name="MarbleBody3D20" parent="." node_paths=PackedStringArray("camera_container") instance=ExtResource("4_o45hv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7683716e-07, -26.314734, -5.0018616)
 camera_container = NodePath("../MarbleCamera3DContainer")
 
 [node name="inflatables" parent="." instance=ExtResource("5_o45hv")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 242.99973, -134.22955, -164.9534)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 24.553757, -49.099564, -39.71692)
+
+[node name="FpSpawn" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.031652, -21.267263, -28.445229)
+script = ExtResource("6_0sn75")
+radius = 15.0
+count = 1600
+spawn_scenes = Array[PackedScene]([ExtResource("7_pnx2s"), ExtResource("8_wkjbc"), ExtResource("10_fd7st"), ExtResource("11_u8ci3"), ExtResource("12_tntl8"), ExtResource("12_lmy8i"), ExtResource("13_fd7st"), ExtResource("14_u8ci3")])
+spawn_mode = 0
+distribution = 1
+metadata/_custom_type_script = "uid://bpo5cwaa1m14f"
+
+[editable path="MarbleCamera3DContainer"]
